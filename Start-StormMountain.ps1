@@ -8,6 +8,7 @@
       1. Finds the ArcGIS Pro Python
       2. Builds the GeoOps incident folder tree
       3. Fetches the AOI's vector base data from public REST services
+     3b. Fetches the leased property's 12 parcels from the county
       4. Regenerates the AOI definition
       5. Builds the blank Event geodatabase with the correct schema and domains
       6. Runs the whole pipeline against the test fixtures so you have seen it work
@@ -150,6 +151,22 @@ if ($SkipFetch) {
     else { Write-Warn2 "One or more layers failed. Check the output above; the rest still landed." }
 }
 
+# ------------------------------------------------------ 3b. Leased property --
+Write-Step "3b" "Leased property (23740 Storm Mountain Rd)"
+
+$siteArgs = @((Join-Path $RepoRoot 'scripts\fetch_site.py'))
+if ($Force) { $siteArgs += '--force' }
+& $AnyPython @siteArgs
+if ($LASTEXITCODE -eq 0) {
+    Write-Ok "12 patented mining claims, 246.54 ac -> data\site\"
+    Write-Warn2 "The fire district boundary runs THROUGH the property."
+    Write-Note "Sections 14/15 (9 claims): Rockerville FD, Keystone Ambulance"
+    Write-Note "Section 10   (3 claims): Whispering Pines FD, NO ambulance district on record"
+    Write-Note "Read docs\11-leased-property.md before you brief anything."
+} else {
+    Write-Warn2 "Parcel fetch failed. The committed copy in data\site\ still works."
+}
+
 # --------------------------------------------------------------------- 4. AOI --
 Write-Step 4 "AOI definition"
 & $AnyPython (Join-Path $RepoRoot 'scripts\make_aoi.py')
@@ -204,6 +221,8 @@ Write-Host @"
 
     4. Draw the seven fires. Open this and work from it:
        $RepoRoot\docs\10-digitizing-guide.md
+       And read this once before you start, for the property itself:
+       $RepoRoot\docs\11-leased-property.md
 
        Short version - you draw:
          - 7 perimeter polygons (FeatureCategory = Wildfire Daily Fire Perimeter)

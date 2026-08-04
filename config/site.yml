@@ -1,0 +1,178 @@
+# The leased property — the ground the exercise actually runs on.
+#
+# Everything else in this repo is about a 10 x 10 mile AOI. This file is about
+# the 246 acres inside it that we control, where people will be standing.
+#
+# Facts below marked (county record) came from the Pennington County assessor's
+# parcel service and are verifiable. Facts marked (survey) are for you to fill
+# in on the ground — see docs/11-leased-property.md.
+
+property:
+  name: Storm Mountain Training Grounds
+  address: 23740 Storm Mountain Rd, Rapid City, SD 57702
+  tenure: leased
+  lease_years: 5
+  lease_note: >-
+    Five years in. We are the tenant, not the owner. That distinction changes
+    who signs for a closure, who authorises a dozer on the property, and who
+    the resource advisor talks to about repair — see docs/11-leased-property.md.
+
+  owner_of_record: SD Annual Conference of the United Methodist Church   # (county record)
+  owner_mailing: PO Box 460, Mitchell, SD 57301                          # (county record)
+
+  parcels: 12                                                            # (county record)
+  acres_stated: 246.54                                                   # (county record, legal)
+  acres_from_geometry: 253.02                                            # (computed from the polygons)
+  acreage_note: >-
+    Stated acreage is the legal figure from the deeds; the geometry figure is
+    what the county's polygons measure. A few percent apart, as parcel data
+    always is. Quote the stated figure when the number has legal weight; use
+    the geometry for map extents and area calculations.
+
+  legal_description: Mineral Survey 2049 — 12 patented lode mining claims
+  plss: T1S R6E, Sections 10, 14, 15                                     # (county record)
+  claims:                                                                # (county record)
+    - {fire: Whispering Pines, name: "EDITH #1 LODE",   pin: "5310400001", acres: 19.97, section: 10}
+    - {fire: Whispering Pines, name: "EDITH #2 LODE",   pin: "5310400002", acres: 19.97, section: 10}
+    - {fire: Whispering Pines, name: "MONTANA LODE",    pin: "5310400003", acres: 20.66, section: 10}
+    - {fire: Rockerville, name: "UTAH LODE",       pin: "5314100002", acres: 20.66, section: 14}
+    - {fire: Rockerville, name: "RED CROSS LODE",  pin: "5314100003", acres: 20.66, section: 14}
+    - {fire: Rockerville, name: "NEVADA LODE",     pin: "5314100004", acres: 20.66, section: 14, address: 23747 Storm Mountain Rd}
+    - {fire: Rockerville, name: "DAN PATCH LODE",  pin: "5314100005", acres: 20.66, section: 14, address: 23736 Storm Mountain Rd}
+    - {fire: Rockerville, name: "GOLD DUST LODE",  pin: "5314100006", acres: 20.66, section: 14}
+    - {fire: Rockerville, name: "ALASKA LODE",     pin: "5315200001", acres: 20.66, section: 15}
+    - {fire: Rockerville, name: "OREGON LODE",     pin: "5315200002", acres: 20.66, section: 15}
+    - {fire: Rockerville, name: "IDAHO LODE",      pin: "5315200003", acres: 20.66, section: 15}
+    - {fire: Rockerville, name: "ARIZONA LODE",    pin: "5315200004", acres: 20.66, section: 15}
+
+# The single most operationally important thing in this file. A fire that starts
+# on this property is not a Forest Service fire on arrival — it is a rural fire
+# district fire, and the Forest Service is a cooperator until that changes.
+jurisdiction:                                                            # (county record)
+  split: true
+  split_note: >-
+    THE FIRE DISTRICT BOUNDARY RUNS THROUGH THE LEASED PROPERTY. This is not a
+    neighbouring-district footnote — the line crosses ground we control, and it
+    is the most consequential thing on this page. Which side of it a fire starts
+    on decides who is IC for the first hour and who is a cooperator.
+  fire_districts:
+    - name: Rockerville Fire District
+      code: RK
+      claims: 9
+      sections: [14, 15]
+      claim_names: [ALASKA, ARIZONA, DAN PATCH, GOLD DUST, IDAHO, NEVADA, OREGON,
+                    RED CROSS, UTAH]
+      ambulance: Keystone Ambulance
+    - name: Whispering Pines Fire District
+      claims: 3
+      sections: [10]
+      claim_names: ["EDITH #1", "EDITH #2", MONTANA]
+      ambulance: null
+      ambulance_gap: >-
+        The county record lists NO ambulance district for these three claims.
+        That is a gap to resolve with the county before an exercise puts people
+        on the north end of the property, not a detail to map around. Find out
+        who actually responds to the Section 10 claims and write it down here.
+  action: >-
+    Put both district boundaries on the ops, medtrans and owner products, and
+    label which claims fall in which. Brief it. A crew working the north end of
+    the property is under a different district than a crew at the lodge.
+  ambulance_note: >-
+    Keystone, not Rapid City, for the nine southern claims. Confirm the response
+    time from Keystone before you build the medical plan — the ICS-206 and the
+    medtrans product both depend on a number nobody should be guessing.
+  water_district: West Dakota Water District
+  school_district: Rapid City School District
+  surrounding_ownership: Black Hills National Forest
+  inholding_note: >-
+    This is a private inholding in, or hard against, National Forest. Three
+    things follow: retardant and dozer authority differ across the line, cost
+    apportionment follows the line, and a closure order on NF land does not
+    close this property. The `owner` product exists to make that line visible.
+
+mining_claims:
+  note: >-
+    "Lode claim" is not decorative. These are patented HARD ROCK claims from
+    Mineral Survey 2049, and a claim block of this vintage in the Black Hills
+    very often carries shafts, adits, prospect pits and tailings.
+  implication: >-
+    Treat every claim as suspected to hold workings until walked. Open shafts do
+    not show on a DEM, do not show on imagery under canopy, and will not be on
+    any layer you can download. They are a life-safety hazard for anyone
+    building line at night.
+  action: >-
+    Walk each of the 12 claims and record every working as a Hazard point with a
+    description in Comments. This is the single highest-value piece of field
+    collection on the property.
+  never: Never anchor control line to a mine working.
+
+access:
+  primary: Storm Mountain Rd
+  from: US-16 at Rockerville
+  length_miles: 1.7
+  note: >-
+    Winding Forest Service road, single lane with turnouts. This is the
+    constraint the whole exercise turns on. One way in for anything larger than
+    a type 6.
+  survey_required:                                                       # (survey)
+    - Every turnout, and whether two engines can pass at it
+    - The turnaround point by vehicle class — where a type 3 stops, where a lowboy stops
+    - Corners a lowboy or a type 1 physically cannot make
+    - Gates and who holds the combination
+    - Cattle guards and their weight rating
+    - Overhead clearance: branches, powerline crossings
+  second_egress:                                                         # (survey)
+    question: Is there any second way off this property?
+    why: >-
+      A single ingress that is also the single egress is a LCES problem for
+      everyone on the property, not just the crews. If the answer is no, that is
+      itself the finding, and it belongs in the briefing.
+
+values_at_risk:                                                          # (survey)
+  note: Collect as Structure points inside a Structure Group polygon.
+  expected:
+    - Lodge
+    - Dining hall
+    - Cabins
+    - Maintenance and storage buildings
+    - Water system infrastructure
+  record_per_structure:
+    - Construction type and roof material
+    - Defensible space, honestly assessed
+    - Occupancy — how many people sleep there, and when
+    - Propane tanks and their setback
+
+water:                                                                   # (survey)
+  note: >-
+    A water source a tender cannot reach is worse than no water source, because
+    it appears on the map as an option.
+  record:
+    - Tank capacity and fitting thread (NH or NPSH)
+    - Hydrant flow, if West Dakota Water District will give you the figure
+    - Any draft-capable pond: depth, approach, tender turnaround
+    - Whether the camp's supply is on the district main or on a well
+
+parcel_service:
+  url: https://services1.arcgis.com/AhXvNWFdL7hH4TjJ/ArcGIS/rest/services/PenningtonParcels/FeatureServer/0
+  where: "GranteeLas LIKE '%METHODIST%' AND Subdivisio LIKE '%MS 2049%'"
+  where_note: >-
+    Matches on owner of record and mineral survey. If the property changes hands
+    this query goes empty and scripts/fetch_site.py will say so rather than
+    silently returning nothing. Update it here, in one place.
+  fetched_to: data/site/
+  attribution: Pennington County / Rapid City GIS
+
+privacy:
+  note: >-
+    This is private property and the owner is a named third party. Parcel data
+    is public record, but an exercise product that maps a real owner's buildings
+    is not something to hand out.
+  rules:
+    - Owner name and mailing address stay off every product. They live here and
+      in the county record, which is where they belong.
+    - The `pio`, `evac` and `closure` products already exclude all Event points.
+      Do not add structures to them for this property.
+    - The `owner` product may show the parcel boundary and that it is private.
+      It does not need to name the owner.
+    - Structure detail — occupancy, defensible space, propane — is operational
+      data for the incident, not public information.

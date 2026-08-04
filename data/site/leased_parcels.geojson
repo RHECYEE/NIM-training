@@ -1,0 +1,1429 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "EPSG:4326"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "id": 45795,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.385623654944,
+       43.9725519086817
+      ],
+      [
+       -103.386933913762,
+       43.9712074318587
+      ],
+      [
+       -103.391440392586,
+       43.9735022318782
+      ],
+      [
+       -103.390128575568,
+       43.9748414960991
+      ],
+      [
+       -103.385623654944,
+       43.9725519086817
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45795,
+    "PIN": "5310400001",
+    "TaxID": 44255,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": " ",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "EDITH #1 LODE MS 2049",
+    "Subdivis_1": "0494",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "10",
+    "Acres": 19.97,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": " ",
+    "Fire": "Whispering Pines Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "WP",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 6300,
+    "ValueTotal": 6300,
+    "SHAPE_Leng": 4098.93197643,
+    "Shape__Area": 868511.1546020508,
+    "Shape__Length": 4098.931976409918
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45796,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.386933913762,
+       43.9712074318587
+      ],
+      [
+       -103.388244983838,
+       43.9698620491282
+      ],
+      [
+       -103.392758761611,
+       43.9721562211493
+      ],
+      [
+       -103.391440392586,
+       43.9735022318782
+      ],
+      [
+       -103.386933913762,
+       43.9712074318587
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45796,
+    "PIN": "5310400002",
+    "TaxID": 44256,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": " ",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "EDITH #2 LODE MS 2049",
+    "Subdivis_1": "0495",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "10",
+    "Acres": 19.97,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": " ",
+    "Fire": "Whispering Pines Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "WP",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 6300,
+    "ValueTotal": 6300,
+    "SHAPE_Leng": 4105.24892142,
+    "Shape__Area": 871855.3928222656,
+    "Shape__Length": 4105.248921438061
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45797,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.381626206624,
+       43.9694010808558
+      ],
+      [
+       -103.382213223772,
+       43.9688031690265
+      ],
+      [
+       -103.384160861007,
+       43.9697951534888
+      ],
+      [
+       -103.386933913762,
+       43.9712074318587
+      ],
+      [
+       -103.385623654944,
+       43.9725519086817
+      ],
+      [
+       -103.3834019557,
+       43.9714226209021
+      ],
+      [
+       -103.380893422983,
+       43.970147430237
+      ],
+      [
+       -103.381231291651,
+       43.9698033106356
+      ],
+      [
+       -103.381626206624,
+       43.9694010808558
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45797,
+    "PIN": "5310400003",
+    "TaxID": 44259,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": " ",
+    "LegalDescr": "ALL (ALSO IN SEC 15)",
+    "Block": " ",
+    "Subdivisio": "MONTANA LODE MS 2049",
+    "Subdivis_1": "0497",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "10",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": " ",
+    "Fire": "Whispering Pines Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "WP",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 9500,
+    "ValueTotal": 9500,
+    "SHAPE_Leng": 4243.41213137,
+    "Shape__Area": 913008.5333862305,
+    "Shape__Length": 4243.412131349472
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45877,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.373198145457,
+       43.9682098135472
+      ],
+      [
+       -103.369848657807,
+       43.9665065649972
+      ],
+      [
+       -103.371135815854,
+       43.965186192169
+      ],
+      [
+       -103.375657858434,
+       43.967485621809
+      ],
+      [
+       -103.375619786912,
+       43.9675227678521
+      ],
+      [
+       -103.375230994154,
+       43.967902111345
+      ],
+      [
+       -103.374327211597,
+       43.9687839095239
+      ],
+      [
+       -103.374073596434,
+       43.9686549568158
+      ],
+      [
+       -103.373198145457,
+       43.9682098135472
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45877,
+    "PIN": "5314100002",
+    "TaxID": 44263,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "UTAH LODE MS 2049",
+    "Subdivis_1": "4911",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "14",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "2",
+    "StateAbstr": "NA-CC,NA-CC-S,NA-CC2,NA-CC2-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 400,
+    "ValueAgStr": 0,
+    "ValueLand": 9500,
+    "ValueTotal": 9900,
+    "SHAPE_Leng": 4075.36102057,
+    "Shape__Area": 852900.3490600586,
+    "Shape__Length": 4075.3610205702785
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45878,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.372455552721,
+       43.9638323211546
+      ],
+      [
+       -103.377019154783,
+       43.9661573621696
+      ],
+      [
+       -103.375657858434,
+       43.967485621809
+      ],
+      [
+       -103.371135815854,
+       43.965186192169
+      ],
+      [
+       -103.372455552721,
+       43.9638323211546
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45878,
+    "PIN": "5314100003",
+    "TaxID": 44262,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "RED CROSS LODE MS 2049",
+    "Subdivis_1": "4910",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "14",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "2",
+    "StateAbstr": "NA-CC,NA-CC-S,NA-CC2,NA-CC2-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 200,
+    "ValueAgStr": 0,
+    "ValueLand": 9500,
+    "ValueTotal": 9700,
+    "SHAPE_Leng": 4132.23393028,
+    "Shape__Area": 882107.8455200195,
+    "Shape__Length": 4132.233930276367
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45879,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.37375765706,
+       43.9624964614713
+      ],
+      [
+       -103.378368229056,
+       43.9648409465903
+      ],
+      [
+       -103.377019154783,
+       43.9661573621696
+      ],
+      [
+       -103.372455552721,
+       43.9638323211546
+      ],
+      [
+       -103.37375765706,
+       43.9624964614713
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45879,
+    "PIN": "5314100004",
+    "TaxID": 44261,
+    "LotNumber": "23747",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "NEVADA LODE MS 2049",
+    "Subdivis_1": "0498",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "14",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "2",
+    "StateAbstr": "NA-CC,NA-CC-S,NA-CC2,NA-CC2-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 27000,
+    "ValueAgStr": 0,
+    "ValueLand": 9500,
+    "ValueTotal": 36500,
+    "SHAPE_Leng": 4147.37359233,
+    "Shape__Area": 880806.0421142578,
+    "Shape__Length": 4147.373592330729
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45880,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.377659515323,
+       43.9624320969009
+      ],
+      [
+       -103.377869030915,
+       43.9625389516195
+      ],
+      [
+       -103.379746174619,
+       43.9634962864616
+      ],
+      [
+       -103.378368229056,
+       43.9648409465903
+      ],
+      [
+       -103.37375765706,
+       43.9624964614713
+      ],
+      [
+       -103.375095178158,
+       43.9611241874508
+      ],
+      [
+       -103.377659515323,
+       43.9624320969009
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45880,
+    "PIN": "5314100005",
+    "TaxID": 44254,
+    "LotNumber": "23736",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "DAN PATCH LODE MS 2049",
+    "Subdivis_1": "0493",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "14",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "2",
+    "StateAbstr": "NA-CC,NA-CC-S,NA-CC2,NA-CC2-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 111300,
+    "ValueAgStr": 0,
+    "ValueLand": 9500,
+    "ValueTotal": 120800,
+    "SHAPE_Leng": 4205.13535686,
+    "Shape__Area": 911022.9768066406,
+    "Shape__Length": 4205.135356859445
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45881,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.375657858434,
+       43.967485621809
+      ],
+      [
+       -103.377019154783,
+       43.9661573621696
+      ],
+      [
+       -103.379755590057,
+       43.9675513366419
+      ],
+      [
+       -103.382213223772,
+       43.9688031690265
+      ],
+      [
+       -103.381626206624,
+       43.9694010808558
+      ],
+      [
+       -103.381231291651,
+       43.9698033106356
+      ],
+      [
+       -103.380893422983,
+       43.970147430237
+      ],
+      [
+       -103.380222006632,
+       43.9698061045279
+      ],
+      [
+       -103.379738652727,
+       43.9695603795625
+      ],
+      [
+       -103.379287465832,
+       43.9693309958374
+      ],
+      [
+       -103.377735992907,
+       43.9685422218536
+      ],
+      [
+       -103.375761373119,
+       43.9675382540864
+      ],
+      [
+       -103.375657858434,
+       43.967485621809
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45881,
+    "PIN": "5314100006",
+    "TaxID": 44257,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": " ",
+    "LegalDescr": "ALL (ALSO IN SEC 15)",
+    "Block": " ",
+    "Subdivisio": "GOLD DUST LODE MS 2049",
+    "Subdivis_1": "0491",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "14",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "2",
+    "StateAbstr": "NA-CC,NA-CC-S,NA-CC2,NA-CC2-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 1800,
+    "ValueAgStr": 0,
+    "ValueLand": 9500,
+    "ValueTotal": 11300,
+    "SHAPE_Leng": 4561.9519648,
+    "Shape__Area": 1010096.5465087891,
+    "Shape__Length": 4561.9519648196865
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45912,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.382213223772,
+       43.9688031690265
+      ],
+      [
+       -103.383527801254,
+       43.9674641594169
+      ],
+      [
+       -103.38809161541,
+       43.9697840936185
+      ],
+      [
+       -103.388244983838,
+       43.9698620491282
+      ],
+      [
+       -103.386933913762,
+       43.9712074318587
+      ],
+      [
+       -103.384160861007,
+       43.9697951534888
+      ],
+      [
+       -103.382213223772,
+       43.9688031690265
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45912,
+    "PIN": "5315200001",
+    "TaxID": 44252,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL (ALSO IN SEC 10)",
+    "Block": " ",
+    "Subdivisio": "ALASKA LODE MS 2049",
+    "Subdivis_1": "2049",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "15",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 6500,
+    "ValueTotal": 6500,
+    "SHAPE_Leng": 4237.31038044,
+    "Shape__Area": 910278.7523803711,
+    "Shape__Length": 4237.31038043972
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45913,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.383527801254,
+       43.9674641594169
+      ],
+      [
+       -103.384862035283,
+       43.9661050410758
+      ],
+      [
+       -103.389567970048,
+       43.9685043572002
+      ],
+      [
+       -103.388321581913,
+       43.9697834427851
+      ],
+      [
+       -103.388244983838,
+       43.9698620491282
+      ],
+      [
+       -103.38809161541,
+       43.9697840936185
+      ],
+      [
+       -103.383527801254,
+       43.9674641594169
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45913,
+    "PIN": "5315200002",
+    "TaxID": 44251,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL",
+    "Block": " ",
+    "Subdivisio": "OREGON LODE MS 2049",
+    "Subdivis_1": "0499",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "15",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 6500,
+    "ValueTotal": 6500,
+    "SHAPE_Leng": 4247.59809155,
+    "Shape__Area": 919999.5776367188,
+    "Shape__Length": 4247.598091574479
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45914,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.377019154783,
+       43.9661573621696
+      ],
+      [
+       -103.378368229056,
+       43.9648409465903
+      ],
+      [
+       -103.379772422757,
+       43.9655549082999
+      ],
+      [
+       -103.383527801254,
+       43.9674641594169
+      ],
+      [
+       -103.382213223772,
+       43.9688031690265
+      ],
+      [
+       -103.379755590057,
+       43.9675513366419
+      ],
+      [
+       -103.377019154783,
+       43.9661573621696
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45914,
+    "PIN": "5315200003",
+    "TaxID": 44258,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": "STORM MOUNTAIN RD",
+    "LegalDescr": "ALL (ALSO IN SEC 14)",
+    "Block": " ",
+    "Subdivisio": "IDAHO LODE MS 2049",
+    "Subdivis_1": "0496",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "15",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 6500,
+    "ValueTotal": 6500,
+    "SHAPE_Leng": 4529.81108636,
+    "Shape__Area": 996312.6954956055,
+    "Shape__Length": 4529.811086363097
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45915,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.378368229056,
+       43.9648409465903
+      ],
+      [
+       -103.379746174619,
+       43.9634962864616
+      ],
+      [
+       -103.379789590098,
+       43.9635184297461
+      ],
+      [
+       -103.384862035283,
+       43.9661050410758
+      ],
+      [
+       -103.383527801254,
+       43.9674641594169
+      ],
+      [
+       -103.379772422757,
+       43.9655549082999
+      ],
+      [
+       -103.378368229056,
+       43.9648409465903
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "FID": 45915,
+    "PIN": "5315200004",
+    "TaxID": 44253,
+    "LotNumber": " ",
+    "LotHalfNum": " ",
+    "LotStreetD": " ",
+    "LotStreetN": " ",
+    "LegalDescr": "ALL (ALSO IN SEC 14)",
+    "Block": " ",
+    "Subdivisio": "ARIZONA LODE MS 2049",
+    "Subdivis_1": "0492",
+    "TownshipNu": "1",
+    "TownshipDi": "S",
+    "RangeNumbe": "06",
+    "RangeDir": "E",
+    "Section": "15",
+    "Acres": 20.66,
+    "GranteeLas": "SD ANNUAL CONFOF UNITED METHODIST",
+    "Grantee1st": " ",
+    "Grantee1_1": " ",
+    "Grantee2nd": " ",
+    "Grantee2_1": " ",
+    "GranteeFul": "PO BOX 460",
+    "GranteeStr": " ",
+    "GranteeS_1": " ",
+    "GranteeS_2": " ",
+    "GranteeS_3": " ",
+    "GranteeS_4": "PO BOX 460",
+    "GranteeCit": "MITCHELL",
+    "GranteeSta": "SD",
+    "GranteeZip": "57301-0460",
+    "GrantorLas": " ",
+    "Grantor1st": " ",
+    "Grantor1_1": " ",
+    "Grantor2nd": " ",
+    "Grantor2_1": " ",
+    "GrantorStr": " ",
+    "GrantorS_1": " ",
+    "GrantorS_2": " ",
+    "GrantorS_3": " ",
+    "GrantorCit": " ",
+    "GrantorSta": " ",
+    "GrantorZip": " ",
+    "Ambulance": "Keystone Ambulance",
+    "Fire": "Rockerville Fire District",
+    "Civil": " ",
+    "Road": " ",
+    "School": "Rapid City School District",
+    "Sewer": " ",
+    "Water": "West Dakota Water District",
+    "VFD": "RK",
+    "LandUse": "N",
+    "LandType": "C",
+    "Commercial": "C",
+    "StructureT": "0",
+    "StateAbstr": "NA-CC,NA-CC-S",
+    "GranteeIns": "102974",
+    "GranteeI_1": "184",
+    "GranteeI_2": "00138",
+    "GranteeI_3": "QC",
+    "GranteeI_4": 0,
+    "GrantorIns": " ",
+    "GrantorI_1": " ",
+    "GrantorI_2": " ",
+    "GrantorI_3": " ",
+    "GrantorI_4": 0,
+    "ExTaxCode": "CH",
+    "ExTaxPct": "093",
+    "OwnerOccFl": "N",
+    "ValueNAStr": 0,
+    "ValueAgStr": 0,
+    "ValueLand": 6500,
+    "ValueTotal": 6500,
+    "SHAPE_Leng": 4527.0288685,
+    "Shape__Area": 1006994.7577514648,
+    "Shape__Length": 4527.028868498462
+   }
+  }
+ ],
+ "_source": "https://services1.arcgis.com/AhXvNWFdL7hH4TjJ/ArcGIS/rest/services/PenningtonParcels/FeatureServer/0",
+ "_where": "GranteeLas LIKE '%METHODIST%' AND Subdivisio LIKE '%MS 2049%'",
+ "_fetched": "2026-08-04T02:37:32+0000",
+ "_note": "Leased property parcels, from the county assessor. Public record about a real place \u2014 NOT incident data, and not to be published on a PIO product.",
+ "_acres_stated": 246.54,
+ "_acres_from_geometry": 253.02
+}

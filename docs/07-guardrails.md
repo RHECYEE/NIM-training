@@ -71,6 +71,22 @@ Publishing drop points, crew locations, camps and helispots is a firefighter
 safety issue. Design the mechanism so the failure mode is a missing symbol, not
 an exposed crew.
 
+### 6. The exercise runs on private leased land
+
+The 246 acres are leased, not owned, and the owner of record is a named third
+party. Parcel data is public record; an exercise product that maps a real
+owner's buildings is not something to hand out.
+
+- Owner name and mailing address stay off every product.
+- Do not add structures to `pio`, `evac` or `closure` for this property. Those
+  products exclude all Event points by design — leave it that way.
+- A closure order on National Forest land does not close this property, and the
+  exercise cannot close NF land. Do not produce a product implying either.
+- Structure detail — occupancy, defensible space, propane — is operational data,
+  not public information.
+
+See [11-leased-property.md](11-leased-property.md).
+
 ## Before anything leaves the room
 
 - [ ] Watermark present and legible on every sheet
@@ -80,6 +96,8 @@ an exposed crew.
 - [ ] Nothing published to a public-facing service
 - [ ] A second person has confirmed the public sheet carries no tactical data
 - [ ] Anything printed is collected at the end of the exercise, or destroyed
+- [ ] No owner name or mailing address on any sheet
+- [ ] Both fire districts shown where the boundary crosses the leased property
 
 ## This repository
 

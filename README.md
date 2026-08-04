@@ -89,6 +89,28 @@ one AOI.
 | Indigo | EX-SD-TRNG-0006 | 08/02 day | 400 / 420 / 440 | Hand-sketch perimeter, low confidence |
 | Violet | EX-SD-TRNG-0007 | 08/03 day | 500 / 520 / 540 | Largest — forces the map-series talk |
 
+## The leased property
+
+The exercise runs on **23740 Storm Mountain Rd** — leased for five years, and
+not one parcel but **12 contiguous patented lode mining claims (Mineral Survey
+2049), 246.54 acres**, in T1S R6E Sections 10, 14 and 15. Pulled live from the
+Pennington County assessor by `scripts/fetch_site.py`.
+
+Three things the county record settles that the exercise could not have invented:
+
+- **The fire district boundary runs through the property.** Sections 14 and 15
+  (9 claims) are Rockerville FD with Keystone Ambulance; Section 10 (3 claims) is
+  Whispering Pines FD — and has **no ambulance district on record**. Which side a
+  fire starts on decides who is IC for the first hour.
+- **Patented lode claims mean mine workings.** Open shafts show on no DEM, no
+  imagery under canopy, and no downloadable layer. Treat all 12 claims as
+  suspected until walked; never anchor line to a working.
+- **We are the tenant, not the owner.** A closure order on NF land does not close
+  this property, and the owner's name stays off every product.
+
+[docs/11-leased-property.md](docs/11-leased-property.md) has the claim table and
+the field survey list.
+
 ## The 16 products
 
 `iap` · `ops` · `airops` · `pilot` · `brief` · `pio` · `trans` · `progression` ·
@@ -117,18 +139,22 @@ iap_85x11_port_20260728_0430_Red_SDBKFEX0001_0728day.pdf
 | [08 — Naming conventions](docs/08-naming-conventions.md) | Filename pattern, the two dates |
 | [09 — QA checklist](docs/09-qa-checklist.md) | Run before anything leaves the ICP |
 | [10 — Digitizing guide](docs/10-digitizing-guide.md) | **What to draw, at the laptop** |
+| [11 — The leased property](docs/11-leased-property.md) | **The 246 acres we actually control** |
 
 ## Layout
 
 ```
 config/
   aoi.json            10 x 10 mi box in UTM 13N and geographic. Generated.
+  site.yml            The leased property: 12 claims, jurisdiction, privacy rules.
+  services.yml        Live REST endpoints the base-data fetch pulls from.
   fires.yml           The seven fires: IDs, op periods, drop point blocks.
   derivation.yml      Trail->hand line, road->line, edge, DP numbering rules.
   event_schema.json   Event Point/Line/Polygon fields and FeatureCategory domains.
   map_products.yml    16 products: page size, extent, definition queries, naming.
   sources.yml         Base-data acquisition manifest.
 
+data/site/               The leased property's 12 parcels, from the county.
 data/drawn/<colour>/     What you export from Pro. The real exercise.
 data/fixtures/<colour>/  Generated throwaway geometry. Proves the pipeline runs.
 

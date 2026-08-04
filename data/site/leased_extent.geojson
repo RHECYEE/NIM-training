@@ -1,0 +1,69 @@
+{
+ "type": "FeatureCollection",
+ "name": "leased_extent",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "CONVEX HULL of the leased parcels, for setting a map extent ONLY. This is NOT the legal property boundary \u2014 it cuts corners the actual claim block does not. Use leased_parcels.geojson for anything that matters.",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "Name": "Storm Mountain Training Grounds",
+    "Parcels": 12,
+    "AcresStated": 246.54,
+    "Purpose": "map extent only, not a boundary"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -103.392759,
+       43.972156
+      ],
+      [
+       -103.389568,
+       43.968504
+      ],
+      [
+       -103.37979,
+       43.963518
+      ],
+      [
+       -103.375095,
+       43.961124
+      ],
+      [
+       -103.371136,
+       43.965186
+      ],
+      [
+       -103.369849,
+       43.966507
+      ],
+      [
+       -103.373198,
+       43.96821
+      ],
+      [
+       -103.374327,
+       43.968784
+      ],
+      [
+       -103.390129,
+       43.974841
+      ],
+      [
+       -103.392759,
+       43.972156
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

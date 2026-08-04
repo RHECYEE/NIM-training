@@ -266,6 +266,15 @@ products:
       EventPolygon: "1=0"
     content: [Check-in, Supply, Ground support, Medical, Showers, Catering, Parking,
               Briefing area, Communications, Sleeping areas, Helibase if co-located]
+    site_layers:
+      note: >-
+        The ICP sits on the leased property, so this sheet is also the property
+        site plan. See docs/11-leased-property.md.
+      include:
+        - data/site/leased_parcels.geojson — the 12 claim boundaries, labelled
+        - Fire district boundaries — THE LINE RUNS THROUGH THE PROPERTY
+        - Structures, water sources, gates, turnarounds
+        - Mine workings as Hazard points
 
   medtrans:
     title: Medical Transport
@@ -284,6 +293,16 @@ products:
       EventLine: "FeatureCategory IN ('Access Route','Escape Route','Division Break')"
       EventPolygon: "FeatureCategory = 'Wildfire Daily Fire Perimeter'"
     additional_layers: [Hospitals and trauma centers, Air ambulance bases, Cell coverage if known]
+    site_layers:
+      note: >-
+        EMS response to the leased property is split and partly UNRESOLVED.
+        Nine claims are Keystone Ambulance; the three Section 10 claims have no
+        ambulance district on county record. Resolve that before this product is
+        briefed — see docs/11-leased-property.md.
+      include:
+        - Both fire district boundaries across the property
+        - Ambulance interception point on Storm Mountain Rd
+        - The turnaround limit by vehicle class — an ambulance may not reach the north end
 
   closure:
     title: Closure Order
@@ -333,6 +352,17 @@ products:
       EventLine: "FeatureCategory IN ('Uncontrolled Fire Edge','Contained Fire Edge')"
       EventPolygon: "FeatureCategory = 'Wildfire Daily Fire Perimeter'"
     additional_layers: [Surface Management Agency, Parcels, Jurisdictional Unit, PLSS]
+    site_layers:
+      note: >-
+        This is the product that makes the private inholding visible. Show the
+        leased block against the surrounding National Forest, and show BOTH fire
+        districts — the boundary crosses the property.
+      include:
+        - data/site/leased_parcels.geojson — 12 patented claims, 246.54 ac
+        - Rockerville / Whispering Pines fire district boundary
+      privacy: >-
+        Show the parcel boundary and that it is private. Do NOT print the owner
+        name or mailing address on the sheet.
 
   allotments:
     title: Range Allotments
