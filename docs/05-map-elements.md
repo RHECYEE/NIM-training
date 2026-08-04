@@ -40,9 +40,9 @@ EX-SD-TRNG-0001                              <- local incident ID
 IAP                                          <- product type
 ```
 
-Drive all of it from dynamic text bound to `config/incident.json`. Change the
+Drive all of it from dynamic text bound to `config/fires.yml`. Change the
 operational period in one place, not in fourteen text elements — and the acreage
-comes from the geometry via `scripts/make_mock_incident.py`, never typed.
+comes from the geometry via `scripts/make_fires.py`, never typed.
 
 Two dates appear on every sheet and they are different, usually by a day:
 

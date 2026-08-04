@@ -1,0 +1,112 @@
+# How drawn geometry becomes tactical Event features.
+#
+# THE WORKFLOW
+#
+#   You draw, in ArcGIS Pro:   fire perimeter polygons, helispot points,
+#                              drop point locations, and a marked selection of
+#                              trail / road segments.
+#   The pipeline derives:      hand line and road-as-line from those marked
+#                              segments, contained vs uncontrolled fire edge,
+#                              drop point numbers, acreage, coordinate tables.
+#
+# The premise is that almost everything except the perimeter is static. Cabins,
+# roads and trails do not move between incidents. What changes is WHERE the fire
+# is, WHICH trail segments are being held as line, and the drop point numbers.
+
+perimeter:
+  # Which polygon the derivation treats as "the fire" for a given fire folder.
+  source_category: Wildfire Daily Fire Perimeter
+  latest_by: PolygonDateTime
+  recalculate_acres: true
+
+trails_to_hand_line:
+  enabled: true
+  note: >-
+    A trail on the fire edge is being held as hand line — that is the whole
+    reason a crew is standing on it. Any trail segment running within
+    `buffer_m` of the perimeter is emitted as an Event Line rather than left as
+    a base-data trail.
+  buffer_m: 75
+  buffer_note: >-
+    75 m is deliberately loose. A hand-drawn perimeter and a surveyed trail
+    centreline will not coincide, and being too tight silently drops line you
+    are actually holding. Widen it before you narrow it.
+  min_segment_length_m: 50
+  min_segment_note: Below this a match is buffer noise, not a piece of line.
+  emit_as: Completed Hand Line
+  # An explicit value in this field on the trail feature always wins over the
+  # proximity rule — set it when the automatic answer is wrong.
+  override_field: LINE_STATUS
+  override_values:
+    completed: Completed Hand Line
+    proposed: Proposed Hand Line
+    none: null        # force this segment to stay a trail
+  label_from: [TRAIL_NAME, TRAIL_NO, NAME]
+  label_prefix: "H/L"
+
+roads_to_line:
+  enabled: true
+  note: >-
+    Same rule for roads. A road on the perimeter is being held as line and
+    belongs in EventLine, not only in the base transportation layer.
+  buffer_m: 60
+  min_segment_length_m: 80
+  emit_as: Completed Road as Line
+  override_field: LINE_STATUS
+  override_values:
+    completed: Completed Road as Line
+    proposed: Proposed Road as Line
+    none: null
+  label_from: [NAME, RTE_CN, ID]
+  label_prefix: "Road"
+
+fire_edge:
+  enabled: true
+  note: >-
+    Split the perimeter into contained and uncontrolled edge. Any stretch of
+    perimeter with derived or drawn line lying on it is contained; the rest is
+    uncontrolled. This is the single most safety-relevant thing on the map, so
+    the automatic answer is a STARTING POINT — Ops confirms it every period.
+  held_buffer_m: 90
+  contained_category: Contained Fire Edge
+  uncontrolled_category: Uncontrolled Fire Edge
+  min_segment_length_m: 40
+  review_required: true
+  review_note: >-
+    Never publish a derived fire edge without an Ops review. A stretch wrongly
+    shown as contained is how people get hurt.
+
+drop_point_numbering:
+  enabled: true
+  note: >-
+    Drop point numbers change between incidents, and on a real incident they are
+    not 1..n — they are grouped in blocks by division or branch, with gaps. The
+    reference incident ran 52-58, 62-65, 71-85 on the main fire and 190-200 on a
+    separate road corridor. This reproduces that shape.
+  scheme: division_block
+  order_along: Access Route
+  order_note: >-
+    Within a block, number in the order a driver encounters them coming in on
+    the access route, not in the order you happened to draw them. That is what
+    makes a drop point number useful over a radio.
+  division_field: DIVISION
+  fallback_division: A
+  label_format: "DP {number}"
+
+coordinate_table:
+  categories: [Helibase, Helispot, Dip Site, Draft Site, Medivac Site]
+  format: dms
+  note: Pilots fly the table. Generate it, never type it.
+
+static_features:
+  note: >-
+    These do not change between incidents. Place them once, reuse them for all
+    seven fires. Only their RELEVANCE changes — a cabin matters when the fire is
+    pointed at it and is just a dot when it is not.
+  categories: [Structure, Value at Risk, Water Tank, Hydrant, Gate, Access Point,
+               Repeater, Internet Access, Sign, Incident Command Post, Camp]
+  source: data/static/
+  per_incident_override: >-
+    A static feature can still be hidden per fire by setting IsVisible = 'No' on
+    that fire's copy. Do not delete it — a cabin that is out of the way this
+    week is still a cabin.

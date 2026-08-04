@@ -1,0 +1,86 @@
+{
+  "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT",
+  "color": "Indigo",
+  "incident_name": "Indigo",
+  "incident_name_upper": "INDIGO",
+  "local_incident_id": "EX-SD-TRNG-0006",
+  "unit_id": "SD-BKF",
+  "unit_id_full": "SD-BKF-EX0006",
+  "irwin_id": null,
+  "administrative_unit": "Black Hills National Forest",
+  "district": "Mystic Ranger District",
+  "county": "Pennington County, South Dakota",
+  "state": "SD",
+  "protecting_agency": "USFS",
+  "imt": "EX TRAINING IMT 1",
+  "giss": "TRAINEE, GISS",
+  "gisto": "INSTRUCTOR, GISTO",
+  "center": {
+    "lat": 43.925,
+    "lon": -103.455
+  },
+  "run_bearing": 225,
+  "scale": 0.8,
+  "teaching_focus": "Backing downslope to the southwest, and the perimeter is a hand sketch. Low-confidence geometry that the source statement must not dress up as better than it is.",
+  "operational_period": {
+    "number": 2,
+    "date": "2026-08-02",
+    "date_display": "08/02/2026",
+    "shift": "day",
+    "timezone": "America/Denver",
+    "timezone_abbr": "MDT"
+  },
+  "prepared": {
+    "iso": "2026-08-02T04:20:00-06:00",
+    "display": "8/2/2026 0420"
+  },
+  "perimeter_source": {
+    "acres": 1129.8,
+    "collected": "2026-08-02T02:05:00-06:00",
+    "collection_method": "Hand sketch from air attack (simulated)",
+    "map_method": "Hand Sketch",
+    "statement": "1,130 acres at 08/02/2026 at 0205 MDT. Hand sketch from air attack (simulated). North American 1983 Datum. Lat/Long Grid"
+  },
+  "progression": [
+    {
+      "label": "Indigo 07/31",
+      "date": "2026-07-31",
+      "acres": 154.1
+    },
+    {
+      "label": "Indigo 08/01",
+      "date": "2026-08-01",
+      "acres": 496.1
+    },
+    {
+      "label": "Indigo 08/02",
+      "date": "2026-08-02",
+      "acres": 1129.8
+    }
+  ],
+  "completed_line_miles": 3.55,
+  "feature_counts": {
+    "EventPoint": 45,
+    "EventLine": 17,
+    "EventPolygon": 15
+  },
+  "products": [
+    "iap",
+    "ops",
+    "airops",
+    "pilot",
+    "brief",
+    "pio",
+    "trans",
+    "progression",
+    "avenza",
+    "camp",
+    "medtrans",
+    "closure",
+    "evac",
+    "owner",
+    "allotments",
+    "repair"
+  ],
+  "watermark": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT"
+}

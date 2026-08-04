@@ -1,49 +1,60 @@
-# One entry per map product. Same layer set every time; the definition queries
-# are what make the products different.
+# The 16 map products, one entry each. Every fire in config/fires.yml produces
+# the full set — 7 fires x 16 products = 112 sheets.
 #
-# The queries are the safety mechanism, not a convenience. The Public
-# Information product drops tactical data because publishing drop points and
-# crew locations puts firefighters at risk — so `pio` sets 1=0 on the point and
-# line layers rather than relying on someone remembering to turn them off.
+# Same layer set every time. The definition queries are what make the products
+# different, and on the public-facing ones they are the safety mechanism rather
+# than a convenience: `pio`, `evac` and `closure` hard-set 1=0 on the tactical
+# layers instead of listing what is allowed, so a FeatureCategory added next
+# season cannot quietly appear on a sheet that gets handed to the public.
+#
+# The product keys, page-size tokens and filename pattern below were decoded
+# from a real incident's published products:
+#   ftp.wildfire.gov/public/incident_specific_maps/pacific_nw/
+#     2026_Incidents_Oregon/2026_BurntCreek/Products/
 #
 # Full specs: https://www.nwcg.gov/publications/pms936/map-product-standards
 
 naming:
-  # Decoded from the Burnt Creek exports, e.g.
-  #   iap_8.5x11_port_20260725_2104_BurntCreek_ORWWF000342_0726day.pdf
   pattern: "{product}_{page_size}_{orientation}_{prepared_yyyymmdd}_{prepared_hhmm}_{IncidentName}_{UnitID}_{op_mmdd}{shift}.pdf"
+  example: "iap_85x11_port_20260728_0430_Red_SDBKFEX0001_0728day.pdf"
   rules:
-    - "{prepared_*} is when the PDF was made. {op_mmdd}{shift} is the operational period it is FOR. They are different, usually by a day."
-    - "Incident name is CamelCase with no spaces: StormMountain."
-    - "Unit ID drops the hyphens: SDBKFEX0001."
+    - "{prepared_*} is when the PDF was made. {op_mmdd}{shift} is the operational period it is FOR. They differ, usually by a day."
+    - "Incident name is CamelCase with no spaces."
+    - "Unit ID drops the hyphens."
     - "shift is `day` or `night`."
-  example: "iap_8.5x11_port_20260728_0430_StormMountain_SDBKFEX0001_0728day.pdf"
+  observed_variants:
+    note: >-
+      The reference incident was not internally consistent, which is worth
+      knowing before you assume a filename is malformed. Standardize on the
+      pattern above for the exercise; recognize the rest when you see them.
+    page_size: ["8.5x11", "85x11", "8x11 all seen for letter", "arche seen once for arch_e"]
+    unit_id: ["ORWWF000342", "2026ORWWF000342 — year prefix appears part-way through the incident"]
+    shift: ["occasionally omitted entirely, e.g. ..._0726.pdf"]
 
 page_sizes:
-  8.5x11:   {width_in: 8.5,  height_in: 11}
-  11x17:    {width_in: 11,   height_in: 17}
-  arch_c:   {width_in: 18,   height_in: 24}
-  arch_d:   {width_in: 24,   height_in: 36}
-  arch_e:   {width_in: 36,   height_in: 48}
+  85x11:  {width_in: 8.5, height_in: 11}
+  11x17:  {width_in: 11,  height_in: 17}
+  arch_c: {width_in: 18,  height_in: 24}
+  arch_d: {width_in: 24,  height_in: 36}
+  arch_e: {width_in: 36,  height_in: 48}
+  e:      {width_in: 36,  height_in: 48, note: "Bare `e` seen on evac sheets. Same as arch_e."}
+  64x64:  {width_in: 64,  height_in: 64, note: "Avenza only. Never printed."}
 
 export:
   format: Geospatial PDF
   dpi: 300
-  vector_resolution: 300
   compress_vectors: true
   embed_fonts: true
   layers_and_attributes: "Layers and Attributes"
   georeference: true
   georeference_note: >-
-    Geospatial PDF is not optional here. A georeferenced PDF opens in Avenza on
-    a crew phone and shows the holder's own position on the map. That is worth
-    teaching by itself, and it is free — it is a checkbox on the export dialog.
+    A georeferenced PDF opens in Avenza on a crew phone and shows the holder's
+    own position. That is worth teaching on its own and it costs one checkbox.
   watermark: "TRAINING EXERCISE — NOT AN ACTUAL INCIDENT"
   watermark_placement: >-
     Diagonal across the map frame, not tucked in a corner. It has to survive
     being photocopied, cropped and photographed off a wall.
 
-# Applied to every product before its own query is layered on.
 global_definition_query:
   EventPoint:   "IsVisible = 'Yes' AND DeleteThis = 'No'"
   EventLine:    "IsVisible = 'Yes' AND DeleteThis = 'No'"
@@ -53,14 +64,14 @@ products:
 
   iap:
     title: IAP
-    page_size: 8.5x11
+    page_size: 85x11
     orientation: port
-    audience: Everyone in the IAP packet
     extent: aoi
+    audience: Everyone in the IAP packet
     required_elements: [scale, title, author, north_arrow, date, legend, source, graticule, datum]
     notes: >-
-      Full STANDL-SGD. This is the sheet that gets photocopied in black and
-      white two hundred times at 0500 — design for that, not for your monitor.
+      Full STANDL-SGD. This is the sheet photocopied in black and white two
+      hundred times at 0500 — design for that, not for your monitor.
     definition_query:
       EventPoint: >-
         FeatureCategory IN ('Incident Command Post','Camp','Staging Area','Helibase',
@@ -75,53 +86,34 @@ products:
       EventPolygon: >-
         FeatureCategory IN ('Wildfire Daily Fire Perimeter','Temporary Flight Restriction',
         'Safety Zone','Structure Group','Management Action Point Area')
-    legend_order:
-      - Wildfire Perimeter
-      - Division Break
-      - Helispot
-      - Lookout
-      - Drop Point
-      - Staging Area
-      - Repeater
-      - Completed Dozer Line
-      - Completed Hand Line
-      - Completed Road as Line
-      - Proposed Road as Line
-      - Access Route
-      - Temporary Flight Restriction
-      - Uncontrolled Fire Edge
 
   ops:
     title: Operations
     page_size: arch_c
     orientation: port
-    audience: Division supervisors, task force leaders
     extent: aoi
+    audience: Division supervisors, task force leaders
+    also_produced_at: [{page_size: arch_e, orientation: port}]
     required_elements: [scale, title, author, north_arrow, date, legend, source, graticule, datum]
     notes: >-
       The densest product. Everything the IAP map has, plus ownership, special
-      management areas, structures and utilities, on a topo base.
+      management areas, structures and utilities, on a topo base. The reference
+      incident published this at both arch C and arch E every single day.
     definition_query:
       EventPoint: "FeatureCategory NOT IN ('Sign','Internet Access')"
       EventLine: "1=1"
       EventPolygon: "FeatureCategory <> 'Temporary Flight Restriction'"
-    additional_layers:
-      - Surface Management Agency (ownership)
-      - PLSS section grid
-      - USA Structures
-      - Powerlines
-      - Contours + hillshade
+    additional_layers: [Surface Management Agency, PLSS sections, USA Structures, Powerlines, Contours + hillshade]
 
   airops:
     title: Air Operations
     page_size: arch_e
     orientation: land
-    audience: ATGS, helibase, air tactical
     extent: aoi_plus_tfr
+    audience: ATGS, helibase, air tactical
     extent_note: >-
-      The 5 NM TFR is wider than the 10 x 10 mi AOI. Do not clip it — zoom the
-      layout out until the whole circle fits, or the product is lying about the
-      airspace.
+      The 5 NM TFR is wider than the 10 x 10 mi AOI. Do not clip it — zoom out
+      until the whole circle fits, or the product is lying about the airspace.
     required_elements: [scale, title, author, north_arrow, date, legend, source, graticule, datum]
     definition_query:
       EventPoint: >-
@@ -136,24 +128,17 @@ products:
     coordinate_table:
       include: true
       format: dms
-      note: >-
-        Lat/long table for every helispot, dip site, draft site and medivac
-        site. Pilots read coordinates, not drop point numbers. Generate it with
-        scripts/make_coordinate_table.py so it cannot drift from the geometry.
       categories: [Helibase, Helispot, Dip Site, Draft Site, Medivac Site]
 
   pilot:
     title: Pilot
     page_size: 11x17
     orientation: land
-    audience: Cockpit
     extent: aoi_plus_tfr
-    notes: >-
-      Air ops content, simplified and sized for a kneeboard. High contrast,
-      minimal base, big labels.
+    audience: Cockpit
+    notes: Air ops content simplified for a kneeboard. High contrast, minimal base, big labels.
     definition_query:
-      EventPoint: >-
-        FeatureCategory IN ('Helibase','Helispot','Dip Site','Draft Site','Medivac Site','Hazard')
+      EventPoint: "FeatureCategory IN ('Helibase','Helispot','Dip Site','Draft Site','Medivac Site','Hazard')"
       EventLine: "FeatureCategory IN ('Uncontrolled Fire Edge','Contained Fire Edge','Division Break')"
       EventPolygon: >-
         FeatureCategory IN ('Wildfire Daily Fire Perimeter','Temporary Flight Restriction',
@@ -163,12 +148,12 @@ products:
       format: dms
       categories: [Helibase, Helispot, Dip Site, Draft Site, Medivac Site]
 
-  briefing:
+  brief:
     title: Briefing Area Map (BAM)
     page_size: arch_e
     orientation: land
-    audience: The 0600 briefing, read from twenty feet away
     extent: aoi
+    audience: The 0600 briefing, read from twenty feet away
     symbology_override: Event Group BAM Large Symbols.lyrx
     notes: >-
       Simplified and oversized. If you can read it from the back of the tent it
@@ -183,66 +168,33 @@ products:
 
   pio:
     title: Public Information
-    page_size: 8.5x11
+    page_size: 85x11
     orientation: port
-    audience: The public, the press, the incident web page
     extent: aoi_wide
+    audience: The public, the press, the incident web page
     safety_critical: true
+    also_produced_at: [{page_size: 11x17, orientation: port}]
     notes: >-
-      NO TACTICAL DATA. The point and line queries are hard-set to 1=0 rather
-      than an inclusion list, so a new FeatureCategory added next season cannot
-      quietly appear on the public map. If you need something on this sheet,
-      add it deliberately.
+      NO TACTICAL DATA. Queries are hard-set to 1=0 rather than an inclusion
+      list so a new FeatureCategory cannot quietly appear on the public map.
     definition_query:
       EventPoint: "1=0"
       EventLine: "1=0"
       EventPolygon: "FeatureCategory IN ('Wildfire Daily Fire Perimeter','Closure Area','Evacuation Area')"
-    additional_layers:
-      - Communities and place names
-      - Administrative boundaries
-      - Closed roads and trails
-      - Simple basemap
+    additional_layers: [Communities and place names, Administrative boundaries, Closed roads and trails, Simple basemap]
     review_before_release: >-
-      A second person confirms there are no drop points, no crew locations, no
-      camps and no helispots on the sheet before it leaves the ICP. On this
-      exercise the watermark also has to be unmistakable — PIO products are the
-      ones that escape into the wild.
+      A second person confirms there are no drop points, crew locations, camps
+      or helispots on the sheet before it leaves the ICP.
 
-  facilities:
-    title: Facilities
-    page_size: 8.5x11
+  trans:
+    title: Transportation
+    page_size: arch_e
     orientation: port
-    audience: Logistics, everyone arriving at the ICP
-    extent: icp
-    extent_note: Large scale — the ICP footprint, not the fire.
-    notes: No Event data at all. This is a site plan.
-    definition_query:
-      EventPoint: "1=0"
-      EventLine: "1=0"
-      EventPolygon: "1=0"
-    content:
-      - Check-in
-      - Supply
-      - Ground support
-      - Medical
-      - Showers
-      - Catering
-      - Parking
-      - Briefing area
-      - Communications / radio
-      - Sleeping areas
-      - Helibase (if co-located)
-
-  transportation:
-    title: "Transportation: Rapid City to Storm Mountain"
-    page_size: 8.5x11
-    orientation: port
-    audience: Every resource driving in for the first time
     extent: aoi_wide
+    audience: Every resource driving in for the first time
     notes: >-
-      Follows the Burnt Creek pattern: a wide route map plus an inset at the
-      destination with the physical street address spelled out. Drivers arrive
-      at night with no cell service.
+      A wide route map plus an inset at the destination with the physical street
+      address spelled out. Drivers arrive at night with no cell service.
     inset:
       include: true
       subject: ICP / Camp approach
@@ -255,7 +207,7 @@ products:
       EventLine: "FeatureCategory IN ('Access Route','Division Break')"
       EventPolygon: "FeatureCategory IN ('Wildfire Daily Fire Perimeter','Closure Area')"
     road_symbology:
-      note: Symbolize on the USFS road attributes, not on one flat line style.
+      note: Symbolize on the USFS road attributes, not one flat line style.
       classes:
         - {label: Paved, query: "SURFACE_TYPE IN ('AC','BST','PCC')"}
         - {label: Gravel / improved, query: "SURFACE_TYPE IN ('AGG','GRA')"}
@@ -265,13 +217,147 @@ products:
 
   progression:
     title: Fire Progression
-    page_size: arch_c
+    page_size: 11x17
     orientation: port
-    audience: Planning, the end-of-incident package
     extent: aoi
-    notes: Daily perimeters symbolized by PolygonDateTime, oldest darkest.
+    audience: Planning, the end-of-incident package
+    notes: Daily perimeters symbolized by PolygonDateTime, oldest drawn on top.
     definition_query:
       EventPoint: "FeatureCategory = 'Point of Origin'"
       EventLine: "1=0"
       EventPolygon: "FeatureCategory = 'Wildfire Daily Fire Perimeter'"
-    symbology: Unique values on PolygonDateTime, drawn oldest on top.
+    symbology: Unique values on PolygonDateTime.
+
+  avenza:
+    title: Avenza (phone map)
+    page_size: 64x64
+    orientation: land
+    extent: aoi_wide
+    audience: Every phone on the incident
+    never_printed: true
+    notes: >-
+      One enormous georeferenced sheet carrying everything, built to be opened
+      in Avenza rather than printed. Because it is never printed, the usual
+      legibility constraints invert: use small symbols and let people zoom.
+      Georeferencing is the entire point — if it fails, the product is worthless.
+    definition_query:
+      EventPoint: "1=1"
+      EventLine: "1=1"
+      EventPolygon: "1=1"
+
+  camp:
+    title: Camp / ICP Facilities
+    page_size: 85x11
+    orientation: port
+    extent: icp
+    audience: Logistics, everyone arriving at the ICP
+    extent_note: Large scale — the ICP footprint, not the fire.
+    notes: No Event data. This is a site plan.
+    definition_query:
+      EventPoint: "1=0"
+      EventLine: "1=0"
+      EventPolygon: "1=0"
+    content: [Check-in, Supply, Ground support, Medical, Showers, Catering, Parking,
+              Briefing area, Communications, Sleeping areas, Helibase if co-located]
+
+  medtrans:
+    title: Medical Transport
+    page_size: arch_e
+    orientation: port
+    extent: aoi_wide
+    audience: Line medics, EMTs, the medical unit leader
+    notes: >-
+      The map that goes with the ICS-206 medical plan. Ground evacuation routes,
+      ambulance interception points, air ambulance options and hospital
+      locations. Times matter more than distances — label drive times, not miles.
+    definition_query:
+      EventPoint: >-
+        FeatureCategory IN ('Medical Site','Medivac Site','Helispot','Helibase',
+        'Drop Point','Incident Command Post','Camp','Access Point','Gate')
+      EventLine: "FeatureCategory IN ('Access Route','Escape Route','Division Break')"
+      EventPolygon: "FeatureCategory = 'Wildfire Daily Fire Perimeter'"
+    additional_layers: [Hospitals and trauma centers, Air ambulance bases, Cell coverage if known]
+
+  closure:
+    title: Closure Order
+    page_size: arch_e
+    orientation: port
+    extent: aoi_wide
+    audience: The public, law enforcement, the forest
+    safety_critical: true
+    notes: >-
+      Accompanies a legal closure order, so the boundary has to match the order's
+      written description exactly. Roads and trails inside are called out
+      individually by number and name.
+    definition_query:
+      EventPoint: "1=0"
+      EventLine: "1=0"
+      EventPolygon: "FeatureCategory IN ('Closure Area','Wildfire Daily Fire Perimeter')"
+    additional_layers: [Closed roads by number, Closed trails by name, Trailheads, Admin boundaries]
+
+  evac:
+    title: Evacuation
+    page_size: e
+    orientation: land
+    extent: aoi_wide
+    audience: The public, the county sheriff, emergency management
+    safety_critical: true
+    notes: >-
+      Evacuation zones with their status. In South Dakota the sheriff owns the
+      evacuation decision, not the IMT — this product shows the sheriff's zones,
+      so the labels have to match what the county is broadcasting, verbatim.
+    definition_query:
+      EventPoint: "1=0"
+      EventLine: "1=0"
+      EventPolygon: "FeatureCategory IN ('Evacuation Area','Wildfire Daily Fire Perimeter','Closure Area')"
+    additional_layers: [County evacuation zones with status, Communities, Shelters, Major routes]
+
+  owner:
+    title: Ownership
+    page_size: 85x11
+    orientation: land
+    extent: aoi
+    audience: Planning, resource advisors, the agency administrator
+    notes: >-
+      Surface management agency and private parcels under the fire. Drives cost
+      apportionment and tells you whose rules apply where.
+    definition_query:
+      EventPoint: "1=0"
+      EventLine: "FeatureCategory IN ('Uncontrolled Fire Edge','Contained Fire Edge')"
+      EventPolygon: "FeatureCategory = 'Wildfire Daily Fire Perimeter'"
+    additional_layers: [Surface Management Agency, Parcels, Jurisdictional Unit, PLSS]
+
+  allotments:
+    title: Range Allotments
+    page_size: arch_c
+    orientation: port
+    extent: aoi
+    audience: Range staff, permittees, resource advisors
+    also_produced_at: [{page_size: arch_e, orientation: port}]
+    notes: >-
+      Grazing allotments and pastures under the fire, with fences and water
+      developments. Permittees need to know which pastures burned and which
+      fences are gone before the fire is out.
+    definition_query:
+      EventPoint: "FeatureCategory IN ('Water Tank','Hydrant','Gate')"
+      EventLine: "FeatureCategory IN ('Uncontrolled Fire Edge','Contained Fire Edge')"
+      EventPolygon: "FeatureCategory = 'Wildfire Daily Fire Perimeter'"
+    additional_layers: [Allotment boundaries, Pastures, Fences, Water developments]
+
+  repair:
+    title: Suppression Repair
+    page_size: arch_e
+    orientation: port
+    extent: aoi
+    audience: The repair group, the resource advisor, the agency administrator
+    notes: >-
+      Every piece of ground suppression disturbed and what has to be done to it:
+      dozer line, hand line, safety zones, drop points, camps, staging. Built at
+      the end of the incident but started on day one — you cannot reconstruct
+      where the dozer went three weeks later.
+    definition_query:
+      EventPoint: "FeatureCategory IN ('Drop Point','Safety Zone','Camp','Staging Area','Helispot')"
+      EventLine: >-
+        FeatureCategory IN ('Completed Dozer Line','Completed Hand Line',
+        'Completed Road as Line','Completed Fuel Break','Completed Mixed Construction Line')
+      EventPolygon: "FeatureCategory IN ('Repair Area','Wildfire Daily Fire Perimeter')"

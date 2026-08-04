@@ -39,7 +39,7 @@ exercise product implies that team produced it.
 Exercise data lives in a local file geodatabase. Do not connect a training
 project to the National Incident Feature Service, for reading or for writing.
 
-`scripts/arcpy/load_mock_incident.py` refuses to run against a geodatabase path
+`scripts/arcpy/load_incident.py` refuses to run against a geodatabase path
 containing `nifs`, `agol`, `arcgis.com`, `national_incident` or `featureserver`,
 and refuses `.sde` connections outright. That check is a backstop for a tired
 person at 0300, not a substitute for knowing the rule.
@@ -83,7 +83,7 @@ an exposed crew.
 
 ## This repository
 
-The repository itself is part of the exercise footprint. `data/mock_incident/`
+The repository itself is part of the exercise footprint. `data/fixtures/<colour>/`
 contains fabricated perimeters that look real enough to be mistaken for real.
 Keep it private, and keep the `_warning` key in the GeoJSON files intact — it is
 the only marking that survives someone opening a single file out of context.

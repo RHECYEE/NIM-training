@@ -1,0 +1,693 @@
+{
+ "type": "FeatureCollection",
+ "name": "EventLine",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
+ "_fire": "Yellow",
+ "_generated_by": "scripts/make_fires.py",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Dozer Line",
+    "Label": "Div Z Dozer",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "YE-LN-0001",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Completed 0730 op 2. Two blades.",
+    "LengthMiles": 3.309
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.301224,
+      43.980072
+     ],
+     [
+      -103.314938,
+      43.982236
+     ],
+     [
+      -103.327877,
+      43.978692
+     ],
+     [
+      -103.337905,
+      43.972559
+     ],
+     [
+      -103.335471,
+      43.963501
+     ],
+     [
+      -103.330881,
+      43.955034
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Hand Line",
+    "Label": "Div A Hand",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "YE-LN-0002",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Completed op 2. Type 1 crew.",
+    "LengthMiles": 1.482
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.301224,
+      43.980072
+     ],
+     [
+      -103.289996,
+      43.973846
+     ],
+     [
+      -103.281979,
+      43.964206
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Road as Line",
+    "Label": "Div Z Road",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "YE-LN-0003",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Existing road brushed and used as line.",
+    "LengthMiles": 1.201
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.330881,
+      43.955034
+     ],
+     [
+      -103.325038,
+      43.947335
+     ],
+     [
+      -103.317943,
+      43.940403
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Dozer Line",
+    "Label": "Div A Proposed Dozer",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "YE-LN-0004",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Op 3 objective. Tie DP 4 to the north contingency.",
+    "LengthMiles": 1.834
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.317943,
+      43.940403
+     ],
+     [
+      -103.308695,
+      43.934062
+     ],
+     [
+      -103.297495,
+      43.930371
+     ],
+     [
+      -103.285796,
+      43.93062
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Hand Line",
+    "Label": "North Contingency Hand",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "YE-LN-0005",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency only. Do not construct without Ops approval.",
+    "LengthMiles": 1.778
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.285796,
+      43.93062
+     ],
+     [
+      -103.276126,
+      43.935805
+     ],
+     [
+      -103.270612,
+      43.942808
+     ],
+     [
+      -103.270157,
+      43.951806
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Road as Line",
+    "Label": "North Contingency Road",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "YE-LN-0006",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency.",
+    "LengthMiles": 1.505
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.270157,
+      43.951806
+     ],
+     [
+      -103.272055,
+      43.962273
+     ],
+     [
+      -103.280069,
+      43.971913
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Uncontrolled Fire Edge",
+    "Label": "Active Edge",
+    "IsVisible": "Yes",
+    "MapMethod": "Infrared Image",
+    "GeometryID": "YE-LN-0007",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Active at 0214 MDT 7/28.",
+    "LengthMiles": 2.971
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.287194,
+      43.963202
+     ],
+     [
+      -103.28404,
+      43.9535
+     ],
+     [
+      -103.284493,
+      43.944501
+     ],
+     [
+      -103.291459,
+      43.938789
+     ],
+     [
+      -103.301706,
+      43.937248
+     ],
+     [
+      -103.312907,
+      43.940939
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Contained Fire Edge",
+    "Label": "Held Edge",
+    "IsVisible": "Yes",
+    "MapMethod": "Infrared Image",
+    "GeometryID": "YE-LN-0008",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Held at 0214 MDT 7/28.",
+    "LengthMiles": 5.463
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.312907,
+      43.940939
+     ],
+     [
+      -103.320001,
+      43.947872
+     ],
+     [
+      -103.325843,
+      43.955571
+     ],
+     [
+      -103.330608,
+      43.963566
+     ],
+     [
+      -103.333568,
+      43.971212
+     ],
+     [
+      -103.33056,
+      43.976688
+     ],
+     [
+      -103.317973,
+      43.979291
+     ],
+     [
+      -103.30481,
+      43.978246
+     ],
+     [
+      -103.294308,
+      43.972666
+     ],
+     [
+      -103.287194,
+      43.963202
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Route",
+    "Label": "Storm Mountain Rd",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "YE-LN-0009",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "1.7 mi of winding FS road. Single lane with turnouts. THE access constraint \u2014 brief every resource on it.",
+    "LengthMiles": 3.559
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.311057,
+      43.886061
+     ],
+     [
+      -103.310268,
+      43.896002
+     ],
+     [
+      -103.312182,
+      43.906469
+     ],
+     [
+      -103.312641,
+      43.915645
+     ],
+     [
+      -103.308049,
+      43.92384
+     ],
+     [
+      -103.304334,
+      43.930186
+     ],
+     [
+      -103.296619,
+      43.932725
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Route",
+    "Label": "South Access",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "YE-LN-0010",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Longer, wider, slower.",
+    "LengthMiles": 5.5
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.311057,
+      43.886061
+     ],
+     [
+      -103.334409,
+      43.898664
+     ],
+     [
+      -103.34645,
+      43.913114
+     ],
+     [
+      -103.346271,
+      43.929237
+     ],
+     [
+      -103.339219,
+      43.943018
+     ],
+     [
+      -103.332659,
+      43.952855
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Escape Route",
+    "Label": "ER North",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "YE-LN-0011",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "DP 4 to the north ridge.",
+    "LengthMiles": 1.424
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.296619,
+      43.932725
+     ],
+     [
+      -103.285745,
+      43.925562
+     ],
+     [
+      -103.277027,
+      43.917809
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Escape Route",
+    "Label": "ER South",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "YE-LN-0012",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "DP 5 to SZ-2.",
+    "LengthMiles": 1.269
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.330881,
+      43.955034
+     ],
+     [
+      -103.342181,
+      43.950663
+     ],
+     [
+      -103.351298,
+      43.944351
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Division Break",
+    "Label": "Div A / Div Z",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "YE-LN-0013",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 3.216
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.296008,
+      43.981077
+     ],
+     [
+      -103.304387,
+      43.971598
+     ],
+     [
+      -103.311307,
+      43.960825
+     ],
+     [
+      -103.31696,
+      43.949805
+     ],
+     [
+      -103.321886,
+      43.938644
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Division Break",
+    "Label": "Div Z / Div M",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "YE-LN-0014",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 1.699
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.348403,
+      43.95995
+     ],
+     [
+      -103.330004,
+      43.957389
+     ],
+     [
+      -103.315382,
+      43.954043
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Branch Break",
+    "Label": "Branch I / Branch II",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "YE-LN-0015",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 2.732
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.273997,
+      43.977798
+     ],
+     [
+      -103.276519,
+      43.958094
+     ],
+     [
+      -103.279032,
+      43.93839
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Pump and Hose Lay",
+    "Label": "Draft 1 Lay",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "YE-LN-0016",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "From Draft 1 to the structure group. Two portable pumps.",
+    "LengthMiles": 1.352
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.301529,
+      43.913285
+     ],
+     [
+      -103.301173,
+      43.920485
+     ],
+     [
+      -103.301968,
+      43.927707
+     ],
+     [
+      -103.302381,
+      43.932835
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Fire Spread Direction",
+    "Label": "Predicted Spread",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Other",
+    "GeometryID": "YE-LN-0017",
+    "IncidentName": "Yellow",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-30T04:05:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Predicted op 3 spread, northeast.",
+    "LengthMiles": 1.875
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.309903,
+      43.964592
+     ],
+     [
+      -103.299678,
+      43.950485
+     ],
+     [
+      -103.291659,
+      43.940847
+     ]
+    ]
+   }
+  }
+ ]
+}

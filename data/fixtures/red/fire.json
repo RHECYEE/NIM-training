@@ -1,0 +1,86 @@
+{
+  "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT",
+  "color": "Red",
+  "incident_name": "Red",
+  "incident_name_upper": "RED",
+  "local_incident_id": "EX-SD-TRNG-0001",
+  "unit_id": "SD-BKF",
+  "unit_id_full": "SD-BKF-EX0001",
+  "irwin_id": null,
+  "administrative_unit": "Black Hills National Forest",
+  "district": "Mystic Ranger District",
+  "county": "Pennington County, South Dakota",
+  "state": "SD",
+  "protecting_agency": "USFS",
+  "imt": "EX TRAINING IMT 1",
+  "giss": "TRAINEE, GISS",
+  "gisto": "INSTRUCTOR, GISTO",
+  "center": {
+    "lat": 43.952,
+    "lon": -103.41
+  },
+  "run_bearing": 45,
+  "scale": 1.0,
+  "teaching_focus": "The baseline scenario. Head pointed at the training grounds, single winding access road, camp as a value at risk. Start here.",
+  "operational_period": {
+    "number": 3,
+    "date": "2026-07-28",
+    "date_display": "07/28/2026",
+    "shift": "day",
+    "timezone": "America/Denver",
+    "timezone_abbr": "MDT"
+  },
+  "prepared": {
+    "iso": "2026-07-28T04:30:00-06:00",
+    "display": "7/28/2026 0430"
+  },
+  "perimeter_source": {
+    "acres": 1765.3,
+    "collected": "2026-07-28T02:14:00-06:00",
+    "collection_method": "Infrared (simulated)",
+    "map_method": "Infrared Image",
+    "statement": "1,765 acres at 07/28/2026 at 0214 MDT. Infrared (simulated). North American 1983 Datum. Lat/Long Grid"
+  },
+  "progression": [
+    {
+      "label": "Red 07/26",
+      "date": "2026-07-26",
+      "acres": 240.7
+    },
+    {
+      "label": "Red 07/27",
+      "date": "2026-07-27",
+      "acres": 775.2
+    },
+    {
+      "label": "Red 07/28",
+      "date": "2026-07-28",
+      "acres": 1765.3
+    }
+  ],
+  "completed_line_miles": 4.44,
+  "feature_counts": {
+    "EventPoint": 45,
+    "EventLine": 17,
+    "EventPolygon": 15
+  },
+  "products": [
+    "iap",
+    "ops",
+    "airops",
+    "pilot",
+    "brief",
+    "pio",
+    "trans",
+    "progression",
+    "avenza",
+    "camp",
+    "medtrans",
+    "closure",
+    "evac",
+    "owner",
+    "allotments",
+    "repair"
+  ],
+  "watermark": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT"
+}

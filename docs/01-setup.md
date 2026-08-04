@@ -52,7 +52,7 @@ the layouts. It is a fallback, not a substitute.
 
    ```
    python scripts/arcpy/build_event_gdb.py --dest <incident>/incident_data
-   python scripts/arcpy/load_mock_incident.py --gdb <incident>/incident_data/event.gdb
+   python scripts/arcpy/load_incident.py --gdb <incident>/incident_data/event.gdb
    ```
 
 8. **Build one layout per product** from the provided templates. Same layer set
@@ -84,7 +84,7 @@ coordinates.
 
 ## Python environment
 
-The pure-Python scripts (`make_aoi.py`, `make_mock_incident.py`,
+The pure-Python scripts (`make_aoi.py`, `make_fires.py`,
 `validate_event_data.py`, `make_coordinate_table.py`, `make_folder_structure.py`)
 run on any Python 3.9+ with no third-party packages. Run them anywhere.
 

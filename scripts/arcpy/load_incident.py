@@ -1,6 +1,7 @@
-"""Load data/mock_incident/*.geojson into the Event geodatabase.
+"""Load a fire's GeoJSON into the Event geodatabase.
 
-    python scripts\\arcpy\\load_mock_incident.py --gdb D:\\...\\incident_data\\event.gdb
+    python scripts\\arcpy\\load_incident.py --gdb <...>\\event.gdb --fire Red
+    python scripts\\arcpy\\load_incident.py --gdb <...>\\event.gdb --all --root data/fixtures
 
 REQUIRES arcpy and a Spatial-Analyst-free Pro install. NOT executed in CI.
 
@@ -24,10 +25,9 @@ except ImportError:  # pragma: no cover
     sys.exit("arcpy not found. Run this from the ArcGIS Pro Python environment.")
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-DATA = ROOT / "data" / "mock_incident"
+DEFAULT_ROOT = ROOT / "data" / "fixtures"
 SCHEMA = json.loads((ROOT / "config" / "event_schema.json").read_text())
 AOI = json.loads((ROOT / "config" / "aoi.json").read_text())
-INCIDENT = json.loads((ROOT / "config" / "incident.json").read_text())
 
 WGS84 = arcpy.SpatialReference(4326)
 TARGET_SR = arcpy.SpatialReference(AOI["crs"]["projected"]["epsg"])
@@ -141,29 +141,54 @@ def report_acres(gdb: str) -> None:
         arcpy.AddMessage(f"  {label:<28} {acres:>10,.1f} acres   {when}")
     if rows:
         arcpy.AddMessage(
-            f"\nSource statement acreage: {rows[-1][1]:,.0f} acres "
-            f"({INCIDENT['perimeter_source']['collected_display']})"
+            f"\nMost recent perimeter: {rows[-1][1]:,.0f} acres"
         )
+
+
+WATERMARK = "TRAINING EXERCISE — NOT AN ACTUAL INCIDENT"
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--gdb", required=True)
-    ap.add_argument("--append", action="store_true", help="keep existing rows instead of truncating")
+    ap.add_argument("--fire", help="single colour")
+    ap.add_argument("--all", action="store_true", help="load every fire found under --root")
+    ap.add_argument("--root", default=None, help="default: data/fixtures")
+    ap.add_argument("--append", action="store_true",
+                    help="keep existing rows. Implied when loading more than one fire.")
     args = ap.parse_args()
 
     guard(args.gdb)
     arcpy.env.overwriteOutput = True
 
+    root = pathlib.Path(args.root) if args.root else DEFAULT_ROOT
+    if not root.is_absolute():
+        root = ROOT / root
+
+    dirs = sorted(d for d in root.iterdir() if d.is_dir()) if root.exists() else []
+    if args.fire:
+        dirs = [d for d in dirs if d.name.lower() == args.fire.lower()]
+    elif not args.all:
+        raise SystemExit("pass --fire <colour> or --all")
+    if not dirs:
+        raise SystemExit(f"no fire folders under {root}")
+
+    # Loading several fires into one geodatabase must not truncate between them,
+    # or you end up with only the last one.
+    truncate_first = not args.append and len(dirs) == 1
+
     total = 0
-    for fc_name, fname in FILES.items():
-        total += load(args.gdb, fc_name, DATA / fname, truncate=not args.append)
+    for i, d in enumerate(dirs):
+        arcpy.AddMessage(f"\n{d.name}")
+        for fc_name, fname in FILES.items():
+            truncate = (truncate_first or (not args.append and i == 0 and len(dirs) > 1))
+            total += load(args.gdb, fc_name, d / fname, truncate=truncate)
 
     recalculate(args.gdb)
     report_acres(args.gdb)
 
-    arcpy.AddMessage(f"\n{total} features loaded")
-    arcpy.AddMessage(INCIDENT["watermark"])
+    arcpy.AddMessage(f"\n{total} features loaded from {len(dirs)} fire(s)")
+    arcpy.AddMessage(WATERMARK)
     return 0
 
 

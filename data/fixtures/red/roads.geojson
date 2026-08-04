@@ -1,0 +1,127 @@
+{
+ "type": "FeatureCollection",
+ "name": "roads",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
+ "_fire": "Red",
+ "_generated_by": "scripts/make_fires.py",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "NAME": "Storm Mountain Rd",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.336573,
+      43.965669
+     ],
+     [
+      -103.346572,
+      43.964168
+     ],
+     [
+      -103.356571,
+      43.961168
+     ],
+     [
+      -103.36557,
+      43.959168
+     ],
+     [
+      -103.374569,
+      43.959967
+     ],
+     [
+      -103.381569,
+      43.960667
+     ],
+     [
+      -103.385568,
+      43.964167
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "NAME": "South Fork Rd",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.401066,
+      43.942166
+     ],
+     [
+      -103.394566,
+      43.946666
+     ],
+     [
+      -103.389067,
+      43.951667
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "NAME": "FS 231",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.431063,
+      43.945165
+     ],
+     [
+      -103.425063,
+      43.939165
+     ],
+     [
+      -103.417064,
+      43.935165
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "NAME": "US-16",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.324574,
+      43.975169
+     ],
+     [
+      -103.336573,
+      43.965669
+     ],
+     [
+      -103.346571,
+      43.951168
+     ]
+    ]
+   }
+  }
+ ]
+}

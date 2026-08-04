@@ -126,6 +126,120 @@ def line_length_miles(coords, zone: int = 13) -> float:
     return line_length_m(coords, zone) / METERS_PER_MILE
 
 
+def point_segment_distance(px, py, ax, ay, bx, by):
+    """Distance from a point to a line segment, and how far along the segment
+    the closest approach falls (0..1). Planar — feed it UTM metres."""
+    dx, dy = bx - ax, by - ay
+    seg_sq = dx * dx + dy * dy
+    if seg_sq == 0.0:
+        return math.hypot(px - ax, py - ay), 0.0
+    t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / seg_sq))
+    cx, cy = ax + t * dx, ay + t * dy
+    return math.hypot(px - cx, py - cy), t
+
+
+def point_to_polyline_distance(px, py, polyline_utm):
+    """Shortest distance from a point to any segment of a polyline."""
+    best = float("inf")
+    for (ax, ay), (bx, by) in zip(polyline_utm, polyline_utm[1:]):
+        d, _ = point_segment_distance(px, py, ax, ay, bx, by)
+        if d < best:
+            best = d
+    return best
+
+
+def distance_along_polyline(px, py, polyline_utm):
+    """How far along a polyline a point projects. Used to order drop points the
+    way a driver encounters them, rather than the order they were drawn."""
+    best_d, best_along = float("inf"), 0.0
+    travelled = 0.0
+    for (ax, ay), (bx, by) in zip(polyline_utm, polyline_utm[1:]):
+        seg_len = math.hypot(bx - ax, by - ay)
+        d, t = point_segment_distance(px, py, ax, ay, bx, by)
+        if d < best_d:
+            best_d, best_along = d, travelled + t * seg_len
+        travelled += seg_len
+    return best_along, best_d
+
+
+def densify_utm(polyline_utm, spacing_m: float = 25.0):
+    """Insert vertices so proximity tests do not step over a short approach.
+
+    A two-vertex trail segment a kilometre long has no vertex near the fire even
+    when its middle runs straight down the perimeter; without this, that segment
+    is invisible to the buffer test.
+    """
+    if len(polyline_utm) < 2:
+        return list(polyline_utm)
+    out = [polyline_utm[0]]
+    for (ax, ay), (bx, by) in zip(polyline_utm, polyline_utm[1:]):
+        seg = math.hypot(bx - ax, by - ay)
+        steps = max(1, int(seg // spacing_m))
+        for i in range(1, steps):
+            t = i / steps
+            out.append((ax + (bx - ax) * t, ay + (by - ay) * t))
+        out.append((bx, by))
+    return out
+
+
+def runs_of_true(flags, min_run: int = 1):
+    """Maximal runs of True in a boolean list, as (start, end_exclusive)."""
+    runs, start = [], None
+    for i, f in enumerate(flags):
+        if f and start is None:
+            start = i
+        elif not f and start is not None:
+            if i - start >= min_run:
+                runs.append((start, i))
+            start = None
+    if start is not None and len(flags) - start >= min_run:
+        runs.append((start, len(flags)))
+    return runs
+
+
+def centroid(coords, zone: int = 13):
+    """Mean of the vertices, in UTM. Good enough to anchor a transform on."""
+    pts = project_ring(coords, zone)
+    return sum(x for x, _ in pts) / len(pts), sum(y for _, y in pts) / len(pts)
+
+
+class Similarity:
+    """Rotate + scale + translate, applied in UTM.
+
+    Used to place one hand-built template scenario at seven different fires:
+    rotate to the fire's run bearing, scale to its size, translate to its
+    centre. Doing it in UTM rather than in lon/lat keeps the shape from
+    shearing — a degree of longitude is not a degree of latitude.
+    """
+
+    def __init__(self, src_center_ll, dst_center_ll, rotation_deg, scale, zone: int = 13):
+        self.zone = zone
+        self.sx, self.sy = ll_to_utm(src_center_ll[0], src_center_ll[1], zone)
+        self.dx, self.dy = ll_to_utm(dst_center_ll[0], dst_center_ll[1], zone)
+        theta = math.radians(rotation_deg)
+        self.cos_t, self.sin_t = math.cos(theta), math.sin(theta)
+        self.scale = scale
+
+    def point_utm(self, x: float, y: float):
+        x, y = (x - self.sx) * self.scale, (y - self.sy) * self.scale
+        return (
+            self.dx + x * self.cos_t - y * self.sin_t,
+            self.dy + x * self.sin_t + y * self.cos_t,
+        )
+
+    def __call__(self, coords):
+        """[[lon, lat], ...] -> [[lon, lat], ...], rounded for output."""
+        out = []
+        for lon, lat in coords:
+            x, y = ll_to_utm(lat, lon, self.zone)
+            nlat, nlon = utm_to_ll(*self.point_utm(x, y), self.zone)
+            out.append([round(nlon, 6), round(nlat, 6)])
+        return out
+
+    def point(self, lon: float, lat: float):
+        return self([[lon, lat]])[0]
+
+
 def dd_to_dm(value: float, is_lat: bool) -> str:
     """Decimal degrees -> degrees/decimal-minutes, the form used on IAP grids."""
     hemi = ("N" if value >= 0 else "S") if is_lat else ("E" if value >= 0 else "W")

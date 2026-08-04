@@ -1,0 +1,169 @@
+# The seven exercise fires.
+#
+# Each is an INDEPENDENT training scenario, not a concurrent incident. They all
+# sit inside the same Storm Mountain AOI so one base-data download serves all
+# seven, but nothing about the exercise assumes they burn at the same time.
+#
+# Each fire produces the full set of 16 map products — see config/map_products.yml.
+#
+# HOW GEOMETRY GETS HERE
+#
+# The real perimeters are DRAWN IN ARCGIS PRO, not generated. See
+# docs/10-digitizing-guide.md for exactly what to draw and what to attribute.
+#
+# `center`, `run_bearing` and `scale` below do not describe the real fires. They
+# drive `scripts/make_fires.py`, which builds throwaway fixtures in
+# data/fixtures/ by transforming one template scenario. Those fixtures exist so
+# the derivation and product pipeline can be exercised end to end BEFORE any
+# real geometry exists — and so a broken pipeline is caught by a test rather
+# than at 0400 on exercise day. Once you have drawn the real perimeters, the
+# fixtures stop mattering and these three fields become dead weight you can
+# ignore.
+#
+# `drop_point_blocks` DOES describe the real exercise. Drop point numbers change
+# between incidents and are grouped in blocks by division with gaps, which is
+# how they work on a real fire.
+
+defaults:
+  administrative_unit: Black Hills National Forest
+  district: Mystic Ranger District
+  county: Pennington County, South Dakota
+  state: SD
+  protecting_agency: USFS
+  unit_id: SD-BKF
+  imt: EX TRAINING IMT 1
+  giss: TRAINEE, GISS
+  gisto: INSTRUCTOR, GISTO
+  timezone: America/Denver
+  timezone_abbr: MDT
+  irwin_id: null
+
+fires:
+
+  - color: Red
+    incident_name: Red
+    local_incident_id: EX-SD-TRNG-0001
+    unit_id_full: SD-BKF-EX0001
+    center: {lat: 43.9520, lon: -103.4100}
+    run_bearing: 45          # degrees, direction of head. Template is built at 45.
+    scale: 1.00
+    drop_point_blocks: {A: 50, Z: 70, M: 190}
+    drop_point_step: 1
+    op_period: {number: 3, date: "2026-07-28", shift: day}
+    prepared: "2026-07-28T04:30:00-06:00"
+    collected: "2026-07-28T02:14:00-06:00"
+    collection_method: Infrared (simulated)
+    map_method: Infrared Image
+    teaching_focus: >-
+      The baseline scenario. Head pointed at the training grounds, single
+      winding access road, camp as a value at risk. Start here.
+
+  - color: Orange
+    incident_name: Orange
+    local_incident_id: EX-SD-TRNG-0002
+    unit_id_full: SD-BKF-EX0002
+    center: {lat: 43.9300, lon: -103.3550}
+    run_bearing: 20
+    scale: 0.70
+    drop_point_blocks: {A: 10, Z: 30, M: 210}
+    drop_point_step: 2
+    op_period: {number: 2, date: "2026-07-29", shift: day}
+    prepared: "2026-07-29T04:15:00-06:00"
+    collected: "2026-07-29T02:40:00-06:00"
+    collection_method: GPS flight (simulated)
+    map_method: GPS-Flight
+    teaching_focus: >-
+      Small and early. Fewer resources, no IR yet — the perimeter came off a
+      GPS flight, and the source statement has to say so.
+
+  - color: Yellow
+    incident_name: Yellow
+    local_incident_id: EX-SD-TRNG-0003
+    unit_id_full: SD-BKF-EX0003
+    center: {lat: 43.9600, lon: -103.3100}
+    run_bearing: 300
+    scale: 1.35
+    drop_point_blocks: {A: 100, Z: 120, M: 230}
+    drop_point_step: 1
+    op_period: {number: 5, date: "2026-07-30", shift: day}
+    prepared: "2026-07-30T04:05:00-06:00"
+    collected: "2026-07-30T01:55:00-06:00"
+    collection_method: Infrared (simulated)
+    map_method: Infrared Image
+    teaching_focus: >-
+      Running back to the northwest, against the template's grain. Divisions
+      end up awkward to fit on one sheet, which is the point.
+
+  - color: Green
+    incident_name: Green
+    local_incident_id: EX-SD-TRNG-0004
+    unit_id_full: SD-BKF-EX0004
+    center: {lat: 44.0100, lon: -103.3400}
+    run_bearing: 135
+    scale: 0.90
+    drop_point_blocks: {A: 150, Z: 170, M: 250}
+    drop_point_step: 2
+    op_period: {number: 4, date: "2026-07-31", shift: night}
+    prepared: "2026-07-31T16:40:00-06:00"
+    collected: "2026-07-31T14:20:00-06:00"
+    collection_method: Infrared (simulated)
+    map_method: Infrared Image
+    teaching_focus: >-
+      The only night-shift product set. Everything reads differently at 0200
+      under a headlamp — check contrast, check label size.
+
+  - color: Blue
+    incident_name: Blue
+    local_incident_id: EX-SD-TRNG-0005
+    unit_id_full: SD-BKF-EX0005
+    center: {lat: 44.0050, lon: -103.4300}
+    run_bearing: 90
+    scale: 1.15
+    drop_point_blocks: {A: 300, Z: 320, M: 270}
+    drop_point_step: 1
+    op_period: {number: 6, date: "2026-08-01", shift: day}
+    prepared: "2026-08-01T03:50:00-06:00"
+    collected: "2026-08-01T01:30:00-06:00"
+    collection_method: Infrared (simulated)
+    map_method: Infrared Image
+    teaching_focus: >-
+      Runs due east along the AOI's north edge. Half the TFR falls off the
+      10 x 10 box — the air ops sheet has to zoom out or it lies about the
+      airspace.
+
+  - color: Indigo
+    incident_name: Indigo
+    local_incident_id: EX-SD-TRNG-0006
+    unit_id_full: SD-BKF-EX0006
+    center: {lat: 43.9250, lon: -103.4550}
+    run_bearing: 225
+    scale: 0.80
+    drop_point_blocks: {A: 400, Z: 420, M: 440}
+    drop_point_step: 2
+    op_period: {number: 2, date: "2026-08-02", shift: day}
+    prepared: "2026-08-02T04:20:00-06:00"
+    collected: "2026-08-02T02:05:00-06:00"
+    collection_method: Hand sketch from air attack (simulated)
+    map_method: Hand Sketch
+    teaching_focus: >-
+      Backing downslope to the southwest, and the perimeter is a hand sketch.
+      Low-confidence geometry that the source statement must not dress up as
+      better than it is.
+
+  - color: Violet
+    incident_name: Violet
+    local_incident_id: EX-SD-TRNG-0007
+    unit_id_full: SD-BKF-EX0007
+    center: {lat: 43.9850, lon: -103.3800}
+    run_bearing: 0
+    scale: 1.50
+    drop_point_blocks: {A: 500, Z: 520, M: 540}
+    drop_point_step: 1
+    op_period: {number: 8, date: "2026-08-03", shift: day}
+    prepared: "2026-08-03T03:45:00-06:00"
+    collected: "2026-08-03T01:20:00-06:00"
+    collection_method: Infrared (simulated)
+    map_method: Infrared Image
+    teaching_focus: >-
+      The largest fire, running due north into the AOI boundary. Forces the
+      map-series conversation: this one does not fit on one sheet.

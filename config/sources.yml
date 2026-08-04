@@ -5,7 +5,7 @@
 # with eleven source CRSs will bite you at export time.
 #
 # Nothing in this file is incident data. All of it is real public data about a
-# real place; the fabricated exercise lives in data/mock_incident/.
+# real place; the fabricated exercise lives in data/fixtures/<colour>/.
 
 aoi_ref: config/aoi.json
 target_crs: EPSG:26913

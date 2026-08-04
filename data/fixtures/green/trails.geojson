@@ -1,0 +1,156 @@
+{
+ "type": "FeatureCollection",
+ "name": "trails",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
+ "_fire": "Green",
+ "_generated_by": "scripts/make_fires.py",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "TRAIL_NAME": "Storm Mountain Loop",
+    "TRAIL_NO": "9082",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.340848,
+      43.99598
+     ],
+     [
+      -103.349572,
+      43.998587
+     ],
+     [
+      -103.357047,
+      44.003791
+     ],
+     [
+      -103.361406,
+      44.009643
+     ],
+     [
+      -103.362898,
+      44.016143
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "TRAIL_NAME": "Coon Hollow",
+    "TRAIL_NO": "9083",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.350796,
+      44.023614
+     ],
+     [
+      -103.347052,
+      44.026538
+     ],
+     [
+      -103.355159,
+      44.027515
+     ],
+     [
+      -103.362644,
+      44.025892
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "TRAIL_NAME": "Rockerville Flume",
+    "TRAIL_NO": "9084",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.36389,
+      44.04214
+     ],
+     [
+      -103.358899,
+      44.03694
+     ],
+     [
+      -103.355158,
+      44.03174
+     ],
+     [
+      -103.352042,
+      44.025889
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "TRAIL_NAME": "Spring Creek Spur",
+    "TRAIL_NO": "9085",
+    "LINE_STATUS": ""
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.343926,
+      44.052541
+     ],
+     [
+      -103.338934,
+      44.055791
+     ],
+     [
+      -103.333942,
+      44.059042
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "TRAIL_NAME": "Old Mine Trail",
+    "TRAIL_NO": "9086",
+    "LINE_STATUS": "none"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.335228,
+      44.003128
+     ],
+     [
+      -103.338964,
+      44.006381
+     ],
+     [
+      -103.342701,
+      44.009634
+     ]
+    ]
+   }
+  }
+ ]
+}

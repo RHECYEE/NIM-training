@@ -16,12 +16,14 @@ shape of it before you commit.
 from __future__ import annotations
 
 import argparse
-import json
 import pathlib
 import sys
 
+import yaml
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-INCIDENT = json.loads((ROOT / "config" / "incident.json").read_text())
+FIRES = yaml.safe_load((ROOT / "config" / "fires.yml").read_text())
+WATERMARK = "TRAINING EXERCISE — NOT AN ACTUAL INCIDENT"
 
 TREE = [
     "base_data/elevation",
@@ -78,12 +80,14 @@ def main() -> int:
     ap.add_argument("--dest", type=pathlib.Path, required=True,
                     help="parent directory the incident folder is created in")
     ap.add_argument("--name", default=None,
-                    help="incident folder name (default: <year>_<IncidentName>)")
+                    help="folder name (default: <year>_StormMountain)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    year = INCIDENT["operational_period"]["date"][:4]
-    folder = args.name or f"{year}_{INCIDENT['incident_name'].replace(' ', '')}"
+    # One tree holds all seven fires: they share an AOI and one base-data
+    # download, and only the Event data differs between them.
+    year = FIRES["fires"][0]["op_period"]["date"][:4]
+    folder = args.name or f"{year}_StormMountain"
     base = args.dest.expanduser() / folder
 
     if base.exists() and not args.dry_run:
@@ -100,13 +104,18 @@ def main() -> int:
     if not args.dry_run:
         for top, text in READMES.items():
             (base / top / "README.txt").write_text(text)
+        roster = "\n".join(
+            f"  {f['color']:<8} {f['local_incident_id']:<17} {f['unit_id_full']:<14} "
+            f"op {f['op_period']['date']} {f['op_period']['shift']}"
+            for f in FIRES["fires"]
+        )
         (base / "README.txt").write_text(
-            f"{INCIDENT['watermark']}\n\n"
-            f"Incident      : {INCIDENT['incident_name']}\n"
-            f"Local ID      : {INCIDENT['local_incident_id']}\n"
-            f"Unit          : {INCIDENT['unit_id_full']}\n"
-            f"Admin unit    : {INCIDENT['administrative_unit']}\n"
-            f"IRWIN ID      : none, and none is ever to be assigned\n\n"
+            f"{WATERMARK}\n\n"
+            f"Admin unit : {FIRES['defaults']['administrative_unit']}\n"
+            f"District   : {FIRES['defaults']['district']}\n"
+            f"County     : {FIRES['defaults']['county']}\n"
+            f"IRWIN ID   : none, on any of them, and none is ever to be assigned\n\n"
+            f"Fires ({len(FIRES['fires'])}), each producing the full product set:\n{roster}\n\n"
             "This is a training exercise. Do not sync any of it to the National "
             "Incident Feature Service or to NIFC AGOL, and do not publish any "
             "perimeter from it to a public-facing service.\n"
@@ -114,7 +123,8 @@ def main() -> int:
         print(f"\nwrote README.txt at the root and in {len(READMES)} subfolders")
 
     print("\nNext: extract the official GeoOps template over this tree if you have it,")
-    print("      then drop base data in per config/sources.yml.")
+    print("      then drop base data in per config/sources.yml,")
+    print("      then draw the fires per docs/10-digitizing-guide.md.")
     return 0
 
 

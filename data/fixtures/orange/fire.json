@@ -1,0 +1,86 @@
+{
+  "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT",
+  "color": "Orange",
+  "incident_name": "Orange",
+  "incident_name_upper": "ORANGE",
+  "local_incident_id": "EX-SD-TRNG-0002",
+  "unit_id": "SD-BKF",
+  "unit_id_full": "SD-BKF-EX0002",
+  "irwin_id": null,
+  "administrative_unit": "Black Hills National Forest",
+  "district": "Mystic Ranger District",
+  "county": "Pennington County, South Dakota",
+  "state": "SD",
+  "protecting_agency": "USFS",
+  "imt": "EX TRAINING IMT 1",
+  "giss": "TRAINEE, GISS",
+  "gisto": "INSTRUCTOR, GISTO",
+  "center": {
+    "lat": 43.93,
+    "lon": -103.355
+  },
+  "run_bearing": 20,
+  "scale": 0.7,
+  "teaching_focus": "Small and early. Fewer resources, no IR yet \u2014 the perimeter came off a GPS flight, and the source statement has to say so.",
+  "operational_period": {
+    "number": 2,
+    "date": "2026-07-29",
+    "date_display": "07/29/2026",
+    "shift": "day",
+    "timezone": "America/Denver",
+    "timezone_abbr": "MDT"
+  },
+  "prepared": {
+    "iso": "2026-07-29T04:15:00-06:00",
+    "display": "7/29/2026 0415"
+  },
+  "perimeter_source": {
+    "acres": 865.0,
+    "collected": "2026-07-29T02:40:00-06:00",
+    "collection_method": "GPS flight (simulated)",
+    "map_method": "GPS-Flight",
+    "statement": "865 acres at 07/29/2026 at 0240 MDT. GPS flight (simulated). North American 1983 Datum. Lat/Long Grid"
+  },
+  "progression": [
+    {
+      "label": "Orange 07/27",
+      "date": "2026-07-27",
+      "acres": 118.0
+    },
+    {
+      "label": "Orange 07/28",
+      "date": "2026-07-28",
+      "acres": 379.8
+    },
+    {
+      "label": "Orange 07/29",
+      "date": "2026-07-29",
+      "acres": 865.0
+    }
+  ],
+  "completed_line_miles": 3.11,
+  "feature_counts": {
+    "EventPoint": 45,
+    "EventLine": 17,
+    "EventPolygon": 15
+  },
+  "products": [
+    "iap",
+    "ops",
+    "airops",
+    "pilot",
+    "brief",
+    "pio",
+    "trans",
+    "progression",
+    "avenza",
+    "camp",
+    "medtrans",
+    "closure",
+    "evac",
+    "owner",
+    "allotments",
+    "repair"
+  ],
+  "watermark": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT"
+}

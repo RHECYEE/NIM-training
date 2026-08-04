@@ -23,15 +23,15 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from geoutil import dd_to_dm, dd_to_dms, ll_to_utm  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-POINTS = ROOT / "data" / "mock_incident" / "eventpoint.geojson"
+DEFAULT_ROOT = ROOT / "data" / "fixtures"
 PRODUCTS = ROOT / "config" / "map_products.yml"
 
 DEFAULT_CATEGORIES = ["Helibase", "Helispot", "Dip Site", "Draft Site", "Medivac Site"]
 ORDER = {c: i for i, c in enumerate(DEFAULT_CATEGORIES)}
 
 
-def load_rows(categories):
-    doc = json.loads(POINTS.read_text())
+def load_rows(categories, points_path):
+    doc = json.loads(points_path.read_text())
     rows = []
     for feat in doc["features"]:
         p = feat["properties"]
@@ -75,9 +75,19 @@ def main() -> int:
     ap.add_argument("--csv", action="store_true", help="emit CSV instead of markdown")
     ap.add_argument("--full", action="store_true", help="include DM and UTM columns")
     ap.add_argument("--out", type=pathlib.Path, help="write to a file instead of stdout")
+    ap.add_argument("--fire", required=True, help="which colour")
+    ap.add_argument("--root", default=None, help="default: data/fixtures")
     args = ap.parse_args()
 
-    rows = load_rows(DEFAULT_CATEGORIES)
+    root = pathlib.Path(args.root) if args.root else DEFAULT_ROOT
+    if not root.is_absolute():
+        root = ROOT / root
+    points_path = root / args.fire.lower() / "eventpoint.geojson"
+    if not points_path.exists():
+        print(f"no point data at {points_path}", file=sys.stderr)
+        return 1
+
+    rows = load_rows(DEFAULT_CATEGORIES, points_path)
     columns = COLUMNS_FULL if args.full else COLUMNS_SHEET
 
     if args.csv:

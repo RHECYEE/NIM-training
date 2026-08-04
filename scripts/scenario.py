@@ -1,29 +1,31 @@
-#!/usr/bin/env python3
-"""Generate the fabricated Storm Mountain incident as three GeoJSON files.
+"""The template fire scenario, and the machinery to place it at a given fire.
 
-    python3 scripts/make_mock_incident.py
+Not run directly — ``scripts/make_fires.py`` drives this for each of the seven
+fires in ``config/fires.yml``.
 
-Output lands in ``data/mock_incident/`` and is the input to
-``scripts/arcpy/load_mock_incident.py``, which pushes it into the Event GDB.
-
-Everything here is invented. The geometry is placed inside the real AOI so the
-exercise sits on real terrain, real roads and real ownership, but no perimeter,
+Everything here is invented. The geometry sits inside the real AOI so the
+exercise rests on real terrain, real roads and real ownership, but no perimeter,
 line or point below describes anything that ever happened.
 
 Acreages and line mileages are computed from the geometry, never asserted, so
 the number on the map and the number in the attribute table cannot drift apart.
 
-Scenario
---------
-Ignition on the west side of the AOI, wind-driven run to the northeast over two
-burning periods. The head is pointed at the Storm Mountain Training Grounds,
-which makes the camp a value at risk and makes the single winding access road
-the constraint the exercise is actually about.
+The template
+------------
+Ignition on the west side of the AOI, wind-driven run to the northeast over
+three burning periods, head pointed at the Storm Mountain Training Grounds.
+That makes the camp a value at risk and makes the single winding access road the
+constraint the exercise is actually about.
+
+Each fire is this template rotated to its own run bearing, scaled to its own
+size and translated to its own centre — so the internal relationships that make
+a scenario briefable (line anchored to road, safety zones off the flanks, drop
+points on the access route) survive, while every fire looks genuinely different
+on the sheet.
 """
 
 from __future__ import annotations
 
-import json
 import math
 import pathlib
 import sys
@@ -31,6 +33,8 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 from geoutil import (  # noqa: E402
+    Similarity,
+    centroid,
     ll_to_utm,
     line_length_miles,
     ring_area_acres,
@@ -38,14 +42,10 @@ from geoutil import (  # noqa: E402
 )
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "data" / "mock_incident"
-INCIDENT = json.loads((ROOT / "config" / "incident.json").read_text())
-AOI = json.loads((ROOT / "config" / "aoi.json").read_text())
-
-INCIDENT_NAME = INCIDENT["incident_name"]
-CREATE_NAME = INCIDENT["giss"]
-CREATE_DATE = INCIDENT["map_prepared"]["prepared_iso"]
 NM_TO_M = 1852.0
+
+# The template is drawn with its head running to the northeast.
+TEMPLATE_BEARING = 45.0
 
 
 # --------------------------------------------------------------------------
@@ -304,26 +304,6 @@ POWERLINE = [
 ]
 
 
-# --------------------------------------------------------------------------
-# features
-# --------------------------------------------------------------------------
-
-def base_props(category, label, geometry_id, map_method, comments=""):
-    return {
-        "FeatureCategory": category,
-        "Label": label,
-        "IsVisible": "Yes",
-        "MapMethod": map_method,
-        "GeometryID": geometry_id,
-        "IncidentName": INCIDENT_NAME,
-        "IRWINID": None,
-        "CreateName": CREATE_NAME,
-        "CreateDate": CREATE_DATE,
-        "DeleteThis": "No",
-        "Comments": comments,
-    }
-
-
 POINTS = [
     # category, label, lon, lat, map method, comment
     ("Incident Command Post", "ICP", -103.3405, 43.9748, "GPS-Driven",
@@ -411,66 +391,252 @@ LINES = [
 ]
 
 
-def build_points():
+# Evacuation zones, named the way a county sheriff names them. In South Dakota
+# the sheriff owns the evacuation decision, not the IMT, so these are the
+# county's zones and the labels have to match what the county broadcasts.
+EVACUATION_ZONES = [
+    ("Zone A — GO", [-103.3860, 43.9660], 1500.0,
+     "Immediate evacuation. Structures inside the Management Action Point trigger."),
+    ("Zone B — SET", [-103.3560, 43.9700], 2200.0,
+     "Be ready. Sheriff will upgrade if the fire crosses the drainage."),
+    ("Zone C — READY", [-103.3300, 43.9740], 2600.0, "Stay informed."),
+]
+
+# Ground suppression disturbed and what has to be put back. Built from the
+# completed line, because that is what the dozer actually cut.
+REPAIR_CORRIDORS = [
+    ("Div Z Dozer Repair", "COMPLETED_DOZER_LINE", 60.0,
+     "Waterbar, pull berm back, scatter slash. Two blades wide."),
+    ("Div Z Road Repair", "COMPLETED_ROAD_AS_LINE", 40.0,
+     "Blade back to template, reinstall drainage."),
+]
+
+# --------------------------------------------------------------------------
+# stand-ins for the real base-data trail and road layers
+# --------------------------------------------------------------------------
+#
+# NOT map data. These exist only so scripts/derive_tactical.py has something to
+# run against before the real USFS TrailNFS_Publish and RoadCore layers are
+# downloaded and the real perimeters are drawn. Some of them deliberately run
+# along the perimeter so the "trail on the fire edge becomes hand line" rule has
+# a positive case to find, and some deliberately do not so it has a negative one.
+
+TEMPLATE_TRAILS = [
+    # name, number, coords, LINE_STATUS override ("" = let proximity decide)
+    ("Storm Mountain Loop", "9082", [
+        [-103.4270, 43.9575], [-103.4230, 43.9645], [-103.4150, 43.9705],
+        [-103.4060, 43.9740], [-103.3960, 43.9752],
+    ], ""),
+    ("Coon Hollow", "9083", [
+        [-103.3845, 43.9655], [-103.3800, 43.9625], [-103.3785, 43.9690],
+        [-103.3810, 43.9750],
+    ], ""),
+    ("Rockerville Flume", "9084", [
+        [-103.3560, 43.9760], [-103.3640, 43.9720], [-103.3720, 43.9690],
+        [-103.3810, 43.9665],
+    ], ""),
+    ("Spring Creek Spur", "9085", [
+        [-103.3400, 43.9600], [-103.3350, 43.9560], [-103.3300, 43.9520],
+    ], ""),
+    ("Old Mine Trail", "9086", [
+        [-103.4160, 43.9530], [-103.4110, 43.9560], [-103.4060, 43.9590],
+    ], "none"),  # runs through the burn, but it is not line — nobody is on it
+]
+
+TEMPLATE_ROADS = [
+    # name, coords, LINE_STATUS override
+    ("Storm Mountain Rd", ACCESS_ROUTE_MAIN, ""),
+    ("South Fork Rd", [
+        [-103.3965, 43.9470], [-103.3900, 43.9515], [-103.3845, 43.9565],
+    ], ""),
+    ("FS 231", [
+        [-103.4265, 43.9500], [-103.4205, 43.9440], [-103.4125, 43.9400],
+    ], ""),
+    ("US-16", [
+        [-103.3200, 43.9800], [-103.3320, 43.9705], [-103.3420, 43.9560],
+    ], ""),
+]
+
+
+def build_reference_layers(tf):
+    """Trail and road stand-ins, transformed to this fire."""
+    trails, roads = [], []
+    for name, number, coords, status in TEMPLATE_TRAILS:
+        trails.append({
+            "type": "Feature",
+            "properties": {"TRAIL_NAME": name, "TRAIL_NO": number, "LINE_STATUS": status},
+            "geometry": {"type": "LineString", "coordinates": tf(coords)},
+        })
+    for name, coords, status in TEMPLATE_ROADS:
+        roads.append({
+            "type": "Feature",
+            "properties": {"NAME": name, "LINE_STATUS": status},
+            "geometry": {"type": "LineString", "coordinates": tf(coords)},
+        })
+    return trails, roads
+
+
+TEMPLATE_CENTER = None  # computed on first use, from the operational-period perimeter
+
+
+def template_center():
+    """Centroid of the current perimeter — the anchor every transform pivots on."""
+    global TEMPLATE_CENTER
+    if TEMPLATE_CENTER is None:
+        cx, cy = centroid(PERIMETER_TODAY)
+        TEMPLATE_CENTER = utm_to_ll(cx, cy)
+    return TEMPLATE_CENTER
+
+
+def transform_for(fire: dict) -> Similarity:
+    return Similarity(
+        template_center(),
+        (fire["center"]["lat"], fire["center"]["lon"]),
+        fire["run_bearing"] - TEMPLATE_BEARING,
+        fire["scale"],
+    )
+
+
+# --------------------------------------------------------------------------
+# feature construction
+# --------------------------------------------------------------------------
+
+def base_props(fire, category, label, geometry_id, map_method, comments=""):
+    return {
+        "FeatureCategory": category,
+        "Label": label,
+        "IsVisible": "Yes",
+        "MapMethod": map_method,
+        "GeometryID": geometry_id,
+        "IncidentName": fire["incident_name"],
+        "IRWINID": None,
+        "CreateName": fire["giss"],
+        "CreateDate": fire["prepared"],
+        "DeleteThis": "No",
+        "Comments": comments,
+    }
+
+
+def build_points(fire, tf):
+    prefix = fire["color"][:2].upper()
     features = []
+    # Which division a drop point belongs to. On the real exercise this comes
+    # from the division you drew it in; here it is fixed so the block-numbering
+    # scheme has something to group on.
+    dp_division = {"DP 1": "A", "DP 2": "A", "DP 3": "A", "DP 4": "A",
+                   "DP 5": "Z", "DP 6": "Z", "DP 7": "M", "DP 8": "M"}
     for i, (cat, label, lon, lat, method, comment) in enumerate(POINTS, start=1):
-        props = base_props(cat, label, f"SMTG-PT-{i:04d}", method, comment)
-        lat_r, lon_r = round(lat, 6), round(lon, 6)
+        props = base_props(fire, cat, label, f"{prefix}-PT-{i:04d}", method, comment)
+        if cat == "Drop Point":
+            props["DIVISION"] = dp_division.get(label, "A")
         features.append({
             "type": "Feature",
             "properties": props,
-            "geometry": {"type": "Point", "coordinates": [lon_r, lat_r]},
+            "geometry": {"type": "Point", "coordinates": tf.point(lon, lat)},
         })
     return features
 
 
-def build_lines():
+def build_lines(fire, tf):
+    prefix = fire["color"][:2].upper()
     features = []
     for i, (cat, label, coords, method, comment) in enumerate(LINES, start=1):
-        props = base_props(cat, label, f"SMTG-LN-{i:04d}", method, comment)
-        props["LengthMiles"] = round(line_length_miles(coords), 3)
+        moved = tf(coords)
+        props = base_props(fire, cat, label, f"{prefix}-LN-{i:04d}", method, comment)
+        props["LengthMiles"] = round(line_length_miles(moved), 3)
         features.append({
             "type": "Feature",
             "properties": props,
-            "geometry": {"type": "LineString", "coordinates": [[round(x, 6), round(y, 6)] for x, y in coords]},
+            "geometry": {"type": "LineString", "coordinates": moved},
         })
     return features
 
 
-def build_polygons():
-    fire_center_lat, fire_center_lon = 43.9580, -103.4045
-    specs = [
-        ("Wildfire Daily Fire Perimeter", "Storm Mountain 07/28", PERIMETER_TODAY,
-         "Infrared Image", "2026-07-28T02:14:00-06:00", "Operational period 3 perimeter."),
-        ("Wildfire Daily Fire Perimeter", "Storm Mountain 07/27", PERIMETER_YESTERDAY,
-         "Infrared Image", "2026-07-27T02:20:00-06:00", "Operational period 2 perimeter."),
-        ("Wildfire Daily Fire Perimeter", "Storm Mountain 07/26", PERIMETER_DAY_ONE,
-         "GPS-Flight", "2026-07-26T03:05:00-06:00", "Operational period 1 perimeter."),
-        ("Temporary Flight Restriction", "TFR 5 NM",
-         circle_ring(fire_center_lat, fire_center_lon, 5 * NM_TO_M),
-         "Digitized-Other", None,
-         "5 NM radius, surface to 8500 ft MSL. Exercise only — no real TFR exists. "
-         "Extends past the AOI, which is why the air ops layout needs a wider extent than ops."),
-        ("Aerial Hazard Area", "Powerline Corridor", buffer_line_ring(POWERLINE, 400.0),
-         "Digitized-Other", None, "Distribution line. No low-level flight."),
-        ("Retardant Avoidance Area", "Spring Creek", buffer_line_ring(SPRING_CREEK_CORRIDOR, 300.0),
-         "Digitized-Other", None, "300 m each side of the creek. Exercise buffer."),
-        ("Closure Area", "Storm Mountain Closure",
-         circle_ring(43.9640, -103.3900, 4200.0), "Digitized-Other", None,
-         "Public closure. Roads and trails inside are closed."),
-        ("Safety Zone", "SZ-1 Area", circle_ring(43.9612, -103.3862, 130.0),
-         "GPS-Walked", None, "Approximately 13 acres of meadow."),
-        ("Structure Group", "Training Grounds Structures",
-         circle_ring(43.9648, -103.3768, 350.0), "GPS-Walked", None,
-         "Lodge, dining hall, cabin row, tank. Structure protection group assigned."),
-        ("Management Action Point Area", "MAP 1 — Storm Mountain Rd",
-         circle_ring(43.9655, -103.3700, 500.0), "Digitized-Topo", None,
-         "Trigger: fire crosses the drainage west of DP 3 — evacuate the training grounds."),
-    ]
+LINE_BY_NAME = {
+    "COMPLETED_DOZER_LINE": COMPLETED_DOZER_LINE,
+    "COMPLETED_ROAD_AS_LINE": COMPLETED_ROAD_AS_LINE,
+}
+
+
+def build_polygons(fire, tf):
+    """Rings that describe the fire get transformed. Rings that describe a fixed
+    real-world distance — the 5 NM TFR, a 300 m retardant buffer — are rebuilt at
+    the moved location so the radius stays physically true rather than scaled."""
+    prefix = fire["color"][:2].upper()
+    op = fire["op_period"]
+    method = fire["map_method"]
+    fire_ll = (fire["center"]["lat"], fire["center"]["lon"])
+
+    specs = []
+
+    # Three daily perimeters, oldest first, ending on the operational period.
+    for offset, ring in ((2, PERIMETER_DAY_ONE), (1, PERIMETER_YESTERDAY), (0, PERIMETER_TODAY)):
+        day = day_offset(op["date"], -offset)
+        label = f"{fire['incident_name']} {day[5:7]}/{day[8:10]}"
+        specs.append((
+            "Wildfire Daily Fire Perimeter", label, tf(ring),
+            method if offset == 0 else "Infrared Image",
+            f"{day}T02:14:00-06:00",
+            f"Operational period {op['number'] - offset} perimeter."
+            if op["number"] - offset > 0 else "Earlier perimeter.",
+        ))
+
+    specs.append((
+        "Temporary Flight Restriction", "TFR 5 NM",
+        circle_ring(*fire_ll, 5 * NM_TO_M), "Digitized-Other", None,
+        "5 NM radius, surface to 8500 ft MSL. Exercise only — no real TFR exists. "
+        "Wider than the AOI, which is why air ops needs a wider extent than ops.",
+    ))
+    specs.append((
+        "Aerial Hazard Area", "Powerline Corridor",
+        buffer_line_ring(tf(POWERLINE), 400.0), "Digitized-Other", None,
+        "Distribution line. No low-level flight.",
+    ))
+    specs.append((
+        "Retardant Avoidance Area", "Spring Creek",
+        buffer_line_ring(tf(SPRING_CREEK_CORRIDOR), 300.0), "Digitized-Other", None,
+        "300 m each side of the creek. Exercise buffer.",
+    ))
+    specs.append((
+        "Closure Area", f"{fire['incident_name']} Closure",
+        circle_ring(*fire_ll, 4200.0 * fire["scale"]), "Digitized-Other", None,
+        "Public closure. Roads and trails inside are closed.",
+    ))
+
+    sz = tf.point(-103.3862, 43.9612)
+    specs.append((
+        "Safety Zone", "SZ-1 Area", circle_ring(sz[1], sz[0], 130.0),
+        "GPS-Walked", None, "Meadow. Measured, not eyeballed.",
+    ))
+    sg = tf.point(-103.3768, 43.9648)
+    specs.append((
+        "Structure Group", "Training Grounds Structures", circle_ring(sg[1], sg[0], 350.0),
+        "GPS-Walked", None,
+        "Lodge, dining hall, cabin row, tank. Structure protection group assigned.",
+    ))
+    mp = tf.point(-103.3700, 43.9655)
+    specs.append((
+        "Management Action Point Area", "MAP 1 — Access Road", circle_ring(mp[1], mp[0], 500.0),
+        "Digitized-Topo", None,
+        "Trigger: fire crosses the drainage west of DP 3 — evacuate the training grounds.",
+    ))
+
+    for label, center, radius, comment in EVACUATION_ZONES:
+        moved = tf.point(*center)
+        specs.append((
+            "Evacuation Area", label, circle_ring(moved[1], moved[0], radius),
+            "Digitized-Other", None, comment,
+        ))
+
+    for label, line_key, radius, comment in REPAIR_CORRIDORS:
+        specs.append((
+            "Repair Area", label, buffer_line_ring(tf(LINE_BY_NAME[line_key]), radius),
+            "GPS-Walked", None, comment,
+        ))
 
     features = []
-    for i, (cat, label, ring, method, dt, comment) in enumerate(specs, start=1):
-        props = base_props(cat, label, f"SMTG-PY-{i:04d}", method, comment)
+    for i, (cat, label, ring, mm, dt, comment) in enumerate(specs, start=1):
+        props = base_props(fire, cat, label, f"{prefix}-PY-{i:04d}", mm, comment)
         props["GISAcres"] = round(ring_area_acres(ring), 1)
         props["PolygonDateTime"] = dt
         features.append({
@@ -481,50 +647,20 @@ def build_polygons():
     return features
 
 
-def write(name, features):
-    fc = {
-        "type": "FeatureCollection",
-        "name": name,
-        "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
-        "_warning": "TRAINING EXERCISE — NOT AN ACTUAL INCIDENT. Fabricated data. "
-                    "Never publish, never sync to NIFS or NIFC AGOL.",
-        "_generated_by": "scripts/make_mock_incident.py",
-        "features": features,
+def day_offset(date_str: str, days: int) -> str:
+    import datetime as _dt
+    d = _dt.date.fromisoformat(date_str) + _dt.timedelta(days=days)
+    return d.isoformat()
+
+
+def build(fire: dict) -> dict:
+    """All three feature classes for one fire, plus the trail/road stand-ins."""
+    tf = transform_for(fire)
+    trails, roads = build_reference_layers(tf)
+    return {
+        "EventPoint": build_points(fire, tf),
+        "EventLine": build_lines(fire, tf),
+        "EventPolygon": build_polygons(fire, tf),
+        "trails": trails,
+        "roads": roads,
     }
-    path = OUT_DIR / f"{name.lower()}.geojson"
-    path.write_text(json.dumps(fc, indent=1) + "\n")
-    return path
-
-
-def main() -> int:
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    points, lines, polygons = build_points(), build_lines(), build_polygons()
-    for name, feats in (("EventPoint", points), ("EventLine", lines), ("EventPolygon", polygons)):
-        path = write(name, feats)
-        print(f"wrote {path.relative_to(ROOT)}  ({len(feats)} features)")
-
-    today = next(f for f in polygons if f["properties"]["Label"] == "Storm Mountain 07/28")
-    acres = today["properties"]["GISAcres"]
-    print()
-    print(f"  daily perimeter 07/28 : {acres:,.1f} acres")
-    for label in ("Storm Mountain 07/27", "Storm Mountain 07/26"):
-        f = next(f for f in polygons if f["properties"]["Label"] == label)
-        print(f"  daily perimeter {label[-5:]} : {f['properties']['GISAcres']:,.1f} acres")
-    total_line = sum(f["properties"]["LengthMiles"] for f in lines
-                     if f["properties"]["FeatureCategory"].startswith("Completed"))
-    print(f"  completed line        : {total_line:.2f} mi")
-    print()
-    print("  Put this acreage in the source statement:")
-    stmt = INCIDENT["perimeter_source"]["source_statement_template"].format(
-        acres=f"{acres:,.0f}",
-        collected_display=INCIDENT["perimeter_source"]["collected_display"],
-        collection_method=INCIDENT["perimeter_source"]["collection_method"],
-        datum_statement=AOI["crs"]["datum_statement"],
-    )
-    print(f"    {stmt}")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())

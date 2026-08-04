@@ -8,7 +8,8 @@
   }
  },
  "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
- "_generated_by": "scripts/make_mock_incident.py",
+ "_fire": "Violet",
+ "_generated_by": "scripts/make_fires.py",
  "features": [
   {
    "type": "Feature",
@@ -17,19 +18,19 @@
     "Label": "ICP",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0001",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0001",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Rockerville staging field. Exercise ICP."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3405,
-     43.9748
+     -103.284759,
+     43.954277
     ]
    }
   },
@@ -40,19 +41,19 @@
     "Label": "Camp 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0002",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0002",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Spike camp, 120 person capacity."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3372,
-     43.9762
+     -103.279206,
+     43.953232
     ]
    }
   },
@@ -63,19 +64,19 @@
     "Label": "Staging 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0003",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0003",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Engine staging off US-16."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3455,
-     43.9712
+     -103.295347,
+     43.954293
     ]
    }
   },
@@ -86,19 +87,19 @@
     "Label": "Helibase",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0004",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0004",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Exercise helibase."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3348,
-     43.9548
+     -103.308091,
+     43.928706
     ]
    }
   },
@@ -109,19 +110,19 @@
     "Label": "H-1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Flight",
-    "GeometryID": "SMTG-PT-0005",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0005",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Ridgetop. One ship at a time."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4062,
-     43.9762
+     -103.352345,
+     44.006117
     ]
    }
   },
@@ -132,19 +133,19 @@
     "Label": "H-2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Flight",
-    "GeometryID": "SMTG-PT-0006",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0006",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Old landing. Dusty, needs water."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3802,
-     43.9452
+     -103.370322,
+     43.953322
     ]
    }
   },
@@ -155,19 +156,19 @@
     "Label": "H-3",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Flight",
-    "GeometryID": "SMTG-PT-0007",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0007",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Saddle. Short-haul capable."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3688,
-     43.9622
+     -103.333265,
+     43.962611
     ]
    }
   },
@@ -178,19 +179,20 @@
     "Label": "DP 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0008",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0008",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "US-16 turnout."
+    "Comments": "US-16 turnout.",
+    "DIVISION": "A"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3462,
-     43.9698
+     -103.298145,
+     43.953346
     ]
    }
   },
@@ -201,19 +203,20 @@
     "Label": "DP 2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0009",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0009",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "Storm Mountain Rd junction."
+    "Comments": "Storm Mountain Rd junction.",
+    "DIVISION": "A"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3585,
-     43.9655
+     -103.317498,
+     43.958215
     ]
    }
   },
@@ -224,19 +227,20 @@
     "Label": "DP 3",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0010",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0010",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "Turnaround, type 6 and smaller past here."
+    "Comments": "Turnaround, type 6 and smaller past here.",
+    "DIVISION": "A"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3702,
-     43.965
+     -103.330636,
+     43.966652
     ]
    }
   },
@@ -247,19 +251,20 @@
     "Label": "DP 4",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0011",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0011",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "Div A anchor."
+    "Comments": "Div A anchor.",
+    "DIVISION": "A"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3808,
-     43.9688
+     -103.33629,
+     43.978805
     ]
    }
   },
@@ -270,19 +275,20 @@
     "Label": "DP 5",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0012",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0012",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "Div Z anchor, south road."
+    "Comments": "Div Z anchor, south road.",
+    "DIVISION": "Z"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3948,
-     43.9468
+     -103.38346,
+     43.966209
     ]
    }
   },
@@ -293,19 +299,20 @@
     "Label": "DP 6",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0013",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0013",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "Dozer line tie-in, south flank."
+    "Comments": "Dozer line tie-in, south flank.",
+    "DIVISION": "Z"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4128,
-     43.9402
+     -103.412252,
+     43.973005
     ]
    }
   },
@@ -316,19 +323,20 @@
     "Label": "DP 7",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0014",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0014",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "West end of completed line. Foot access only."
+    "Comments": "West end of completed line. Foot access only.",
+    "DIVISION": "M"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4268,
-     43.9578
+     -103.401249,
+     44.002399
     ]
    }
   },
@@ -339,19 +347,20 @@
     "Label": "DP 8",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0015",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0015",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
-    "Comments": "Contingency line, north."
+    "Comments": "Contingency line, north.",
+    "DIVISION": "M"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4055,
-     43.9788
+     -103.347779,
+     44.008336
     ]
    }
   },
@@ -362,19 +371,19 @@
     "Label": "Dip 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Flight",
-    "GeometryID": "SMTG-PT-0016",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0016",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Stock pond. Verify depth each morning."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4302,
-     43.9842
+     -103.366032,
+     44.03299
     ]
    }
   },
@@ -385,19 +394,19 @@
     "Label": "Dip 2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Flight",
-    "GeometryID": "SMTG-PT-0017",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0017",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Adjacent to helibase."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3355,
-     43.96
+     -103.301199,
+     43.934756
     ]
    }
   },
@@ -408,19 +417,19 @@
     "Label": "Draft 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0018",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0018",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Spring Creek. Screened intake required."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3608,
-     43.9702
+     -103.313031,
+     43.96496
     ]
    }
   },
@@ -431,19 +440,19 @@
     "Label": "Hydrant 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0019",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0019",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Camp supply."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.338,
-     43.9755
+     -103.281082,
+     43.953103
     ]
    }
   },
@@ -454,19 +463,19 @@
     "Label": "Tank 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0020",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0020",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Training grounds 10,000 gal tank."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3772,
-     43.9642
+     -103.339233,
+     43.97117
     ]
    }
   },
@@ -477,19 +486,19 @@
     "Label": "SZ-1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0021",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0021",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Meadow, 4 acres. Div A."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3862,
-     43.9612
+     -103.353184,
+     43.974887
     ]
    }
   },
@@ -500,19 +509,19 @@
     "Label": "SZ-2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0022",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0022",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Old burn scar. Div Z."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4048,
-     43.9418
+     -103.401413,
+     43.968571
     ]
    }
   },
@@ -523,19 +532,19 @@
     "Label": "LO-1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0023",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0023",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "North rim. Sees the head."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3925,
-     43.9782
+     -103.334877,
+     43.997736
     ]
    }
   },
@@ -546,19 +555,19 @@
     "Label": "LO-2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0024",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0024",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "South, covers the dozer line."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4212,
-     43.9382
+     -103.424104,
+     43.977322
     ]
    }
   },
@@ -569,19 +578,19 @@
     "Label": "RPT Storm",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0025",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0025",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Sited to cover the Coon Hollow dead zone."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3648,
-     43.9808
+     -103.301692,
+     43.979261
     ]
    }
   },
@@ -592,19 +601,19 @@
     "Label": "IRAWS 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0026",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0026",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Exercise IRAWS."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3888,
-     43.9752
+     -103.335365,
+     43.991721
     ]
    }
   },
@@ -615,19 +624,19 @@
     "Label": "AP-1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0027",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0027",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "US-16 at Storm Mountain Rd."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3318,
-     43.9708
+     -103.281417,
+     43.943369
     ]
    }
   },
@@ -638,19 +647,19 @@
     "Label": "Gate 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0028",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0028",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "FS gate. Combination with Div A."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3562,
-     43.9662
+     -103.314032,
+     43.957194
     ]
    }
   },
@@ -661,19 +670,19 @@
     "Label": "Gate 2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0029",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0029",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Locked, south road."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3925,
-     43.9452
+     -103.38337,
+     43.96275
     ]
    }
   },
@@ -684,19 +693,19 @@
     "Label": "Closure 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0030",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0030",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Storm Mountain Rd closed to public."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3492,
-     43.9682
+     -103.303675,
+     43.953949
     ]
    }
   },
@@ -707,19 +716,19 @@
     "Label": "Closure 2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0031",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0031",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "South road closed."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.368,
-     43.9432
+     -103.360319,
+     43.941851
     ]
    }
   },
@@ -730,19 +739,19 @@
     "Label": "Mine 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0032",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0032",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Abandoned shaft, open. Uncovered, do not anchor line here."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4108,
-     43.9598
+     -103.381333,
+     43.992257
     ]
    }
   },
@@ -753,19 +762,19 @@
     "Label": "Mine 2",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0033",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0033",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Abandoned adit and tailings."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4162,
-     43.9532
+     -103.396762,
+     43.989398
     ]
    }
   },
@@ -776,19 +785,19 @@
     "Label": "Powerline",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Other",
-    "GeometryID": "SMTG-PT-0034",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0034",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Distribution line crossing."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4002,
-     43.982
+     -103.337454,
+     44.007666
     ]
    }
   },
@@ -799,19 +808,19 @@
     "Label": "Snags",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0035",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0035",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Heavy beetle-kill, standing dead."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3968,
-     43.9678
+     -103.354726,
+     43.990008
     ]
    }
   },
@@ -822,19 +831,19 @@
     "Label": "MED 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0036",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0036",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Line medic at DP 3. Ambulance interception point."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3712,
-     43.9645
+     -103.332431,
+     43.966889
     ]
    }
   },
@@ -845,19 +854,19 @@
     "Label": "MEDIVAC 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Flight",
-    "GeometryID": "SMTG-PT-0037",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0037",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Co-located with H-3."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3688,
-     43.9622
+     -103.333265,
+     43.962611
     ]
    }
   },
@@ -868,19 +877,19 @@
     "Label": "Training Grounds",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0038",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0038",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Storm Mountain Training Grounds \u2014 lodge, cabins, dining hall."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3768,
-     43.9648
+     -103.337927,
+     43.971499
     ]
    }
   },
@@ -891,19 +900,19 @@
     "Label": "Lodge",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0039",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0039",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Main lodge."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3766,
-     43.9651
+     -103.337274,
+     43.971664
     ]
    }
   },
@@ -914,19 +923,19 @@
     "Label": "Dining Hall",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0040",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0040",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": ""
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3774,
-     43.9645
+     -103.339004,
+     43.971641
     ]
    }
   },
@@ -937,19 +946,19 @@
     "Label": "Cabin Row",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0041",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0041",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Six cabins."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3758,
-     43.9643
+     -103.337601,
+     43.970203
     ]
    }
   },
@@ -960,19 +969,19 @@
     "Label": "Spot 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0042",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0042",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Quarter acre, north of the head. Held."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3822,
-     43.9742
+     -103.329838,
+     43.985602
     ]
    }
   },
@@ -983,19 +992,19 @@
     "Label": "Origin",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-PT-0043",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0043",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Exercise origin. Secured."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.4118,
-     43.9518
+     -103.39415,
+     43.984541
     ]
    }
   },
@@ -1006,19 +1015,19 @@
     "Label": "Sign 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0044",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0044",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "Fire traffic sign, US-16."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3465,
-     43.97
+     -103.298169,
+     43.953788
     ]
    }
   },
@@ -1029,19 +1038,19 @@
     "Label": "Starlink 1",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-PT-0045",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "VI-PT-0045",
+    "IncidentName": "Violet",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-03T03:45:00-06:00",
     "DeleteThis": "No",
     "Comments": "ICP."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -103.3402,
-     43.975
+     -103.284148,
+     43.954259
     ]
    }
   }

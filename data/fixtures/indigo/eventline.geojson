@@ -8,7 +8,8 @@
   }
  },
  "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
- "_generated_by": "scripts/make_mock_incident.py",
+ "_fire": "Indigo",
+ "_generated_by": "scripts/make_fires.py",
  "features": [
   {
    "type": "Feature",
@@ -17,41 +18,41 @@
     "Label": "Div Z Dozer",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-LN-0001",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0001",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Completed 0730 op 2. Two blades.",
-    "LengthMiles": 2.451
+    "LengthMiles": 1.961
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.427,
-      43.9575
+      -103.437757,
+      43.924472
      ],
      [
-      -103.4265,
-      43.95
+      -103.438158,
+      43.930472
      ],
      [
-      -103.4205,
-      43.944
+      -103.442958,
+      43.935271
      ],
      [
-      -103.4125,
-      43.94
+      -103.449359,
+      43.93847
      ],
      [
-      -103.404,
-      43.943
+      -103.456157,
+      43.936067
      ],
      [
-      -103.3965,
-      43.947
+      -103.462153,
+      43.932864
      ]
     ]
    }
@@ -63,29 +64,29 @@
     "Label": "Div A Hand",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-LN-0002",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0002",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Completed op 2. Type 1 crew.",
-    "LengthMiles": 1.098
+    "LengthMiles": 0.878
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.427,
-      43.9575
+      -103.437757,
+      43.924472
      ],
      [
-      -103.423,
-      43.9645
+      -103.440953,
+      43.918872
      ],
      [
-      -103.415,
-      43.9705
+      -103.447345,
+      43.91407
      ]
     ]
    }
@@ -97,29 +98,29 @@
     "Label": "Div Z Road",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-LN-0003",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0003",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Existing road brushed and used as line.",
-    "LengthMiles": 0.89
+    "LengthMiles": 0.712
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.3965,
-      43.947
+      -103.462153,
+      43.932864
      ],
      [
-      -103.39,
-      43.9515
+      -103.467347,
+      43.92926
      ],
      [
-      -103.3845,
-      43.9565
+      -103.471739,
+      43.925257
      ]
     ]
    }
@@ -131,33 +132,33 @@
     "Label": "Div A Proposed Dozer",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Topo",
-    "GeometryID": "SMTG-LN-0004",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0004",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Op 3 objective. Tie DP 4 to the north contingency.",
-    "LengthMiles": 1.358
+    "LengthMiles": 1.087
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.3845,
-      43.9565
+      -103.471739,
+      43.925257
      ],
      [
-      -103.38,
-      43.9625
+      -103.47533,
+      43.920454
      ],
      [
-      -103.3785,
-      43.969
+      -103.47652,
+      43.915253
      ],
      [
-      -103.381,
-      43.975
+      -103.474514,
+      43.910455
      ]
     ]
    }
@@ -169,33 +170,33 @@
     "Label": "North Contingency Hand",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Topo",
-    "GeometryID": "SMTG-LN-0005",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0005",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Contingency only. Do not construct without Ops approval.",
-    "LengthMiles": 1.317
+    "LengthMiles": 1.054
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.381,
-      43.975
+      -103.474514,
+      43.910455
      ],
      [
-      -103.388,
-      43.979
+      -103.468916,
+      43.907259
      ],
      [
-      -103.396,
-      43.9805
+      -103.462522,
+      43.906063
      ],
      [
-      -103.405,
-      43.979
+      -103.455332,
+      43.907267
      ]
     ]
    }
@@ -207,29 +208,29 @@
     "Label": "North Contingency Road",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Topo",
-    "GeometryID": "SMTG-LN-0006",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0006",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Contingency.",
-    "LengthMiles": 1.115
+    "LengthMiles": 0.892
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.405,
-      43.979
+      -103.455332,
+      43.907267
      ],
      [
-      -103.415,
-      43.976
+      -103.447343,
+      43.90967
      ],
      [
-      -103.423,
-      43.97
+      -103.440952,
+      43.914471
      ]
     ]
    }
@@ -241,41 +242,41 @@
     "Label": "Active Edge",
     "IsVisible": "Yes",
     "MapMethod": "Infrared Image",
-    "GeometryID": "SMTG-LN-0007",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0007",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Active at 0214 MDT 7/28.",
-    "LengthMiles": 2.201
+    "LengthMiles": 1.761
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.413,
-      43.968
+      -103.448945,
+      43.91607
      ],
      [
-      -103.404,
-      43.9715
+      -103.456136,
+      43.913267
      ],
      [
-      -103.395,
-      43.973
+      -103.463328,
+      43.912063
      ],
      [
-      -103.388,
-      43.9705
+      -103.468925,
+      43.914059
      ],
      [
-      -103.3845,
-      43.9655
+      -103.471729,
+      43.918057
      ],
      [
-      -103.386,
-      43.959
+      -103.470537,
+      43.923258
      ]
     ]
    }
@@ -287,57 +288,57 @@
     "Label": "Held Edge",
     "IsVisible": "Yes",
     "MapMethod": "Infrared Image",
-    "GeometryID": "SMTG-LN-0008",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0008",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Held at 0214 MDT 7/28.",
-    "LengthMiles": 4.047
+    "LengthMiles": 3.237
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.386,
-      43.959
+      -103.470537,
+      43.923258
      ],
      [
-      -103.3915,
-      43.954
+      -103.466145,
+      43.927261
      ],
      [
-      -103.398,
-      43.9495
+      -103.460951,
+      43.930864
      ],
      [
-      -103.405,
-      43.9455
+      -103.455355,
+      43.934067
      ],
      [
-      -103.412,
-      43.9425
+      -103.449758,
+      43.93647
      ],
      [
-      -103.418,
-      43.943
+      -103.444958,
+      43.936071
      ],
      [
-      -103.423,
-      43.949
+      -103.440957,
+      43.931272
      ],
      [
-      -103.4245,
-      43.956
+      -103.439756,
+      43.925672
      ],
      [
-      -103.421,
-      43.9625
+      -103.442552,
+      43.920471
      ],
      [
-      -103.413,
-      43.968
+      -103.448945,
+      43.91607
      ]
     ]
    }
@@ -349,45 +350,45 @@
     "Label": "Storm Mountain Rd",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-LN-0009",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0009",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "1.7 mi of winding FS road. Single lane with turnouts. THE access constraint \u2014 brief every resource on it.",
-    "LengthMiles": 2.636
+    "LengthMiles": 2.109
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.332,
-      43.9705
+      -103.513684,
+      43.914007
      ],
      [
-      -103.342,
-      43.969
+      -103.505695,
+      43.915219
      ],
      [
-      -103.352,
-      43.966
+      -103.497708,
+      43.91763
      ],
      [
-      -103.361,
-      43.964
+      -103.490517,
+      43.919239
      ],
      [
-      -103.37,
-      43.9648
+      -103.483321,
+      43.918607
      ],
      [
-      -103.377,
-      43.9655
+      -103.477724,
+      43.918052
      ],
      [
-      -103.381,
-      43.969
+      -103.474522,
+      43.915255
      ]
     ]
    }
@@ -399,41 +400,41 @@
     "Label": "South Access",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
-    "GeometryID": "SMTG-LN-0010",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0010",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Longer, wider, slower.",
-    "LengthMiles": 4.074
+    "LengthMiles": 3.259
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.332,
-      43.9705
+      -103.513684,
+      43.914007
      ],
      [
-      -103.34,
-      43.956
+      -103.507323,
+      43.925617
      ],
      [
-      -103.352,
-      43.947
+      -103.497745,
+      43.932831
      ],
      [
-      -103.368,
-      43.944
+      -103.484952,
+      43.935246
      ],
      [
-      -103.383,
-      43.945
+      -103.472953,
+      43.934456
      ],
      [
-      -103.394,
-      43.9465
+      -103.464153,
+      43.933263
      ]
     ]
    }
@@ -445,29 +446,29 @@
     "Label": "ER North",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-LN-0011",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0011",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "DP 4 to the north ridge.",
-    "LengthMiles": 1.055
+    "LengthMiles": 0.844
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.381,
-      43.969
+      -103.474522,
+      43.915255
      ],
      [
-      -103.376,
-      43.976
+      -103.478509,
+      43.909651
      ],
      [
-      -103.37,
-      43.982
+      -103.483294,
+      43.904846
      ]
     ]
    }
@@ -479,29 +480,29 @@
     "Label": "ER South",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-LN-0012",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0012",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "DP 5 to SZ-2.",
-    "LengthMiles": 0.94
+    "LengthMiles": 0.752
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.3965,
-      43.947
+      -103.462153,
+      43.932864
      ],
      [
-      -103.39,
-      43.942
+      -103.467357,
+      43.936861
      ],
      [
-      -103.382,
-      43.9385
+      -103.473761,
+      43.939656
      ]
     ]
    }
@@ -513,37 +514,37 @@
     "Label": "Div A / Div Z",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Topo",
-    "GeometryID": "SMTG-LN-0013",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0013",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "",
-    "LengthMiles": 2.382
+    "LengthMiles": 1.906
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.429,
-      43.96
+      -103.436157,
+      43.922472
      ],
      [
-      -103.418,
-      43.9575
+      -103.444953,
+      43.924471
      ],
      [
-      -103.406,
-      43.956
+      -103.454548,
+      43.925668
      ],
      [
-      -103.394,
-      43.9552
+      -103.464144,
+      43.926303
      ],
      [
-      -103.382,
-      43.9548
+      -103.47374,
+      43.926616
      ]
     ]
    }
@@ -555,29 +556,29 @@
     "Label": "Div Z / Div M",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Topo",
-    "GeometryID": "SMTG-LN-0014",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0014",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "",
-    "LengthMiles": 1.259
+    "LengthMiles": 1.007
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.398,
-      43.937
+      -103.460961,
+      43.940865
      ],
      [
-      -103.399,
-      43.947
+      -103.460153,
+      43.932865
      ],
      [
-      -103.3985,
-      43.9552
+      -103.460546,
+      43.926305
      ]
     ]
    }
@@ -589,29 +590,29 @@
     "Label": "Branch I / Branch II",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Topo",
-    "GeometryID": "SMTG-LN-0015",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0015",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "",
-    "LengthMiles": 2.024
+    "LengthMiles": 1.619
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.43,
-      43.972
+      -103.435357,
+      43.912872
      ],
      [
-      -103.41,
-      43.9745
+      -103.451339,
+      43.910869
      ],
      [
-      -103.39,
-      43.977
+      -103.46732,
+      43.90886
      ]
     ]
    }
@@ -623,33 +624,33 @@
     "Label": "Draft 1 Lay",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
-    "GeometryID": "SMTG-LN-0016",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0016",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "From Draft 1 to the structure group. Two portable pumps.",
-    "LengthMiles": 1.002
+    "LengthMiles": 0.801
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.3608,
-      43.9702
+      -103.490666,
+      43.914279
      ],
      [
-      -103.368,
-      43.969
+      -103.484913,
+      43.915245
      ],
      [
-      -103.375,
-      43.9672
+      -103.47932,
+      43.91669
      ],
      [
-      -103.38,
-      43.966
+      -103.475325,
+      43.917654
      ]
     ]
    }
@@ -661,29 +662,29 @@
     "Label": "Predicted Spread",
     "IsVisible": "Yes",
     "MapMethod": "Digitized-Other",
-    "GeometryID": "SMTG-LN-0017",
-    "IncidentName": "Storm Mountain",
+    "GeometryID": "IN-LN-0017",
+    "IncidentName": "Indigo",
     "IRWINID": null,
     "CreateName": "TRAINEE, GISS",
-    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "CreateDate": "2026-08-02T04:20:00-06:00",
     "DeleteThis": "No",
     "Comments": "Predicted op 3 spread, northeast.",
-    "LengthMiles": 1.389
+    "LengthMiles": 1.111
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -103.41,
-      43.956
+      -103.45135,
+      43.925669
      ],
      [
-      -103.398,
-      43.964
+      -103.460938,
+      43.919264
      ],
      [
-      -103.39,
-      43.97
+      -103.467327,
+      43.91446
      ]
     ]
    }

@@ -1,0 +1,2003 @@
+{
+ "type": "FeatureCollection",
+ "name": "EventLine",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
+ "_fire": "Orange",
+ "_generated_by": "scripts/make_fires.py",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Dozer Line",
+    "Label": "Div Z Dozer",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "OR-LN-0001",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Completed 0730 op 2. Two blades.",
+    "LengthMiles": 1.716
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.368399,
+      43.935037
+     ],
+     [
+      -103.371156,
+      43.930174
+     ],
+     [
+      -103.369811,
+      43.925084
+     ],
+     [
+      -103.366378,
+      43.920835
+     ],
+     [
+      -103.35976,
+      43.920919
+     ],
+     [
+      -103.353366,
+      43.921851
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Hand Line",
+    "Label": "Div A Hand",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "OR-LN-0002",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Completed op 2. Type 1 crew.",
+    "LengthMiles": 0.768
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.368399,
+      43.935037
+     ],
+     [
+      -103.362993,
+      43.938621
+     ],
+     [
+      -103.355461,
+      43.940714
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Road as Line",
+    "Label": "Div Z Road",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "OR-LN-0003",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Existing road brushed and used as line.",
+    "LengthMiles": 0.623
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.353366,
+      43.921851
+     ],
+     [
+      -103.347401,
+      43.923314
+     ],
+     [
+      -103.341866,
+      43.925309
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Dozer Line",
+    "Label": "Div A Proposed Dozer",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "OR-LN-0004",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Op 3 objective. Tie DP 4 to the north contingency.",
+    "LengthMiles": 0.951
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.341866,
+      43.925309
+     ],
+     [
+      -103.336555,
+      43.928152
+     ],
+     [
+      -103.33294,
+      43.931954
+     ],
+     [
+      -103.332066,
+      43.936294
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Hand Line",
+    "Label": "North Contingency Hand",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "OR-LN-0005",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency only. Do not construct without Ops approval.",
+    "LengthMiles": 0.922
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.332066,
+      43.936294
+     ],
+     [
+      -103.334863,
+      43.940328
+     ],
+     [
+      -103.339318,
+      43.942991
+     ],
+     [
+      -103.345638,
+      43.943965
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Road as Line",
+    "Label": "North Contingency Road",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "OR-LN-0006",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency.",
+    "LengthMiles": 0.78
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.345638,
+      43.943965
+     ],
+     [
+      -103.353206,
+      43.944202
+     ],
+     [
+      -103.360738,
+      43.942109
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Uncontrolled Fire Edge",
+    "Label": "Active Edge",
+    "IsVisible": "Yes",
+    "MapMethod": "Infrared Image",
+    "GeometryID": "OR-LN-0007",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Active at 0214 MDT 7/28.",
+    "LengthMiles": 1.541
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.355219,
+      43.9387
+     ],
+     [
+      -103.348079,
+      43.938994
+     ],
+     [
+      -103.341759,
+      43.93802
+     ],
+     [
+      -103.338347,
+      43.934937
+     ],
+     [
+      -103.338178,
+      43.931017
+     ],
+     [
+      -103.341792,
+      43.927216
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Contained Fire Edge",
+    "Label": "Held Edge",
+    "IsVisible": "Yes",
+    "MapMethod": "Infrared Image",
+    "GeometryID": "OR-LN-0008",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Held at 0214 MDT 7/28.",
+    "LengthMiles": 2.833
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.341792,
+      43.927216
+     ],
+     [
+      -103.347328,
+      43.925221
+     ],
+     [
+      -103.353293,
+      43.923758
+     ],
+     [
+      -103.35937,
+      43.922718
+     ],
+     [
+      -103.365037,
+      43.922314
+     ],
+     [
+      -103.368636,
+      43.923915
+     ],
+     [
+      -103.369347,
+      43.92879
+     ],
+     [
+      -103.367429,
+      43.933551
+     ],
+     [
+      -103.362545,
+      43.936924
+     ],
+     [
+      -103.355219,
+      43.9387
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Route",
+    "Label": "Storm Mountain Rd",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "OR-LN-0009",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "1.7 mi of winding FS road. Single lane with turnouts. THE access constraint \u2014 brief every resource on it.",
+    "LengthMiles": 1.845
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.302853,
+      43.922961
+     ],
+     [
+      -103.309805,
+      43.924148
+     ],
+     [
+      -103.317372,
+      43.924383
+     ],
+     [
+      -103.323896,
+      43.925039
+     ],
+     [
+      -103.329273,
+      43.927472
+     ],
+     [
+      -103.333424,
+      43.929413
+     ],
+     [
+      -103.334525,
+      43.932488
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Route",
+    "Label": "South Access",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "OR-LN-0010",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Longer, wider, slower.",
+    "LengthMiles": 2.852
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.302853,
+      43.922961
+     ],
+     [
+      -103.313862,
+      43.915474
+     ],
+     [
+      -103.325154,
+      43.912331
+     ],
+     [
+      -103.336526,
+      43.913851
+     ],
+     [
+      -103.345626,
+      43.917694
+     ],
+     [
+      -103.351986,
+      43.920999
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Escape Route",
+    "Label": "ER North",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "OR-LN-0011",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "DP 4 to the north ridge.",
+    "LengthMiles": 0.738
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.334525,
+      43.932488
+     ],
+     [
+      -103.328487,
+      43.935859
+     ],
+     [
+      -103.322225,
+      43.938381
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Escape Route",
+    "Label": "ER South",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "OR-LN-0012",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "DP 5 to SZ-2.",
+    "LengthMiles": 0.658
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.353366,
+      43.921851
+     ],
+     [
+      -103.351293,
+      43.917289
+     ],
+     [
+      -103.347655,
+      43.913357
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Division Break",
+    "Label": "Div A / Div Z",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "OR-LN-0013",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 1.668
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.368641,
+      43.937051
+     ],
+     [
+      -103.362693,
+      43.933111
+     ],
+     [
+      -103.3557,
+      43.929592
+     ],
+     [
+      -103.348421,
+      43.926517
+     ],
+     [
+      -103.340978,
+      43.923696
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Division Break",
+    "Label": "Div Z / Div M",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "OR-LN-0014",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 0.881
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.358414,
+      43.915829
+     ],
+     [
+      -103.354951,
+      43.922386
+     ],
+     [
+      -103.351274,
+      43.92748
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Branch Break",
+    "Label": "Branch I / Branch II",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "OR-LN-0015",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 1.417
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.364355,
+      43.944875
+     ],
+     [
+      -103.350652,
+      43.942181
+     ],
+     [
+      -103.33695,
+      43.939488
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Pump and Hose Lay",
+    "Label": "Draft 1 Lay",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "OR-LN-0016",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "From Draft 1 to the structure group. Two portable pumps.",
+    "LengthMiles": 0.701
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.321229,
+      43.928929
+     ],
+     [
+      -103.326285,
+      43.929708
+     ],
+     [
+      -103.331459,
+      43.930063
+     ],
+     [
+      -103.33512,
+      43.930372
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Fire Spread Direction",
+    "Label": "Predicted Spread",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Other",
+    "GeometryID": "OR-LN-0017",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Predicted op 3 spread, northeast.",
+    "LengthMiles": 0.972
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.358236,
+      43.930448
+     ],
+     [
+      -103.34735,
+      43.932954
+     ],
+     [
+      -103.33982,
+      43.935048
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Hand Line",
+    "Label": "H/L Coon Hollow",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Other",
+    "GeometryID": "OR-TR-0001",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from trail 'Coon Hollow' running within 75 m of the fire edge. Confirm with Ops before publishing.",
+    "LengthMiles": 0.049,
+    "DerivedFrom": "trail"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.338178,
+      43.931017
+     ],
+     [
+      -103.338053,
+      43.930797
+     ],
+     [
+      -103.337928,
+      43.930576
+     ],
+     [
+      -103.337803,
+      43.930356
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Road as Line",
+    "Label": "Road FS 231",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Other",
+    "GeometryID": "OR-RO-0001",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from road 'FS 231' running within 60 m of the fire edge. Confirm with Ops before publishing.",
+    "LengthMiles": 0.113,
+    "DerivedFrom": "road"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.369484,
+      43.924679
+     ],
+     [
+      -103.369321,
+      43.924477
+     ],
+     [
+      -103.369157,
+      43.924275
+     ],
+     [
+      -103.368994,
+      43.924072
+     ],
+     [
+      -103.36883,
+      43.92387
+     ],
+     [
+      -103.368667,
+      43.923668
+     ],
+     [
+      -103.368503,
+      43.923465
+     ],
+     [
+      -103.36834,
+      43.923263
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Contained Fire Edge",
+    "Label": "Contained",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "OR-ED-0001",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from perimeter and held line. OPS MUST CONFIRM before this is published.",
+    "LengthMiles": 0.161,
+    "DerivedFrom": "perimeter"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.368636,
+      43.923915
+     ],
+     [
+      -103.36867,
+      43.924147
+     ],
+     [
+      -103.368704,
+      43.924379
+     ],
+     [
+      -103.368738,
+      43.924611
+     ],
+     [
+      -103.368771,
+      43.924844
+     ],
+     [
+      -103.368805,
+      43.925076
+     ],
+     [
+      -103.368839,
+      43.925308
+     ],
+     [
+      -103.368873,
+      43.92554
+     ],
+     [
+      -103.368907,
+      43.925772
+     ],
+     [
+      -103.368941,
+      43.926004
+     ],
+     [
+      -103.368975,
+      43.926236
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Contained Fire Edge",
+    "Label": "Contained",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "OR-ED-0002",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from perimeter and held line. OPS MUST CONFIRM before this is published.",
+    "LengthMiles": 0.111,
+    "DerivedFrom": "perimeter"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.338208,
+      43.931709
+     ],
+     [
+      -103.338198,
+      43.931478
+     ],
+     [
+      -103.338188,
+      43.931248
+     ],
+     [
+      -103.338178,
+      43.931017
+     ],
+     [
+      -103.338359,
+      43.930827
+     ],
+     [
+      -103.338539,
+      43.930637
+     ],
+     [
+      -103.33872,
+      43.930447
+     ],
+     [
+      -103.338901,
+      43.930257
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Contained Fire Edge",
+    "Label": "Contained",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "OR-ED-0003",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from perimeter and held line. OPS MUST CONFIRM before this is published.",
+    "LengthMiles": 0.097,
+    "DerivedFrom": "perimeter"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.366975,
+      43.923176
+     ],
+     [
+      -103.367252,
+      43.923299
+     ],
+     [
+      -103.367529,
+      43.923422
+     ],
+     [
+      -103.367805,
+      43.923546
+     ],
+     [
+      -103.368082,
+      43.923669
+     ],
+     [
+      -103.368359,
+      43.923792
+     ],
+     [
+      -103.368636,
+      43.923915
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Uncontrolled Fire Edge",
+    "Label": "Uncontrolled",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "OR-ED-0004",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from perimeter and held line. OPS MUST CONFIRM before this is published.",
+    "LengthMiles": 2.384,
+    "DerivedFrom": "perimeter"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.369008,
+      43.926469
+     ],
+     [
+      -103.369042,
+      43.926701
+     ],
+     [
+      -103.369076,
+      43.926933
+     ],
+     [
+      -103.36911,
+      43.927165
+     ],
+     [
+      -103.369144,
+      43.927397
+     ],
+     [
+      -103.369178,
+      43.927629
+     ],
+     [
+      -103.369212,
+      43.927861
+     ],
+     [
+      -103.369245,
+      43.928094
+     ],
+     [
+      -103.369279,
+      43.928326
+     ],
+     [
+      -103.369313,
+      43.928558
+     ],
+     [
+      -103.369347,
+      43.92879
+     ],
+     [
+      -103.36926,
+      43.929006
+     ],
+     [
+      -103.369173,
+      43.929223
+     ],
+     [
+      -103.369085,
+      43.929439
+     ],
+     [
+      -103.368998,
+      43.929656
+     ],
+     [
+      -103.368911,
+      43.929872
+     ],
+     [
+      -103.368824,
+      43.930088
+     ],
+     [
+      -103.368737,
+      43.930305
+     ],
+     [
+      -103.36865,
+      43.930521
+     ],
+     [
+      -103.368562,
+      43.930738
+     ],
+     [
+      -103.368475,
+      43.930954
+     ],
+     [
+      -103.368388,
+      43.931171
+     ],
+     [
+      -103.368301,
+      43.931387
+     ],
+     [
+      -103.368214,
+      43.931603
+     ],
+     [
+      -103.368126,
+      43.93182
+     ],
+     [
+      -103.368039,
+      43.932036
+     ],
+     [
+      -103.367952,
+      43.932253
+     ],
+     [
+      -103.367865,
+      43.932469
+     ],
+     [
+      -103.367778,
+      43.932685
+     ],
+     [
+      -103.367691,
+      43.932902
+     ],
+     [
+      -103.367603,
+      43.933118
+     ],
+     [
+      -103.367516,
+      43.933335
+     ],
+     [
+      -103.367429,
+      43.933551
+     ],
+     [
+      -103.367196,
+      43.933712
+     ],
+     [
+      -103.366964,
+      43.933872
+     ],
+     [
+      -103.366731,
+      43.934033
+     ],
+     [
+      -103.366499,
+      43.934193
+     ],
+     [
+      -103.366266,
+      43.934354
+     ],
+     [
+      -103.366034,
+      43.934515
+     ],
+     [
+      -103.365801,
+      43.934675
+     ],
+     [
+      -103.365568,
+      43.934836
+     ],
+     [
+      -103.365336,
+      43.934997
+     ],
+     [
+      -103.365103,
+      43.935157
+     ],
+     [
+      -103.364871,
+      43.935318
+     ],
+     [
+      -103.364638,
+      43.935478
+     ],
+     [
+      -103.364406,
+      43.935639
+     ],
+     [
+      -103.364173,
+      43.9358
+     ],
+     [
+      -103.36394,
+      43.93596
+     ],
+     [
+      -103.363708,
+      43.936121
+     ],
+     [
+      -103.363475,
+      43.936282
+     ],
+     [
+      -103.363243,
+      43.936442
+     ],
+     [
+      -103.36301,
+      43.936603
+     ],
+     [
+      -103.362778,
+      43.936763
+     ],
+     [
+      -103.362545,
+      43.936924
+     ],
+     [
+      -103.36224,
+      43.936998
+     ],
+     [
+      -103.361935,
+      43.937072
+     ],
+     [
+      -103.361629,
+      43.937146
+     ],
+     [
+      -103.361324,
+      43.93722
+     ],
+     [
+      -103.361019,
+      43.937294
+     ],
+     [
+      -103.360714,
+      43.937368
+     ],
+     [
+      -103.360408,
+      43.937442
+     ],
+     [
+      -103.360103,
+      43.937516
+     ],
+     [
+      -103.359798,
+      43.93759
+     ],
+     [
+      -103.359493,
+      43.937664
+     ],
+     [
+      -103.359187,
+      43.937738
+     ],
+     [
+      -103.358882,
+      43.937812
+     ],
+     [
+      -103.358577,
+      43.937886
+     ],
+     [
+      -103.358272,
+      43.93796
+     ],
+     [
+      -103.357966,
+      43.938034
+     ],
+     [
+      -103.357661,
+      43.938108
+     ],
+     [
+      -103.357356,
+      43.938182
+     ],
+     [
+      -103.357051,
+      43.938256
+     ],
+     [
+      -103.356745,
+      43.93833
+     ],
+     [
+      -103.35644,
+      43.938404
+     ],
+     [
+      -103.356135,
+      43.938478
+     ],
+     [
+      -103.35583,
+      43.938552
+     ],
+     [
+      -103.355524,
+      43.938626
+     ],
+     [
+      -103.355219,
+      43.9387
+     ],
+     [
+      -103.354894,
+      43.938713
+     ],
+     [
+      -103.35457,
+      43.938727
+     ],
+     [
+      -103.354245,
+      43.93874
+     ],
+     [
+      -103.353921,
+      43.938753
+     ],
+     [
+      -103.353596,
+      43.938767
+     ],
+     [
+      -103.353272,
+      43.93878
+     ],
+     [
+      -103.352947,
+      43.938794
+     ],
+     [
+      -103.352623,
+      43.938807
+     ],
+     [
+      -103.352298,
+      43.93882
+     ],
+     [
+      -103.351974,
+      43.938834
+     ],
+     [
+      -103.351649,
+      43.938847
+     ],
+     [
+      -103.351324,
+      43.93886
+     ],
+     [
+      -103.351,
+      43.938874
+     ],
+     [
+      -103.350675,
+      43.938887
+     ],
+     [
+      -103.350351,
+      43.938901
+     ],
+     [
+      -103.350026,
+      43.938914
+     ],
+     [
+      -103.349702,
+      43.938927
+     ],
+     [
+      -103.349377,
+      43.938941
+     ],
+     [
+      -103.349053,
+      43.938954
+     ],
+     [
+      -103.348728,
+      43.938967
+     ],
+     [
+      -103.348404,
+      43.938981
+     ],
+     [
+      -103.348079,
+      43.938994
+     ],
+     [
+      -103.347763,
+      43.938945
+     ],
+     [
+      -103.347447,
+      43.938897
+     ],
+     [
+      -103.347131,
+      43.938848
+     ],
+     [
+      -103.346815,
+      43.938799
+     ],
+     [
+      -103.346499,
+      43.938751
+     ],
+     [
+      -103.346183,
+      43.938702
+     ],
+     [
+      -103.345867,
+      43.938653
+     ],
+     [
+      -103.345551,
+      43.938604
+     ],
+     [
+      -103.345235,
+      43.938556
+     ],
+     [
+      -103.344919,
+      43.938507
+     ],
+     [
+      -103.344603,
+      43.938458
+     ],
+     [
+      -103.344287,
+      43.93841
+     ],
+     [
+      -103.343971,
+      43.938361
+     ],
+     [
+      -103.343655,
+      43.938312
+     ],
+     [
+      -103.343339,
+      43.938264
+     ],
+     [
+      -103.343023,
+      43.938215
+     ],
+     [
+      -103.342707,
+      43.938166
+     ],
+     [
+      -103.342391,
+      43.938117
+     ],
+     [
+      -103.342075,
+      43.938069
+     ],
+     [
+      -103.341759,
+      43.93802
+     ],
+     [
+      -103.341558,
+      43.937839
+     ],
+     [
+      -103.341358,
+      43.937657
+     ],
+     [
+      -103.341157,
+      43.937476
+     ],
+     [
+      -103.340956,
+      43.937295
+     ],
+     [
+      -103.340755,
+      43.937113
+     ],
+     [
+      -103.340555,
+      43.936932
+     ],
+     [
+      -103.340354,
+      43.936751
+     ],
+     [
+      -103.340153,
+      43.936569
+     ],
+     [
+      -103.339953,
+      43.936388
+     ],
+     [
+      -103.339752,
+      43.936206
+     ],
+     [
+      -103.339551,
+      43.936025
+     ],
+     [
+      -103.33935,
+      43.935844
+     ],
+     [
+      -103.33915,
+      43.935662
+     ],
+     [
+      -103.338949,
+      43.935481
+     ],
+     [
+      -103.338748,
+      43.9353
+     ],
+     [
+      -103.338548,
+      43.935118
+     ],
+     [
+      -103.338347,
+      43.934937
+     ],
+     [
+      -103.338337,
+      43.934706
+     ],
+     [
+      -103.338327,
+      43.934476
+     ],
+     [
+      -103.338317,
+      43.934245
+     ],
+     [
+      -103.338307,
+      43.934015
+     ],
+     [
+      -103.338297,
+      43.933784
+     ],
+     [
+      -103.338287,
+      43.933553
+     ],
+     [
+      -103.338277,
+      43.933323
+     ],
+     [
+      -103.338267,
+      43.933092
+     ],
+     [
+      -103.338258,
+      43.932862
+     ],
+     [
+      -103.338248,
+      43.932631
+     ],
+     [
+      -103.338238,
+      43.932401
+     ],
+     [
+      -103.338228,
+      43.93217
+     ],
+     [
+      -103.338218,
+      43.931939
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Uncontrolled Fire Edge",
+    "Label": "Uncontrolled",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "OR-ED-0005",
+    "IncidentName": "Orange",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-29T04:15:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Derived from perimeter and held line. OPS MUST CONFIRM before this is published.",
+    "LengthMiles": 1.555,
+    "DerivedFrom": "perimeter"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.339082,
+      43.930067
+     ],
+     [
+      -103.339262,
+      43.929877
+     ],
+     [
+      -103.339443,
+      43.929687
+     ],
+     [
+      -103.339624,
+      43.929497
+     ],
+     [
+      -103.339804,
+      43.929307
+     ],
+     [
+      -103.339985,
+      43.929117
+     ],
+     [
+      -103.340166,
+      43.928926
+     ],
+     [
+      -103.340346,
+      43.928736
+     ],
+     [
+      -103.340527,
+      43.928546
+     ],
+     [
+      -103.340708,
+      43.928356
+     ],
+     [
+      -103.340889,
+      43.928166
+     ],
+     [
+      -103.341069,
+      43.927976
+     ],
+     [
+      -103.34125,
+      43.927786
+     ],
+     [
+      -103.341431,
+      43.927596
+     ],
+     [
+      -103.341611,
+      43.927406
+     ],
+     [
+      -103.341792,
+      43.927216
+     ],
+     [
+      -103.342083,
+      43.927111
+     ],
+     [
+      -103.342375,
+      43.927006
+     ],
+     [
+      -103.342666,
+      43.926901
+     ],
+     [
+      -103.342958,
+      43.926796
+     ],
+     [
+      -103.343249,
+      43.926691
+     ],
+     [
+      -103.34354,
+      43.926586
+     ],
+     [
+      -103.343832,
+      43.926481
+     ],
+     [
+      -103.344123,
+      43.926376
+     ],
+     [
+      -103.344414,
+      43.926271
+     ],
+     [
+      -103.344706,
+      43.926166
+     ],
+     [
+      -103.344997,
+      43.926061
+     ],
+     [
+      -103.345288,
+      43.925956
+     ],
+     [
+      -103.34558,
+      43.925851
+     ],
+     [
+      -103.345871,
+      43.925746
+     ],
+     [
+      -103.346163,
+      43.925641
+     ],
+     [
+      -103.346454,
+      43.925536
+     ],
+     [
+      -103.346745,
+      43.925431
+     ],
+     [
+      -103.347037,
+      43.925326
+     ],
+     [
+      -103.347328,
+      43.925221
+     ],
+     [
+      -103.347626,
+      43.925148
+     ],
+     [
+      -103.347925,
+      43.925075
+     ],
+     [
+      -103.348223,
+      43.925002
+     ],
+     [
+      -103.348521,
+      43.924928
+     ],
+     [
+      -103.348819,
+      43.924855
+     ],
+     [
+      -103.349118,
+      43.924782
+     ],
+     [
+      -103.349416,
+      43.924709
+     ],
+     [
+      -103.349714,
+      43.924636
+     ],
+     [
+      -103.350012,
+      43.924563
+     ],
+     [
+      -103.350311,
+      43.92449
+     ],
+     [
+      -103.350609,
+      43.924416
+     ],
+     [
+      -103.350907,
+      43.924343
+     ],
+     [
+      -103.351205,
+      43.92427
+     ],
+     [
+      -103.351504,
+      43.924197
+     ],
+     [
+      -103.351802,
+      43.924124
+     ],
+     [
+      -103.3521,
+      43.924051
+     ],
+     [
+      -103.352398,
+      43.923977
+     ],
+     [
+      -103.352697,
+      43.923904
+     ],
+     [
+      -103.352995,
+      43.923831
+     ],
+     [
+      -103.353293,
+      43.923758
+     ],
+     [
+      -103.353597,
+      43.923706
+     ],
+     [
+      -103.353901,
+      43.923654
+     ],
+     [
+      -103.354205,
+      43.923602
+     ],
+     [
+      -103.354508,
+      43.92355
+     ],
+     [
+      -103.354812,
+      43.923498
+     ],
+     [
+      -103.355116,
+      43.923446
+     ],
+     [
+      -103.35542,
+      43.923394
+     ],
+     [
+      -103.355724,
+      43.923342
+     ],
+     [
+      -103.356028,
+      43.92329
+     ],
+     [
+      -103.356332,
+      43.923238
+     ],
+     [
+      -103.356635,
+      43.923186
+     ],
+     [
+      -103.356939,
+      43.923134
+     ],
+     [
+      -103.357243,
+      43.923082
+     ],
+     [
+      -103.357547,
+      43.92303
+     ],
+     [
+      -103.357851,
+      43.922978
+     ],
+     [
+      -103.358155,
+      43.922926
+     ],
+     [
+      -103.358458,
+      43.922874
+     ],
+     [
+      -103.358762,
+      43.922822
+     ],
+     [
+      -103.359066,
+      43.92277
+     ],
+     [
+      -103.35937,
+      43.922718
+     ],
+     [
+      -103.359685,
+      43.922696
+     ],
+     [
+      -103.36,
+      43.922673
+     ],
+     [
+      -103.360315,
+      43.922651
+     ],
+     [
+      -103.360629,
+      43.922628
+     ],
+     [
+      -103.360944,
+      43.922606
+     ],
+     [
+      -103.361259,
+      43.922583
+     ],
+     [
+      -103.361574,
+      43.922561
+     ],
+     [
+      -103.361889,
+      43.922538
+     ],
+     [
+      -103.362204,
+      43.922516
+     ],
+     [
+      -103.362518,
+      43.922494
+     ],
+     [
+      -103.362833,
+      43.922471
+     ],
+     [
+      -103.363148,
+      43.922449
+     ],
+     [
+      -103.363463,
+      43.922426
+     ],
+     [
+      -103.363778,
+      43.922404
+     ],
+     [
+      -103.364093,
+      43.922381
+     ],
+     [
+      -103.364407,
+      43.922359
+     ],
+     [
+      -103.364722,
+      43.922336
+     ],
+     [
+      -103.365037,
+      43.922314
+     ],
+     [
+      -103.365314,
+      43.922437
+     ],
+     [
+      -103.365591,
+      43.92256
+     ],
+     [
+      -103.365868,
+      43.922683
+     ],
+     [
+      -103.366144,
+      43.922807
+     ],
+     [
+      -103.366421,
+      43.92293
+     ],
+     [
+      -103.366698,
+      43.923053
+     ]
+    ]
+   }
+  }
+ ],
+ "_derived_by": "scripts/derive_tactical.py"
+}

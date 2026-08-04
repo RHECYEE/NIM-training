@@ -4,7 +4,7 @@ The part nobody can download, and the part that makes the exercise about *this*
 place rather than a generic 10 × 10 box. Budget a day. Collect with Field Maps
 or a GPS unit, load into the Event GDB.
 
-The mock incident in `data/mock_incident/` already has placeholder features for
+The mock incident in `data/fixtures/<colour>/` already has placeholder features for
 all of this so the products can be built before anyone walks the ground. Replace
 the placeholders with real surveyed positions — that swap is itself a good
 exercise in what changes when the data gets real.

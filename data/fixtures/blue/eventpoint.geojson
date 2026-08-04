@@ -1,0 +1,1058 @@
+{
+ "type": "FeatureCollection",
+ "name": "EventPoint",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
+ "_fire": "Blue",
+ "_generated_by": "scripts/make_fires.py",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Incident Command Post",
+    "Label": "ICP",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0001",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Rockerville staging field. Exercise ICP."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.397422,
+     44.057758
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Camp",
+    "Label": "Camp 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0002",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Spike camp, 120 person capacity."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.396317,
+     44.060835
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Staging Area",
+    "Label": "Staging 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0003",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Engine staging off US-16."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.397429,
+     44.051894
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Helibase",
+    "Label": "Helibase",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0004",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Exercise helibase."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.370221,
+     44.044853
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Helispot",
+    "Label": "H-1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "BL-PT-0005",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Ridgetop. One ship at a time."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.452452,
+     44.020291
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Helispot",
+    "Label": "H-2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "BL-PT-0006",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Old landing. Dusty, needs water."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.396354,
+     44.010369
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Helispot",
+    "Label": "H-3",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "BL-PT-0007",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Saddle. Short-haul capable."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.40624,
+     44.030888
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0008",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "US-16 turnout.",
+    "DIVISION": "A"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.39642,
+     44.050345
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0009",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Storm Mountain Rd junction.",
+    "DIVISION": "A"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.401579,
+     44.039623
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 3",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0010",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Turnaround, type 6 and smaller past here.",
+    "DIVISION": "A"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.410536,
+     44.032341
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 4",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0011",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Div A anchor.",
+    "DIVISION": "A"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.423446,
+     44.029201
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 5",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0012",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Div Z anchor, south road.",
+    "DIVISION": "Z"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.41004,
+     44.003091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 6",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0013",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Dozer line tie-in, south flank.",
+    "DIVISION": "Z"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.417253,
+     43.987148
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 7",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0014",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "West end of completed line. Foot access only.",
+    "DIVISION": "M"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.44847,
+     43.993231
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Drop Point",
+    "Label": "DP 8",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0015",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency line, north.",
+    "DIVISION": "M"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.454815,
+     44.022816
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Dip Site",
+    "Label": "Dip 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "BL-PT-0016",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Stock pond. Verify depth each morning."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.480989,
+     44.012692
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Dip Site",
+    "Label": "Dip 2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "BL-PT-0017",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Adjacent to helibase."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.376656,
+     44.048668
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Draft Site",
+    "Label": "Draft 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0018",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Spring Creek. Screened intake required."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.408752,
+     44.042091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Hydrant",
+    "Label": "Hydrant 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0019",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Camp supply."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.396178,
+     44.059796
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Water Tank",
+    "Label": "Tank 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0020",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Training grounds 10,000 gal tank."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.41533,
+     44.027578
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Safety Zone",
+    "Label": "SZ-1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0021",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Meadow, 4 acres. Div A."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.419271,
+     44.019851
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Safety Zone",
+    "Label": "SZ-2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0022",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Old burn scar. Div Z."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.412545,
+     43.99315
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Lookout",
+    "Label": "LO-1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0023",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "North rim. Sees the head."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.443564,
+     44.029966
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Lookout",
+    "Label": "LO-2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0024",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "South, covers the dozer line."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.421836,
+     43.980586
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Repeater",
+    "Label": "RPT Storm",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0025",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Sited to cover the Coon Hollow dead zone."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.423964,
+     44.048355
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Mobile Weather Unit",
+    "Label": "IRAWS 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0026",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Exercise IRAWS."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.437172,
+     44.029702
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Point",
+    "Label": "AP-1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0027",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "US-16 at Storm Mountain Rd."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.385828,
+     44.05962
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Gate",
+    "Label": "Gate 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0028",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "FS gate. Combination with Div A."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.400497,
+     44.041543
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Gate",
+    "Label": "Gate 2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0029",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Locked, south road."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.406365,
+     44.003142
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Closure",
+    "Label": "Closure 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0030",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Storm Mountain Rd closed to public."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.397056,
+     44.047282
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Closure",
+    "Label": "Closure 2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0031",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "South road closed."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.38417,
+     44.015913
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Hazard",
+    "Label": "Mine 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0032",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Abandoned shaft, open. Uncovered, do not anchor line here."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.437708,
+     44.004258
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Hazard",
+    "Label": "Mine 2",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0033",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Abandoned adit and tailings."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.434664,
+     43.99572
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Hazard",
+    "Label": "Powerline",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Other",
+    "GeometryID": "BL-PT-0034",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Distribution line crossing."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.454113,
+     44.02853
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Hazard",
+    "Label": "Snags",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0035",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Heavy beetle-kill, standing dead."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.435336,
+     44.018987
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Medical Site",
+    "Label": "MED 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0036",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Line medic at DP 3. Ambulance interception point."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.410786,
+     44.031347
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Medivac Site",
+    "Label": "MEDIVAC 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Flight",
+    "GeometryID": "BL-PT-0037",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Co-located with H-3."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.40624,
+     44.030888
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Value at Risk",
+    "Label": "Training Grounds",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0038",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Storm Mountain Training Grounds \u2014 lodge, cabins, dining hall."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.415681,
+     44.028301
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Structure",
+    "Label": "Lodge",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0039",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Main lodge."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.415857,
+     44.028662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Structure",
+    "Label": "Dining Hall",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0040",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": ""
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.415831,
+     44.027704
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Structure",
+    "Label": "Cabin Row",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0041",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Six cabins."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.414304,
+     44.028482
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Spot Fire",
+    "Label": "Spot 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0042",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Quarter acre, north of the head. Held."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.430675,
+     44.032768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Point of Origin",
+    "Label": "Origin",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "BL-PT-0043",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Exercise origin. Secured."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.429507,
+     43.997167
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Sign",
+    "Label": "Sign 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0044",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Fire traffic sign, US-16."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.396889,
+     44.050332
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Internet Access",
+    "Label": "Starlink 1",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "BL-PT-0045",
+    "IncidentName": "Blue",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-08-01T03:50:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "ICP."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -103.397404,
+     44.058097
+    ]
+   }
+  }
+ ]
+}

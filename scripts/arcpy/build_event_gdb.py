@@ -109,8 +109,9 @@ def main() -> int:
 
     arcpy.AddMessage("\nNext:")
     arcpy.AddMessage("  1. Repair the Event .lyrx paths to point at this GDB so symbology comes through.")
-    arcpy.AddMessage("  2. python scripts/arcpy/load_mock_incident.py --gdb " + gdb)
-    arcpy.AddMessage("\n" + json.loads((ROOT / "config" / "incident.json").read_text())["watermark"])
+    arcpy.AddMessage("  2. Draw the fires — see docs/10-digitizing-guide.md.")
+    arcpy.AddMessage("  3. python scripts/arcpy/load_incident.py --gdb " + gdb + " --all")
+    arcpy.AddMessage("\nTRAINING EXERCISE — NOT AN ACTUAL INCIDENT")
     return 0
 
 
