@@ -22,9 +22,7 @@ the fire is**, **which trail segments are line**, and **the drop point numbers**
 
 ## Before you start
 
-```powershell
-.\Start-StormMountain.ps1 -OpenPro
-```
+Double-click **`START.cmd`**.
 
 That does all of it: folder tree, base data, the leased property's 12 parcels,
 the Event geodatabase, and an `.aprx` with every layer loaded, the map already

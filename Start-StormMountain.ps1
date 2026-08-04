@@ -34,6 +34,10 @@
     .\Start-StormMountain.ps1
 
 .EXAMPLE
+    Double-click START.cmd - the normal way to run this. It wraps this script
+    so Windows' default execution policy does not block it.
+
+.EXAMPLE
     .\Start-StormMountain.ps1 -OpenPro
 
 .EXAMPLE

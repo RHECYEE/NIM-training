@@ -54,16 +54,26 @@ definition queries, and the scripts that keep the numbers honest.
 
 Prove the pipeline works before drawing anything real:
 
-```powershell
-# Windows, with ArcGIS Pro installed - this is the whole thing:
-.\Start-StormMountain.ps1 -OpenPro
+```
+git clone https://github.com/RHECYEE/NIM-training.git
 ```
 
-That fetches the base data and the leased parcels, builds the Event
-geodatabase, converts everything into a geodatabase, builds an `.aprx` with
-every layer loaded and the map already in UTM 13N, and opens it. One manual
-step remains: repairing the Event `.lyrx` paths from the GeoOps template so the
-official symbology comes through.
+then **double-click `START.cmd`**. That is the whole thing.
+
+(`START.cmd` wraps the PowerShell so Windows' default execution policy does not
+block it. From a prompt, `START.cmd -Force` and the other switches work too.)
+
+It fetches the base data and the leased parcels, builds the Event geodatabase,
+converts everything into feature classes, builds an `.aprx` with every layer
+loaded and the map already in UTM 13N, and opens ArcGIS Pro on it.
+
+**Two things it cannot do for you:**
+
+1. **Repair the Event `.lyrx` paths** from the GeoOps template to your Event
+   geodatabase. Manual, in Pro. Skip it and you hand-style every feature.
+2. **Download the DEM.** It is an interactive bulk download from the National
+   Map. You do not need it to draw — only to derive hillshade and contours for
+   the finished products.
 
 Or run the pieces by hand:
 
