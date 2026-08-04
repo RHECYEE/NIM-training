@@ -54,6 +54,19 @@ definition queries, and the scripts that keep the numbers honest.
 
 Prove the pipeline works before drawing anything real:
 
+```powershell
+# Windows, with ArcGIS Pro installed - this is the whole thing:
+.\Start-StormMountain.ps1 -OpenPro
+```
+
+That fetches the base data and the leased parcels, builds the Event
+geodatabase, converts everything into a geodatabase, builds an `.aprx` with
+every layer loaded and the map already in UTM 13N, and opens it. One manual
+step remains: repairing the Event `.lyrx` paths from the GeoOps template so the
+official symbology comes through.
+
+Or run the pieces by hand:
+
 ```bash
 python3 scripts/make_aoi.py                            # AOI extents in both CRSs
 python3 scripts/make_fires.py                          # throwaway test fixtures
@@ -66,6 +79,7 @@ Then, in the ArcGIS Pro Python environment:
 
 ```
 python scripts\arcpy\build_event_gdb.py   --dest <incident>\incident_data
+python scripts\arcpy\build_project.py     --incident <incident>
 python scripts\arcpy\derive_terrain.py    --dem <dem.tif> --out <incident>\base_data\elevation
                                           ... draw the seven fires ...
 python scripts\arcpy\derive_tactical.py   --gdb <...>\event.gdb --fire Red ^

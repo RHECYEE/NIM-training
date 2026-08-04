@@ -22,16 +22,22 @@ the fire is**, **which trail segments are line**, and **the drop point numbers**
 
 ## Before you start
 
-1. Extract the GeoOps template, set the map CRS to **EPSG:26913**
-   ([01-setup.md](01-setup.md)).
-2. Load base data per [02-base-data.md](02-base-data.md) — you specifically need
-   USFS trails and roads, because the derivation reads them.
-3. Build the Event geodatabase:
-   ```
-   python scripts\arcpy\build_event_gdb.py --dest <incident>\incident_data
-   ```
-4. Repair the Event `.lyrx` paths so symbology and feature templates come
-   through. Skipping this is what makes digitizing miserable.
+```powershell
+.\Start-StormMountain.ps1 -OpenPro
+```
+
+That does all of it: folder tree, base data, the leased property's 12 parcels,
+the Event geodatabase, and an `.aprx` with every layer loaded, the map already
+in EPSG:26913, and the Event layers on top ready to edit.
+
+**One manual step it cannot do for you:** repair the Event `.lyrx` paths from
+the GeoOps template to your Event geodatabase, so the official symbology and
+feature templates come through. Skipping that is what makes digitizing
+miserable — you end up hand-styling features one at a time.
+
+Read [11-leased-property.md](11-leased-property.md) once before you draw. The
+fire district boundary runs through the property, which affects where a
+sensible division break goes.
 
 ## Draw once: the static layer
 

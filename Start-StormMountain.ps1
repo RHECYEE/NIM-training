@@ -11,8 +11,9 @@
      3b. Fetches the leased property's 12 parcels from the county
       4. Regenerates the AOI definition
       5. Builds the blank Event geodatabase with the correct schema and domains
-      6. Runs the whole pipeline against the test fixtures so you have seen it work
-      7. Tells you exactly what to do next
+      6. Builds an ArcGIS Pro project with every layer loaded and the CRS set
+      7. Runs the whole pipeline against the test fixtures so you have seen it work
+      8. Tells you exactly what to do next
 
     Everything is idempotent. Run it again any time; it skips what is already done.
 
@@ -24,10 +25,16 @@
     Do not hit the network. Use the base data already on disk.
 
 .PARAMETER Force
-    Refetch base data even if it is already downloaded.
+    Refetch base data and rebuild the Pro project even if they already exist.
+
+.PARAMETER OpenPro
+    Launch ArcGIS Pro on the finished project when everything is done.
 
 .EXAMPLE
     .\Start-StormMountain.ps1
+
+.EXAMPLE
+    .\Start-StormMountain.ps1 -OpenPro
 
 .EXAMPLE
     .\Start-StormMountain.ps1 -IncidentRoot C:\fire -Force
@@ -40,7 +47,8 @@
 param(
     [string]$IncidentRoot,
     [switch]$SkipFetch,
-    [switch]$Force
+    [switch]$Force,
+    [switch]$OpenPro
 )
 
 $ErrorActionPreference = 'Stop'
@@ -186,8 +194,31 @@ if (-not $ProPython) {
     else { Write-Bad "Event geodatabase build failed." }
 }
 
-# ---------------------------------------------------------------- 6. Dry run --
-Write-Step 6 "Pipeline dry run against the test fixtures"
+# ----------------------------------------------------------- 6. Pro project --
+Write-Step 6 "ArcGIS Pro project"
+
+$Aprx = Join-Path $IncidentDir "projects\StormMountain.aprx"
+
+if (-not $ProPython) {
+    Write-Warn2 "Skipped - needs arcpy. You will have to add the layers by hand."
+} elseif ((Test-Path $Aprx) -and -not $Force) {
+    Write-Ok "Already exists: $Aprx"
+    Write-Note "Pass -Force to rebuild it from the fetched data."
+} else {
+    $projArgs = @((Join-Path $RepoRoot 'scripts\arcpy\build_project.py'), '--incident', $IncidentDir)
+    if ($Force) { $projArgs += '--overwrite' }
+    & $ProPython @projArgs
+    if ($LASTEXITCODE -eq 0) {
+        Write-Ok "Built: $Aprx"
+        Write-Note "Base data converted to a geodatabase, map already in UTM 13N,"
+        Write-Note "layers loaded in draw order, Event layers on top ready to edit."
+    } else {
+        Write-Bad "Project build failed. Add the layers by hand, or check the output above."
+    }
+}
+
+# ---------------------------------------------------------------- 7. Dry run --
+Write-Step 7 "Pipeline dry run against the test fixtures"
 Write-Note "Throwaway geometry. Proves the pipeline works before you draw anything real."
 
 & $AnyPython (Join-Path $RepoRoot 'scripts\make_fires.py') | Out-Null
@@ -196,8 +227,8 @@ Write-Note "Throwaway geometry. Proves the pipeline works before you draw anythi
 if ($LASTEXITCODE -eq 0) { Write-Ok "Pipeline healthy." }
 else { Write-Bad "Validation failed on the fixtures - fix this before drawing." }
 
-# ------------------------------------------------------------------ 7. Next --
-Write-Step 7 "What to do next"
+# ------------------------------------------------------------------ 8. Next --
+Write-Step 8 "What to do next"
 
 $trails = Join-Path $BaseData 'trails.geojson'
 $roads  = Join-Path $BaseData 'roads.geojson'
@@ -214,10 +245,12 @@ Write-Host @"
        Then:
        & '$ProPython' '$RepoRoot\scripts\arcpy\derive_terrain.py' --dem <dem.tif> --out '$BaseData\elevation'
 
-    3. Open ArcGIS Pro. Set the map CRS to NAD 1983 UTM Zone 13N (EPSG:26913)
-       BEFORE you digitize anything, or your acreage will be wrong.
-       Repair the Event .lyrx paths to point at:
-       $EventGdb
+    3. Open the project. Everything is already loaded and the map is in UTM 13N:
+       $Aprx
+
+       One thing still manual: repair the Event .lyrx paths from the GeoOps
+       template to point at $EventGdb, so the official symbology and feature
+       templates come through.
 
     4. Draw the seven fires. Open this and work from it:
        $RepoRoot\docs\10-digitizing-guide.md
@@ -253,7 +286,13 @@ if ($script:Failures.Count -gt 0) {
     exit 1
 }
 
+if ($OpenPro -and (Test-Path $Aprx)) {
+    Write-Host "  Opening ArcGIS Pro..." -ForegroundColor Cyan
+    Start-Process $Aprx
+}
+
 Write-Host "  Ready. Incident root: $IncidentDir" -ForegroundColor Green
+if (Test-Path $Aprx) { Write-Host "  Project: $Aprx" -ForegroundColor Green }
 Write-Host "  TRAINING EXERCISE - NOT AN ACTUAL INCIDENT" -ForegroundColor Yellow
 Write-Host "  Never sync this to NIFS or NIFC AGOL. No real IRWIN ID, ever." -ForegroundColor Yellow
 Write-Host ""
