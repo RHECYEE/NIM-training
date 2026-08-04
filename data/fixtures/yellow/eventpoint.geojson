@@ -176,7 +176,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 1",
+    "Label": "DP 100",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0008",
@@ -186,7 +186,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "US-16 turnout.",
-    "DIVISION": "A"
+    "DIVISION": "A",
+    "DropPointNumber": 100
    },
    "geometry": {
     "type": "Point",
@@ -200,7 +201,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 2",
+    "Label": "DP 101",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0009",
@@ -210,7 +211,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "Storm Mountain Rd junction.",
-    "DIVISION": "A"
+    "DIVISION": "A",
+    "DropPointNumber": 101
    },
    "geometry": {
     "type": "Point",
@@ -224,7 +226,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 3",
+    "Label": "DP 102",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0010",
@@ -234,7 +236,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "Turnaround, type 6 and smaller past here.",
-    "DIVISION": "A"
+    "DIVISION": "A",
+    "DropPointNumber": 102
    },
    "geometry": {
     "type": "Point",
@@ -248,7 +251,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 4",
+    "Label": "DP 103",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0011",
@@ -258,7 +261,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "Div A anchor.",
-    "DIVISION": "A"
+    "DIVISION": "A",
+    "DropPointNumber": 103
    },
    "geometry": {
     "type": "Point",
@@ -272,7 +276,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 5",
+    "Label": "DP 120",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0012",
@@ -282,7 +286,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "Div Z anchor, south road.",
-    "DIVISION": "Z"
+    "DIVISION": "Z",
+    "DropPointNumber": 120
    },
    "geometry": {
     "type": "Point",
@@ -296,7 +301,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 6",
+    "Label": "DP 121",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0013",
@@ -306,7 +311,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "Dozer line tie-in, south flank.",
-    "DIVISION": "Z"
+    "DIVISION": "Z",
+    "DropPointNumber": 121
    },
    "geometry": {
     "type": "Point",
@@ -320,7 +326,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 7",
+    "Label": "DP 231",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Walked",
     "GeometryID": "YE-PT-0014",
@@ -330,7 +336,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "West end of completed line. Foot access only.",
-    "DIVISION": "M"
+    "DIVISION": "M",
+    "DropPointNumber": 231
    },
    "geometry": {
     "type": "Point",
@@ -344,7 +351,7 @@
    "type": "Feature",
    "properties": {
     "FeatureCategory": "Drop Point",
-    "Label": "DP 8",
+    "Label": "DP 230",
     "IsVisible": "Yes",
     "MapMethod": "GPS-Driven",
     "GeometryID": "YE-PT-0015",
@@ -354,7 +361,8 @@
     "CreateDate": "2026-07-30T04:05:00-06:00",
     "DeleteThis": "No",
     "Comments": "Contingency line, north.",
-    "DIVISION": "M"
+    "DIVISION": "M",
+    "DropPointNumber": 230
    },
    "geometry": {
     "type": "Point",
@@ -1054,5 +1062,6 @@
     ]
    }
   }
- ]
+ ],
+ "_derived_by": "scripts/derive_tactical.py"
 }

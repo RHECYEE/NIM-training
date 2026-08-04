@@ -1,0 +1,109 @@
+# Live ArcGIS REST endpoints that scripts/fetch_base_data.py pulls for the AOI.
+#
+# Every URL here was probed against the Storm Mountain AOI and returned real
+# Black Hills data. They are public services — no token, no login.
+#
+# NOT everything in config/sources.yml is here. Elevation (3DEP LiDAR), NAIP and
+# LANDFIRE are bulk raster downloads with interactive selection or staged
+# ordering; they cannot be pulled from a query endpoint and you fetch them by
+# hand. This file covers the vector layers, which is the part that would
+# otherwise be an hour of clicking.
+#
+# Field names come back LOWERCASE from these services (trail_name, surface_type),
+# which is not what the Esri REST field list shows. The derivation config accounts
+# for that by matching field names case-insensitively.
+
+defaults:
+  out_sr: 4326
+  format: geojson
+  page_size: 1000        # services cap at 1000-2000; the fetcher pages past it
+  timeout_seconds: 120
+
+layers:
+
+  - id: trails
+    name: USFS Trails (TrailNFS Publish)
+    url: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0
+    out: trails.geojson
+    required: true
+    note: >-
+      The derivation reads this to turn trail segments on the fire edge into
+      hand line. Key fields: trail_name, security_id, trail_surface.
+
+  - id: roads
+    name: USFS Roads (RoadBasic — National Forest System Roads)
+    url: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RoadBasic_01/MapServer/0
+    out: roads.geojson
+    required: true
+    note: >-
+      Key fields: name, id, surface_type, oper_maint_level. Both attributes come
+      back as "CODE - DESCRIPTION" ("NAT - NATIVE MATERIAL"), not a bare code,
+      which is why the transportation symbology queries use LIKE and not =.
+
+  - id: roads_closed
+    name: USFS Roads closed to motorized use
+    url: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_RoadBasic_01/MapServer/1
+    out: roads_closed.geojson
+    required: false
+
+  - id: ownership
+    name: USFS Basic Ownership
+    url: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_BasicOwnership_01/MapServer/0
+    out: ownership.geojson
+    required: true
+    note: Fields ownerclassification, forestname. Drives the `owner` product.
+
+  - id: plss_section
+    name: PLSS Sections
+    url: https://gis.blm.gov/arcgis/rest/services/Cadastral/BLM_Natl_PLSS_CadNSDI/MapServer/2
+    out: plss_section.geojson
+    required: true
+    note: Section corners are how ground resources describe locations over the radio.
+
+  - id: plss_township
+    name: PLSS Townships
+    url: https://gis.blm.gov/arcgis/rest/services/Cadastral/BLM_Natl_PLSS_CadNSDI/MapServer/1
+    out: plss_township.geojson
+    required: false
+
+  - id: nhd_flowline
+    name: NHD Flowlines (large scale)
+    url: https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6
+    out: nhd_flowline.geojson
+    required: true
+    note: Spring Creek. Drives the retardant avoidance corridor and the draft site.
+
+  - id: nhd_waterbody
+    name: NHD Waterbodies (large scale)
+    url: https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/12
+    out: nhd_waterbody.geojson
+    required: false
+    note: Candidate dip sites.
+
+  - id: nhd_area
+    name: NHD Areas (large scale)
+    url: https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/9
+    out: nhd_area.geojson
+    required: false
+
+manual_downloads:
+  note: >-
+    These cannot be fetched from a query endpoint. Get them by hand, drop them in
+    base_data/, and everything else in the pipeline works without them.
+  items:
+    - name: DEM — 1 m QL1/QL2 LiDAR (or 1/3 arc-second)
+      url: https://apps.nationalmap.gov/downloader/
+      why: Hillshade, 40 ft contours, slope and aspect all derive from it.
+      then: scripts/arcpy/derive_terrain.py --dem <dem.tif> --out base_data/elevation
+    - name: NAIP orthoimagery
+      url: https://apps.nationalmap.gov/downloader/
+      why: Alternate basemap, structure verification.
+    - name: LANDFIRE FBFM40, canopy cover, canopy base height
+      url: https://landfire.gov/
+      why: Fire-behavior injects. Optional.
+    - name: FEMA USA Structures
+      url: https://gis-fema.hub.arcgis.com/
+      why: Structure footprints for values at risk.
+    - name: Pennington County parcels and 911 addressing
+      url: https://www.pennco.org/
+      why: Private ownership detail the USFS layer does not carry.

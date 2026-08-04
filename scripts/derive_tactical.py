@@ -73,8 +73,14 @@ def utm_to_lonlat(pts):
 
 
 def first_attr(props, names):
+    """Case-insensitive attribute lookup.
+
+    The USFS and BLM services return lowercase field names (trail_name), while
+    the Esri field list and anything you add by hand in Pro is usually upper.
+    Matching exactly would silently label every derived feature 'Unnamed'."""
+    lowered = {k.lower(): v for k, v in props.items()}
     for n in names:
-        v = props.get(n)
+        v = lowered.get(n.lower())
         if v not in (None, ""):
             return str(v)
     return None
@@ -118,7 +124,7 @@ def derive_line_features(features, perimeter_utm, rules, fire, kind):
             continue
         props = feat.get("properties", {})
 
-        override = (props.get(override_field) or "").strip().lower() if override_field else ""
+        override = (first_attr(props, [override_field]) or "").strip().lower() if override_field else ""
         if override in overrides:
             category = overrides[override]
             if category is None:

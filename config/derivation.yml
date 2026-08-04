@@ -37,11 +37,15 @@ trails_to_hand_line:
   # An explicit value in this field on the trail feature always wins over the
   # proximity rule — set it when the automatic answer is wrong.
   override_field: LINE_STATUS
+  override_field_note: >-
+    Matched case-insensitively. These services return lowercase field names, so
+    a field you add in Pro as LINE_STATUS and one that arrives as line_status
+    both work.
   override_values:
     completed: Completed Hand Line
     proposed: Proposed Hand Line
     none: null        # force this segment to stay a trail
-  label_from: [TRAIL_NAME, TRAIL_NO, NAME]
+  label_from: [trail_name, TRAIL_NAME, trail_no, TRAIL_NO, name, NAME]
   label_prefix: "H/L"
 
 roads_to_line:
@@ -57,7 +61,7 @@ roads_to_line:
     completed: Completed Road as Line
     proposed: Proposed Road as Line
     none: null
-  label_from: [NAME, RTE_CN, ID]
+  label_from: [name, NAME, id, ID, rte_cn, RTE_CN]
   label_prefix: "Road"
 
 fire_edge:

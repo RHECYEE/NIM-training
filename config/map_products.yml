@@ -207,13 +207,20 @@ products:
       EventLine: "FeatureCategory IN ('Access Route','Division Break')"
       EventPolygon: "FeatureCategory IN ('Wildfire Daily Fire Perimeter','Closure Area')"
     road_symbology:
-      note: Symbolize on the USFS road attributes, not one flat line style.
+      note: >-
+        Symbolize on the USFS road attributes, not one flat line style. These
+        queries use LIKE because the service returns "CODE - DESCRIPTION"
+        ("NAT - NATIVE MATERIAL"), not a bare code. Values below are the ones
+        that actually occur in this AOI — verified against the fetched data,
+        not copied from the Esri field list.
       classes:
-        - {label: Paved, query: "SURFACE_TYPE IN ('AC','BST','PCC')"}
-        - {label: Gravel / improved, query: "SURFACE_TYPE IN ('AGG','GRA')"}
-        - {label: Dirt / native surface, query: "SURFACE_TYPE IN ('NAT','DIRT')"}
-        - {label: High clearance / 4WD only, query: "OPER_MAINT_LEVEL LIKE '2%'"}
-        - {label: Closed to public, query: "OPER_MAINT_LEVEL LIKE '1%'"}
+        - {label: Paved, query: "surface_type LIKE 'AC%'"}
+        - {label: Gravel, query: "surface_type LIKE 'AGG%'"}
+        - {label: Improved native, query: "surface_type LIKE 'IMP%'"}
+        - {label: Native surface / dirt, query: "surface_type LIKE 'NAT%'"}
+        - {label: Passenger car, query: "oper_maint_level LIKE '3%' OR oper_maint_level LIKE '4%'"}
+        - {label: High clearance / 4WD only, query: "oper_maint_level LIKE '2%'"}
+        - {label: Closed to motorized use, query: "from roads_closed.geojson — a separate layer, not an attribute"}
 
   progression:
     title: Fire Progression
