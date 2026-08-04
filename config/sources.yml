@@ -1,0 +1,205 @@
+# Base-data acquisition manifest for the Storm Mountain AOI.
+#
+# Clip everything to config/aoi.json -> extent_utm_26913, plus the 2 mile
+# download buffer. Reproject to EPSG:26913 on ingest, not later — a project
+# with eleven source CRSs will bite you at export time.
+#
+# Nothing in this file is incident data. All of it is real public data about a
+# real place; the fabricated exercise lives in data/mock_incident/.
+
+aoi_ref: config/aoi.json
+target_crs: EPSG:26913
+landing_dir: base_data/
+
+groups:
+
+  terrain:
+    - id: dem
+      name: DEM — 1 m LiDAR (QL1/QL2) preferred, 1/3 arc-second fallback
+      source: USGS National Map
+      url: https://apps.nationalmap.gov/downloader/
+      dataset: Elevation Products (3DEP)
+      notes: >-
+        The Black Hills has 1 m LiDAR coverage. Take it if it is there — 40 ft
+        contours off a 1/3 arc-second DEM in this terrain look mushy, and the
+        exercise is partly about reading slope.
+      required: true
+
+    - id: hillshade
+      name: Hillshade
+      derived_from: dem
+      tool: Spatial Analyst > Hillshade
+      parameters: {azimuth: 315, altitude: 45, z_factor: 1}
+      script: scripts/arcpy/derive_terrain.py
+      required: true
+
+    - id: contours
+      name: Contours — 40 ft intermediate / 200 ft index
+      derived_from: dem
+      tool: Spatial Analyst > Contour
+      script: scripts/arcpy/derive_terrain.py
+      notes: >-
+        Generate in feet. If the DEM is in metres, convert first or your
+        interval is wrong by a factor of 3.28.
+      required: true
+
+    - id: slope
+      name: Slope (percent)
+      derived_from: dem
+      tool: Spatial Analyst > Slope
+      script: scripts/arcpy/derive_terrain.py
+      required: false
+      used_for: fire-behavior scenario injects
+
+    - id: aspect
+      name: Aspect
+      derived_from: dem
+      tool: Spatial Analyst > Aspect
+      script: scripts/arcpy/derive_terrain.py
+      required: false
+
+    - id: naip
+      name: NAIP orthoimagery
+      source: USGS National Map / USFS data hub
+      url: https://apps.nationalmap.gov/downloader/
+      required: false
+      used_for: alternate basemap, structure verification
+
+    - id: ustopo
+      name: USGS US Topo (vector / GeoPDF)
+      source: USGS National Map
+      url: https://apps.nationalmap.gov/downloader/
+      required: false
+      notes: Fastest way to get a base that reads like a quad.
+
+  transportation:
+    - id: usfs_roads
+      name: USFS Roads (INFRA RoadCore) — surface type and maintenance level
+      source: USFS Enterprise Data Warehouse
+      url: https://data-usfs.hub.arcgis.com/
+      required: true
+      notes: >-
+        SURFACE_TYPE and OPER_MAINT_LEVEL are what the transportation product
+        symbolizes on. Keep both fields through the clip.
+
+    - id: mvum
+      name: Motor Vehicle Use Map — Black Hills NF
+      source: USFS EDW / Black Hills NF
+      url: https://data-usfs.hub.arcgis.com/
+      required: true
+      notes: Tells you what a vehicle is actually allowed on, which the road layer does not.
+
+    - id: usfs_trails
+      name: USFS Trails (TrailNFS_Publish)
+      source: USFS data hub
+      url: https://data-usfs.hub.arcgis.com/
+      required: true
+
+    - id: sd_roads
+      name: State and county roads
+      source: SD DOT GIS
+      url: https://dot.sd.gov/inside-sddot/forms-publications/maps/gis/
+      required: true
+
+    - id: county_roads
+      name: Local roads and 911 addressing
+      source: Pennington County GIS
+      required: false
+
+  hydrography:
+    - id: nhd
+      name: NHD flowlines and waterbodies
+      source: USGS National Map
+      url: https://apps.nationalmap.gov/downloader/
+      required: true
+
+    - id: wbd
+      name: Watershed boundaries (WBD, HUC12)
+      source: USGS National Map
+      required: false
+
+  ownership:
+    - id: sma
+      name: Surface Management Agency
+      source: BLM National Data / NIFC AGOL
+      required: true
+      notes: Drives the ownership backdrop on the ops product.
+
+    - id: usfs_admin
+      name: USFS Administrative Forest and Ranger District boundaries
+      source: USFS data hub
+      url: https://data-usfs.hub.arcgis.com/
+      required: true
+
+    - id: plss
+      name: PLSS — township, range, section
+      source: USGS National Map
+      required: true
+      notes: Section corners are how ground resources will describe locations to you.
+
+    - id: parcels
+      name: Parcels
+      source: Pennington County GIS
+      required: false
+
+    - id: jurisdictional_unit
+      name: Jurisdictional Unit (fire protection responsibility)
+      source: NIFC Open Data
+      required: true
+
+  fuels:
+    - id: landfire_fbfm40
+      name: LANDFIRE FBFM40 (Scott and Burgan 40)
+      source: LANDFIRE
+      url: https://landfire.gov/
+      required: false
+      used_for: fire-behavior injects
+
+    - id: landfire_canopy
+      name: LANDFIRE canopy cover and canopy base height
+      source: LANDFIRE
+      url: https://landfire.gov/
+      required: false
+
+    - id: historic_perimeters
+      name: Historic fire perimeters
+      source: NIFC Open Data
+      required: false
+      notes: >-
+        Useful context and a good sanity check — if your exercise perimeter
+        overlaps a real recent burn scar, the fuels story does not hold up.
+
+    - id: raws
+      name: RAWS locations
+      source: NIFC / MesoWest
+      required: false
+
+  values_at_risk:
+    - id: usa_structures
+      name: USA Structures footprints
+      source: FEMA
+      required: true
+
+    - id: hifld_power
+      name: Powerlines and substations
+      source: HIFLD Open
+      required: false
+
+    - id: site_survey
+      name: Camp buildings, tanks, hydrants, gates, helispots, mine hazards
+      source: FIELD COLLECTION — see docs/06-field-collection.md
+      required: true
+      notes: >-
+        This is the part nobody can download and the part that makes the
+        exercise site-specific. Budget a day.
+
+  statewide:
+    - id: sd_hub
+      name: South Dakota open data hub
+      source: ArcGIS Hub
+      required: false
+    - id: sdgs
+      name: SD Geological Survey digital data
+      url: https://www.sdgs.usd.edu/digitaldata/default.aspx
+      required: false
+      notes: Best available source for the abandoned mine workings in this AOI.

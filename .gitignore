@@ -1,0 +1,31 @@
+# Incident working data — never commit an Event geodatabase.
+*.gdb/
+*.sde
+*.aprx
+*.lyrx
+base_data/
+incident_data/
+products/
+projects/
+
+# Exported products. Regenerate them; do not version them.
+*.pdf
+*.tif
+*.tif.aux.xml
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

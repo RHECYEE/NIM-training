@@ -1,0 +1,138 @@
+{
+  "_comment": "Training schema modeled on the NWCG Event geodatabase (Event Point / Event Line / Event Polygon).",
+  "_authoritative_source": {
+    "note": "The blank Event GDB shipped inside the GeoOps Incident Directory Structure is the authority. If you have it, USE IT and treat this file as documentation only. This file exists so the validator and the mock-data generator have something to check against before anyone has downloaded the template, and so a Python-only box can lint the exercise data.",
+    "template": "https://www.nwcg.gov/page/geospatial-training-unit-tools",
+    "standard": "https://www.nwcg.gov/publications/pms936/nwcg-standards-for-geospatial-operations-pms-936"
+  },
+  "_domain_verification": {
+    "note": "FeatureCategory domains are revised annually. Verify this list against the PMS 936 symbology pages before you finalize a legend or print a key.",
+    "point": "https://www.nwcg.gov/publications/pms936/symbology/pms-936-point-feature-symbology",
+    "line": "https://www.nwcg.gov/publications/pms936/pms-936-symbology-event-line",
+    "polygon": "https://www.nwcg.gov/publications/pms936/symbology/pms-936-polygon-feature-symbology"
+  },
+
+  "common_fields": [
+    {"name": "FeatureCategory", "type": "TEXT", "length": 100, "nullable": false, "domain": "per feature class", "description": "Drives symbology. This is the field the .lyrx renders on. Get it wrong and the feature draws as a grey dot."},
+    {"name": "Label", "type": "TEXT", "length": 100, "nullable": true, "description": "What the annotation shows: 'DP 5', 'H-2', 'Div A'."},
+    {"name": "IsVisible", "type": "TEXT", "length": 5, "nullable": false, "domain": "YesNo", "default": "Yes", "description": "No hides the feature without deleting it. Use this, not deletion, when a drop point goes cold."},
+    {"name": "MapMethod", "type": "TEXT", "length": 50, "nullable": true, "domain": "MapMethod", "description": "How the geometry was captured. Feeds the source statement."},
+    {"name": "GeometryID", "type": "TEXT", "length": 50, "nullable": true, "description": "Stable per-feature identifier that survives an edit session."},
+    {"name": "IncidentName", "type": "TEXT", "length": 100, "nullable": true},
+    {"name": "IRWINID", "type": "TEXT", "length": 50, "nullable": true, "description": "MUST stay null on an exercise. Populated only by the real IRWIN integration."},
+    {"name": "CreateName", "type": "TEXT", "length": 100, "nullable": true},
+    {"name": "CreateDate", "type": "DATE", "nullable": true},
+    {"name": "DeleteThis", "type": "TEXT", "length": 5, "nullable": true, "domain": "YesNo", "default": "No"},
+    {"name": "Comments", "type": "TEXT", "length": 255, "nullable": true}
+  ],
+
+  "feature_classes": {
+    "EventPoint": {
+      "geometry": "POINT",
+      "extra_fields": [],
+      "domain": "EventPointFeatureCategory",
+      "categories": [
+        "Incident Command Post",
+        "Camp",
+        "Staging Area",
+        "Helibase",
+        "Helispot",
+        "Drop Point",
+        "Dip Site",
+        "Draft Site",
+        "Hydrant",
+        "Water Tank",
+        "Safety Zone",
+        "Lookout",
+        "Repeater",
+        "Mobile Weather Unit",
+        "Access Point",
+        "Gate",
+        "Closure",
+        "Hazard",
+        "Medical Site",
+        "Medivac Site",
+        "Value at Risk",
+        "Structure",
+        "Spot Fire",
+        "Point of Origin",
+        "Sign",
+        "Internet Access"
+      ]
+    },
+
+    "EventLine": {
+      "geometry": "POLYLINE",
+      "extra_fields": [
+        {"name": "LengthMiles", "type": "DOUBLE", "nullable": true, "description": "Recalculate after every edit session. Ops reads line mileage off this."}
+      ],
+      "domain": "EventLineFeatureCategory",
+      "categories": [
+        "Completed Hand Line",
+        "Completed Dozer Line",
+        "Completed Road as Line",
+        "Completed Fuel Break",
+        "Completed Mixed Construction Line",
+        "Proposed Dozer Line",
+        "Proposed Hand Line",
+        "Proposed Road as Line",
+        "Uncontrolled Fire Edge",
+        "Contained Fire Edge",
+        "Access Route",
+        "Escape Route",
+        "Pump and Hose Lay",
+        "Fire Spread Direction",
+        "Division Break",
+        "Branch Break"
+      ]
+    },
+
+    "EventPolygon": {
+      "geometry": "POLYGON",
+      "extra_fields": [
+        {"name": "GISAcres", "type": "DOUBLE", "nullable": true, "description": "Calculated from geometry in an equal-area or UTM projection. NEVER hand-typed — the acreage on the map and the acreage in the 209 have to come from the same place."},
+        {"name": "PolygonDateTime", "type": "DATE", "nullable": true, "description": "When this perimeter was collected. Drives the progression map's date symbology."}
+      ],
+      "domain": "EventPolygonFeatureCategory",
+      "categories": [
+        "Wildfire Daily Fire Perimeter",
+        "Wildfire Final Fire Perimeter",
+        "Aerial Hazard Area",
+        "Retardant Avoidance Area",
+        "Closure Area",
+        "Evacuation Area",
+        "Temporary Flight Restriction",
+        "Safety Zone",
+        "Structure Group",
+        "Management Action Point Area",
+        "Repair Area"
+      ]
+    }
+  },
+
+  "coded_domains": {
+    "YesNo": ["Yes", "No"],
+    "MapMethod": [
+      "GPS-Driven",
+      "GPS-Walked",
+      "GPS-Flight",
+      "GPS-Unknown",
+      "Digitized-Topo",
+      "Digitized-Infrared",
+      "Digitized-Other",
+      "Image Interpretation",
+      "Infrared Image",
+      "Hand Sketch",
+      "Mixed Methods",
+      "Unknown"
+    ]
+  },
+
+  "rules": [
+    "Do not add, rename, or retype fields in the three Event feature classes. Downstream tools and the .lyrx files bind to these names.",
+    "Symbolize on FeatureCategory only. If a feature draws wrong, the attribute is wrong — do not fix it by overriding the symbol.",
+    "Where an Event Line (dozer/hand line) sits on top of the perimeter, suppress the perimeter polygon's outline so the line reads cleanly. This is a display fix on the polygon layer, not an edit to the geometry.",
+    "Recalculate GISAcres and LengthMiles at the end of every edit session, before export.",
+    "IRWINID stays null for the duration of the exercise."
+  ]
+}

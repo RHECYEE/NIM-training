@@ -1,0 +1,692 @@
+{
+ "type": "FeatureCollection",
+ "name": "EventLine",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "_warning": "TRAINING EXERCISE \u2014 NOT AN ACTUAL INCIDENT. Fabricated data. Never publish, never sync to NIFS or NIFC AGOL.",
+ "_generated_by": "scripts/make_mock_incident.py",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Dozer Line",
+    "Label": "Div Z Dozer",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "SMTG-LN-0001",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Completed 0730 op 2. Two blades.",
+    "LengthMiles": 2.451
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.427,
+      43.9575
+     ],
+     [
+      -103.4265,
+      43.95
+     ],
+     [
+      -103.4205,
+      43.944
+     ],
+     [
+      -103.4125,
+      43.94
+     ],
+     [
+      -103.404,
+      43.943
+     ],
+     [
+      -103.3965,
+      43.947
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Hand Line",
+    "Label": "Div A Hand",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "SMTG-LN-0002",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Completed op 2. Type 1 crew.",
+    "LengthMiles": 1.098
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.427,
+      43.9575
+     ],
+     [
+      -103.423,
+      43.9645
+     ],
+     [
+      -103.415,
+      43.9705
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Completed Road as Line",
+    "Label": "Div Z Road",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "SMTG-LN-0003",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Existing road brushed and used as line.",
+    "LengthMiles": 0.89
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.3965,
+      43.947
+     ],
+     [
+      -103.39,
+      43.9515
+     ],
+     [
+      -103.3845,
+      43.9565
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Dozer Line",
+    "Label": "Div A Proposed Dozer",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "SMTG-LN-0004",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Op 3 objective. Tie DP 4 to the north contingency.",
+    "LengthMiles": 1.358
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.3845,
+      43.9565
+     ],
+     [
+      -103.38,
+      43.9625
+     ],
+     [
+      -103.3785,
+      43.969
+     ],
+     [
+      -103.381,
+      43.975
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Hand Line",
+    "Label": "North Contingency Hand",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "SMTG-LN-0005",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency only. Do not construct without Ops approval.",
+    "LengthMiles": 1.317
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.381,
+      43.975
+     ],
+     [
+      -103.388,
+      43.979
+     ],
+     [
+      -103.396,
+      43.9805
+     ],
+     [
+      -103.405,
+      43.979
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Proposed Road as Line",
+    "Label": "North Contingency Road",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "SMTG-LN-0006",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Contingency.",
+    "LengthMiles": 1.115
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.405,
+      43.979
+     ],
+     [
+      -103.415,
+      43.976
+     ],
+     [
+      -103.423,
+      43.97
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Uncontrolled Fire Edge",
+    "Label": "Active Edge",
+    "IsVisible": "Yes",
+    "MapMethod": "Infrared Image",
+    "GeometryID": "SMTG-LN-0007",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Active at 0214 MDT 7/28.",
+    "LengthMiles": 2.201
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.413,
+      43.968
+     ],
+     [
+      -103.404,
+      43.9715
+     ],
+     [
+      -103.395,
+      43.973
+     ],
+     [
+      -103.388,
+      43.9705
+     ],
+     [
+      -103.3845,
+      43.9655
+     ],
+     [
+      -103.386,
+      43.959
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Contained Fire Edge",
+    "Label": "Held Edge",
+    "IsVisible": "Yes",
+    "MapMethod": "Infrared Image",
+    "GeometryID": "SMTG-LN-0008",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Held at 0214 MDT 7/28.",
+    "LengthMiles": 4.047
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.386,
+      43.959
+     ],
+     [
+      -103.3915,
+      43.954
+     ],
+     [
+      -103.398,
+      43.9495
+     ],
+     [
+      -103.405,
+      43.9455
+     ],
+     [
+      -103.412,
+      43.9425
+     ],
+     [
+      -103.418,
+      43.943
+     ],
+     [
+      -103.423,
+      43.949
+     ],
+     [
+      -103.4245,
+      43.956
+     ],
+     [
+      -103.421,
+      43.9625
+     ],
+     [
+      -103.413,
+      43.968
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Route",
+    "Label": "Storm Mountain Rd",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "SMTG-LN-0009",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "1.7 mi of winding FS road. Single lane with turnouts. THE access constraint \u2014 brief every resource on it.",
+    "LengthMiles": 2.636
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.332,
+      43.9705
+     ],
+     [
+      -103.342,
+      43.969
+     ],
+     [
+      -103.352,
+      43.966
+     ],
+     [
+      -103.361,
+      43.964
+     ],
+     [
+      -103.37,
+      43.9648
+     ],
+     [
+      -103.377,
+      43.9655
+     ],
+     [
+      -103.381,
+      43.969
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Access Route",
+    "Label": "South Access",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Driven",
+    "GeometryID": "SMTG-LN-0010",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Longer, wider, slower.",
+    "LengthMiles": 4.074
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.332,
+      43.9705
+     ],
+     [
+      -103.34,
+      43.956
+     ],
+     [
+      -103.352,
+      43.947
+     ],
+     [
+      -103.368,
+      43.944
+     ],
+     [
+      -103.383,
+      43.945
+     ],
+     [
+      -103.394,
+      43.9465
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Escape Route",
+    "Label": "ER North",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "SMTG-LN-0011",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "DP 4 to the north ridge.",
+    "LengthMiles": 1.055
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.381,
+      43.969
+     ],
+     [
+      -103.376,
+      43.976
+     ],
+     [
+      -103.37,
+      43.982
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Escape Route",
+    "Label": "ER South",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "SMTG-LN-0012",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "DP 5 to SZ-2.",
+    "LengthMiles": 0.94
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.3965,
+      43.947
+     ],
+     [
+      -103.39,
+      43.942
+     ],
+     [
+      -103.382,
+      43.9385
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Division Break",
+    "Label": "Div A / Div Z",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "SMTG-LN-0013",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 2.382
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.429,
+      43.96
+     ],
+     [
+      -103.418,
+      43.9575
+     ],
+     [
+      -103.406,
+      43.956
+     ],
+     [
+      -103.394,
+      43.9552
+     ],
+     [
+      -103.382,
+      43.9548
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Division Break",
+    "Label": "Div Z / Div M",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "SMTG-LN-0014",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 1.259
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.398,
+      43.937
+     ],
+     [
+      -103.399,
+      43.947
+     ],
+     [
+      -103.3985,
+      43.9552
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Branch Break",
+    "Label": "Branch I / Branch II",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Topo",
+    "GeometryID": "SMTG-LN-0015",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "",
+    "LengthMiles": 2.024
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.43,
+      43.972
+     ],
+     [
+      -103.41,
+      43.9745
+     ],
+     [
+      -103.39,
+      43.977
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Pump and Hose Lay",
+    "Label": "Draft 1 Lay",
+    "IsVisible": "Yes",
+    "MapMethod": "GPS-Walked",
+    "GeometryID": "SMTG-LN-0016",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "From Draft 1 to the structure group. Two portable pumps.",
+    "LengthMiles": 1.002
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.3608,
+      43.9702
+     ],
+     [
+      -103.368,
+      43.969
+     ],
+     [
+      -103.375,
+      43.9672
+     ],
+     [
+      -103.38,
+      43.966
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "FeatureCategory": "Fire Spread Direction",
+    "Label": "Predicted Spread",
+    "IsVisible": "Yes",
+    "MapMethod": "Digitized-Other",
+    "GeometryID": "SMTG-LN-0017",
+    "IncidentName": "Storm Mountain",
+    "IRWINID": null,
+    "CreateName": "TRAINEE, GISS",
+    "CreateDate": "2026-07-28T04:30:00-06:00",
+    "DeleteThis": "No",
+    "Comments": "Predicted op 3 spread, northeast.",
+    "LengthMiles": 1.389
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -103.41,
+      43.956
+     ],
+     [
+      -103.398,
+      43.964
+     ],
+     [
+      -103.39,
+      43.97
+     ]
+    ]
+   }
+  }
+ ]
+}
